@@ -3,427 +3,200 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Desk — AV Quoting Software for Production Companies | an AV.Land App</title>
+  <title>Desk — AV Quoting Software | an AV.Land App</title>
   <meta name="description" content="Desk is professional AV quoting software built for production companies. Create proposals, manage gear, track clients, and generate pull sheets — fast."/>
   <link rel="icon" type="image/png" href="https://desk.av.land/favicon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0d1520;--navy2:#151f2e;--gold:#f5c518;--gold2:#c9a000;--muted:#8a8890;--white:#ffffff;--border:rgba(255,255,255,0.08)}
+    html{scroll-behavior:smooth}
+    body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
 
-    :root {
-      --navy:   #0d1520;
-      --navy2:  #151f2e;
-      --gold:   #f5c518;
-      --gold2:  #c9a000;
-      --gray:   #555358;
-      --muted:  #8a8890;
-      --light:  #f4f4f5;
-      --white:  #ffffff;
-      --border: rgba(255,255,255,0.08);
-    }
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(13,21,32,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{display:flex;align-items:center;text-decoration:none}
+    .nav-logo img{height:26px;width:auto;display:block}
+    .nav-logo-fb{display:none;color:var(--gold);font-weight:800;font-size:1.1rem}
+    .nav-center{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-center a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-center a:hover{color:var(--white)}
+    .nav-right{display:flex;align-items:center;gap:.25rem}
+    .nav-right a{color:var(--white);text-decoration:none;font-size:1rem;font-weight:600;padding:.4rem .65rem;transition:color .2s}
+    .nav-right a:hover{color:var(--gold)}
+    .nav-sep{color:rgba(255,255,255,0.25);font-size:1rem;padding:0 .15rem;user-select:none}
+    .nav-cta{background:var(--gold)!important;color:#111!important;font-weight:700!important;padding:.55rem 1.3rem!important;border-radius:6px;margin-left:.6rem;font-size:.9rem!important;transition:background .2s!important}
+    .nav-cta:hover{background:var(--gold2)!important}
 
-    html { scroll-behavior: smooth; }
+    /* HERO */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem 2.5rem;position:relative;z-index:2}
+    .hero-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 0% 50%,rgba(245,197,24,0.05) 0%,transparent 70%);pointer-events:none}
+    .hero-brand-logo{height:44px;width:auto;display:block;margin-bottom:1.5rem}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+    .beta-badge{background:rgba(245,197,24,0.15);border:1px solid rgba(245,197,24,0.35);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;padding:.15rem .5rem;border-radius:4px;text-transform:uppercase}
+    .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:1.25rem}
+    .hero h1 em{font-style:normal;color:var(--gold)}
+    .hero-sub{font-size:1.05rem;color:var(--muted);max-width:460px;margin-bottom:2rem;line-height:1.65}
+    .hero-sub strong{color:var(--white);font-weight:600}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:.75rem}
+    .btn-primary{background:var(--gold);color:#111;font-weight:700;padding:.9rem 2rem;border-radius:8px;text-decoration:none;font-size:1rem;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+    .btn-ghost{color:rgba(255,255,255,0.55);font-weight:500;padding:.9rem 1.25rem;border-radius:8px;text-decoration:none;font-size:1rem;border:1px solid var(--border);transition:all .2s}
+    .btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.2)}
+    .hero-note{font-size:.78rem;color:var(--muted)}
+    .hero-right{position:relative;overflow:hidden}
+    .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+    .hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--navy) 0%,transparent 18%),linear-gradient(to top,var(--navy) 0%,transparent 12%)}
 
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* STRIP */
+    .strip{background:var(--gold);color:#111;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 0;overflow:hidden;white-space:nowrap}
+    .strip-inner{display:inline-flex;gap:3rem;animation:marquee 28s linear infinite}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* ── NAV ─────────────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2.5rem;
-      background: rgba(13,21,32,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo img { height: 28px; width: auto; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 500; transition: color .2s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-sep-line { color: rgba(255,255,255,0.25); font-size: .9rem; }
-    .nav-cta {
-      background: var(--gold); color: #111; font-weight: 700;
-      padding: .55rem 1.4rem; border-radius: 6px; text-decoration: none;
-      font-size: .9rem; transition: background .2s;
-    }
-    .nav-cta:hover { background: var(--gold2); }
+    /* SHARED */
+    .section-head{text-align:center;margin-bottom:3.5rem}
+    .section-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem}
+    .section-head h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;line-height:1.1}
 
-    /* ── HERO ────────────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 2.5rem 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-inner {
-      display: flex; align-items: center; gap: 3rem;
-      max-width: 1100px; margin: 0 auto; width: 100%;
-    }
-    .hero-content { flex: 1; min-width: 0; }
-    .hero-image {
-      flex: 0 0 48%; max-width: 480px;
-    }
-    .hero-mockup-img {
-      width: 100%; height: auto; border-radius: 16px;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-      display: block;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(245,197,24,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: .8rem; font-weight: 600; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      font-weight: 800; line-height: .95;
-      letter-spacing: -.02em;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 em { font-style: normal; color: var(--gold); }
-    .hero-sub {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
-      color: var(--muted); max-width: 560px;
-      margin-bottom: 2.5rem; line-height: 1.6;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-    .btn-primary {
-      background: var(--gold); color: #111; font-weight: 700;
-      padding: .9rem 2rem; border-radius: 8px; text-decoration: none;
-      font-size: 1rem; transition: background .2s, transform .15s;
-      display: inline-flex; align-items: center; gap: .5rem;
-    }
-    .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
-    .btn-ghost {
-      color: var(--muted); font-weight: 500;
-      padding: .9rem 1.5rem; border-radius: 8px; text-decoration: none;
-      font-size: 1rem; border: 1px solid var(--border); transition: all .2s;
-    }
-    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
-    .hero-note { font-size: .82rem; color: var(--muted); margin-top: 1rem; }
+    /* INTRO */
+    .intro{padding:6rem 2.5rem;background:var(--navy2)}
+    .intro-inner{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .intro-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+    .intro h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;line-height:1.05;margin-bottom:1.25rem}
+    .intro p{color:var(--muted);font-size:1rem;line-height:1.7}
+    .pain-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+    .pain-list li{display:flex;align-items:flex-start;gap:.75rem;color:var(--muted);font-size:.9rem;line-height:1.5}
+    .pain-arrow{color:var(--gold);flex-shrink:0;margin-top:2px}
 
-    /* ── MARQUEE STRIP ───────────────────────────────── */
-    .strip {
-      background: var(--gold); color: #111; font-weight: 700;
-      font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
-      padding: .7rem 0; overflow: hidden; white-space: nowrap;
-    }
-    .strip-inner {
-      display: inline-flex; gap: 3rem;
-      animation: marquee 28s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
+    /* FEATURES */
+    .features{padding:6rem 2.5rem;background:#e5e5ea}
+    .features .section-label{color:#9a7800}
+    .features .section-head h2{color:#0d1520}
+    .features-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .feature-card{background:#fff;border:1px solid #d5d5db;border-radius:14px;padding:1.75rem;transition:border-color .25s,transform .2s,box-shadow .2s}
+    .feature-card:hover{border-color:#c9a000;transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+    .feature-icon{width:42px;height:42px;border-radius:10px;background:rgba(180,140,0,0.1);border:1px solid rgba(180,140,0,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .feature-icon svg{width:20px;height:20px;stroke:#9a7800;fill:none;stroke-width:1.8}
+    .feature-card h3{font-size:.98rem;font-weight:700;margin-bottom:.4rem;color:#0d1520}
+    .feature-card p{color:#555;font-size:.87rem;line-height:1.6}
 
-    /* ── PROBLEM / INTRO ─────────────────────────────── */
-    .intro {
-      padding: 6rem 2.5rem;
-      background: var(--navy2);
-    }
-    .intro-inner {
-      max-width: 900px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-    }
-    .intro-label {
-      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: .75rem;
-    }
-    .intro h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
-      line-height: 1.05; margin-bottom: 1.25rem;
-    }
-    .intro p { color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
-    .pain-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
-    .pain-list li {
-      display: flex; align-items: flex-start; gap: .75rem;
-      color: var(--muted); font-size: .95rem; line-height: 1.5;
-    }
-    .pain-icon {
-      width: 20px; height: 20px; flex-shrink: 0;
-      background: rgba(245,197,24,0.12); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 2px;
-    }
-    .pain-icon svg { width: 11px; height: 11px; }
+    /* HOW */
+    .how{padding:6rem 2.5rem;background:var(--navy2)}
+    .steps{max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .step{text-align:center;padding:1rem}
+    .step-num{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(245,197,24,0.2);line-height:1;margin-bottom:.75rem}
+    .step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+    .step p{color:var(--muted);font-size:.87rem;line-height:1.6}
 
-    /* ── FEATURES ────────────────────────────────────── */
-    .features { padding: 6rem 2.5rem; }
-    .section-head { text-align: center; margin-bottom: 3.5rem; }
-    .section-label {
-      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .6rem;
-    }
-    .section-head h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800;
-      line-height: 1.1;
-    }
-    .features-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
-    .feature-card {
-      background: var(--navy2); border: 1px solid var(--border);
-      border-radius: 14px; padding: 2rem;
-      transition: border-color .25s, transform .2s;
-    }
-    .feature-card:hover { border-color: rgba(245,197,24,0.3); transform: translateY(-3px); }
-    .feature-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: rgba(245,197,24,0.1); border: 1px solid rgba(245,197,24,0.2);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-    .feature-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
-    .feature-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: .5rem; }
-    .feature-card p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    /* PRICING */
+    .pricing{padding:6rem 2.5rem}
+    .pricing-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
+    .plan{background:var(--navy2);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative}
+    .plan-featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 20px 60px rgba(245,197,24,0.1)}
+    .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#111;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .75rem;border-radius:99px;white-space:nowrap}
+    .plan-name{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+    .plan-price{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:.25rem}
+    .plan-price span{font-size:1rem;font-weight:400;color:var(--muted)}
+    .plan-desc{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .plan-features{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem}
+    .plan-features li{display:flex;align-items:flex-start;gap:.6rem;font-size:.87rem;color:var(--muted)}
+    .plan-features li.on{color:var(--white)}
+    .ck{color:var(--gold);flex-shrink:0;margin-top:1px}
+    .cx{color:#333;flex-shrink:0;margin-top:1px}
+    .plan-btn-disabled{display:block;text-align:center;width:100%;padding:.85rem;border-radius:8px;font-weight:600;font-size:.9rem;cursor:not-allowed;border:1px solid rgba(255,255,255,0.06);color:#3a3a3a;background:rgba(255,255,255,0.02);user-select:none}
+    .plan-btn-gold{background:rgba(245,197,24,0.1);color:#7a6400;border-color:rgba(245,197,24,0.18)}
 
-    /* ── HOW IT WORKS ────────────────────────────────── */
-    .how { padding: 6rem 2.5rem; background: var(--navy2); }
-    .steps {
-      max-width: 860px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-    }
-    .step { text-align: center; padding: 1rem; }
-    .step-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 3.5rem; font-weight: 800; color: rgba(245,197,24,0.2);
-      line-height: 1; margin-bottom: .75rem;
-    }
-    .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: .4rem; }
-    .step p { color: var(--muted); font-size: .88rem; line-height: 1.6; }
+    /* TRIAL */
+    .trial-wrap{padding:0 2.5rem 6rem}
+    .trial{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,rgba(245,197,24,0.1) 0%,rgba(245,197,24,0.03) 100%);border:1px solid rgba(245,197,24,0.22);border-radius:20px;padding:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .trial h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;margin-bottom:.4rem}
+    .trial p{color:var(--muted);font-size:1rem}
 
-    /* ── PRICING ─────────────────────────────────────── */
-    .pricing { padding: 6rem 2.5rem; }
-    .pricing-grid {
-      max-width: 940px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start;
-    }
-    .plan {
-      background: var(--navy2); border: 1px solid var(--border);
-      border-radius: 16px; padding: 2rem;
-      position: relative;
-    }
-    .plan-featured {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 1px var(--gold), 0 20px 60px rgba(245,197,24,0.1);
-    }
-    .plan-badge {
-      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-      background: var(--gold); color: #111; font-size: .72rem; font-weight: 800;
-      letter-spacing: .1em; text-transform: uppercase;
-      padding: .25rem .75rem; border-radius: 99px; white-space: nowrap;
-    }
-    .plan-name { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
-    .plan-price { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1; margin-bottom: .25rem; }
-    .plan-price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
-    .plan-desc { color: var(--muted); font-size: .85rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-    .plan-features { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin-bottom: 2rem; }
-    .plan-features li { display: flex; align-items: flex-start; gap: .6rem; font-size: .88rem; color: var(--muted); }
-    .plan-features li.active { color: var(--white); }
-    .check { color: var(--gold); font-size: .9rem; flex-shrink: 0; margin-top: 1px; }
-    .cross { color: #444; font-size: .9rem; flex-shrink: 0; margin-top: 1px; }
-    .plan-btn {
-      display: block; text-align: center; width: 100%;
-      padding: .85rem; border-radius: 8px; font-weight: 700;
-      font-size: .95rem; text-decoration: none; transition: all .2s;
-    }
-    .plan-btn-outline { border: 1px solid var(--border); color: var(--white); }
-    .plan-btn-outline:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.04); }
-    .plan-btn-gold { background: var(--gold); color: #111; }
-    .plan-btn-gold:hover { background: var(--gold2); }
+    /* FOOTER */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:2.5rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+    .footer-logo img{height:32px;width:auto;display:block}
+    .footer-logo-fb{display:none;color:var(--gold);font-weight:800;font-size:1rem}
+    .footer-brand p{color:var(--muted);font-size:.76rem;margin-top:.3rem}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:.82rem;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{color:var(--muted);font-size:.74rem;text-align:right;line-height:1.6}
 
-    /* ── TRIAL BANNER ────────────────────────────────── */
-    .trial {
-      margin: 0 2.5rem 6rem;
-      max-width: 1100px; margin-left: auto; margin-right: auto;
-      background: linear-gradient(135deg, rgba(245,197,24,0.12) 0%, rgba(245,197,24,0.04) 100%);
-      border: 1px solid rgba(245,197,24,0.25);
-      border-radius: 20px; padding: 3.5rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-      flex-wrap: wrap;
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero{grid-template-columns:1fr;min-height:auto}
+      .hero-right{height:55vw;order:-1}
+      .hero-right::after{background:linear-gradient(to bottom,var(--navy) 0%,transparent 30%),linear-gradient(to top,var(--navy) 0%,transparent 20%)}
+      .hero-left{padding:5rem 1.5rem 3rem}
+      .features-grid{grid-template-columns:repeat(2,1fr)}
+      .pricing-grid{grid-template-columns:1fr;max-width:380px}
+      .intro-inner{grid-template-columns:1fr;gap:2.5rem}
+      .steps{grid-template-columns:1fr;max-width:380px}
+      nav{padding:1rem 1.25rem}
+      .nav-center{display:none}
+      .intro,.features,.how,.pricing,.trial-wrap,footer{padding-left:1.25rem;padding-right:1.25rem}
     }
-    .trial h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800;
-      margin-bottom: .5rem;
+    @media(max-width:480px){
+      .features-grid{grid-template-columns:1fr}
+      .hero-actions{flex-direction:column;align-items:flex-start}
+      .trial{padding:2rem 1.25rem}
     }
-    .trial p { color: var(--muted); font-size: 1rem; }
-
-    /* ── FOOTER ──────────────────────────────────────── */
-    footer {
-      background: var(--navy2); border-top: 1px solid var(--border);
-      padding: 3rem 2.5rem;
-    }
-    .footer-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
-    }
-    .footer-brand img { height: 34px; width: auto; opacity: .85; }
-    .footer-brand p { color: var(--muted); font-size: .8rem; margin-top: .3rem; }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s; }
-    .footer-links a:hover { color: var(--white); }
-    .footer-copy { color: var(--muted); font-size: .78rem; text-align: right; }
-
-    /* ── RESPONSIVE ──────────────────────────────────── */
-    @media (max-width: 900px) {
-      .hero-inner { flex-direction: column; }
-      .hero-image { max-width: 100%; flex: none; order: -1; }
-      .hero-mockup-img { border-radius: 12px; }
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
-      .intro-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .steps { grid-template-columns: 1fr; max-width: 400px; }
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-    }
-    @media (max-width: 600px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .hero { padding: 7rem 1.25rem 4rem; }
-      .intro, .features, .how, .pricing, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .trial { padding: 2rem 1.5rem; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ── Hero brand logo ─────────────────────────────── */
-    .hero-brand-logo {
-      height: 48px; width: auto; display: block;
-      margin-bottom: 1.75rem;
-    }
-    .beta-badge {
-      display: inline-block;
-      background: rgba(245,197,24,0.15);
-      border: 1px solid rgba(245,197,24,0.35);
-      color: var(--gold);
-      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-      padding: .15rem .5rem; border-radius: 4px;
-      vertical-align: middle; margin-left: .4rem;
-      text-transform: uppercase;
-    }
-
-    /* ── Features light section ──────────────────────── */
-    .features-light {
-      background: #ededf0;
-      color: #0d1520;
-    }
-    .features-light .section-label { color: #c9a000; }
-    .features-light .section-head h2 { color: #0d1520; }
-    .features-light .feature-card {
-      background: #f7f7fa;
-      border-color: #e4e4e8;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    .features-light .feature-card:hover { border-color: rgba(201,160,0,0.4); }
-    .features-light .feature-card h3 { color: #0d1520; }
-    .features-light .feature-card p { color: #555; }
-
-    /* ── Disabled plan button ────────────────────────── */
-    .plan-btn-disabled {
-      display: block; text-align: center; width: 100%;
-      padding: .85rem; border-radius: 8px; font-weight: 600;
-      font-size: .95rem; cursor: not-allowed;
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #555; background: rgba(255,255,255,0.04);
-      user-select: none;
-    }
-    .plan-btn-disabled-gold {
-      background: rgba(245,197,24,0.15);
-      color: #a08200; border-color: rgba(245,197,24,0.2);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .strip-inner { animation: none; }
-      * { transition: none !important; }
-    }
+    @media(prefers-reduced-motion:reduce){.strip-inner{animation:none}*{transition:none!important}}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="/">
-    <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk — an AV.Land App" onerror="this.style.display='none';this.nextSibling.style.display='block'"/>
-    <span style="display:none;color:#f5c518;font-weight:800;font-size:1.1rem;letter-spacing:.05em">DESK</span>
+  <a href="/" class="nav-logo">
+    <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk"
+      onerror="this.style.display='none';document.getElementById('nlfb').style.display='inline'"/>
+    <span id="nlfb" class="nav-logo-fb">DESK</span>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-center">
     <li><a href="#features">Features</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li class="nav-sep-item"><span class="nav-sep-line">|</span></li>
-    <li><a href="https://desk.av.land">Launch</a></li>
-    <li><a href="mailto:desk@av.land">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="https://desk.av.land">Start Free Trial</a>
+  <div class="nav-right">
+    <a href="https://desk.av.land">Launch</a>
+    <span class="nav-sep">|</span>
+    <a href="mailto:desk@av.land">Contact</a>
+    <a href="https://desk.av.land" class="nav-cta">Start Free Trial</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk" class="hero-brand-logo" onerror="this.style.display='none'"/>
-      <span class="hero-eyebrow">an AV.Land App &nbsp;<span class="beta-badge">Public Beta</span></span>
-      <h1>AV quoting.<br/><em>Done right.</em></h1>
-      <p class="hero-sub"><strong>Desk</strong> is the quoting tool built specifically for AV production companies. Build proposals, manage your gear library, track clients, and generate pull sheets — all in one place.</p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="https://desk.av.land">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Start Free Trial
-        </a>
-        <a class="btn-ghost" href="#features">See what's inside →</a>
-      </div>
-      <p class="hero-note">7-day free trial. No credit card required.</p>
+  <div class="hero-left">
+    <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk" class="hero-brand-logo"
+      onerror="this.style.display='none'"/>
+    <span class="hero-eyebrow">an AV.Land App <span class="beta-badge">Public Beta</span></span>
+    <h1>AV quoting.<br/><em>Done right.</em></h1>
+    <p class="hero-sub"><strong>Desk</strong> is the quoting tool built specifically for AV production companies. Build proposals, manage your gear library, track clients, and generate pull sheets — all in one place.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://desk.av.land">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Start Free Trial
+      </a>
+      <a class="btn-ghost" href="#features">See what's inside →</a>
     </div>
-    <div class="hero-image">
-      <img src="hero-mockup.jpg" alt="Desk AV quoting app on laptop" class="hero-mockup-img"/>
-    </div>
+    <p class="hero-note">7-day free trial · No credit card required</p>
+  </div>
+  <div class="hero-right">
+    <img src="hero-mockup.jpg" alt="Desk AV quoting app on laptop"/>
   </div>
 </section>
 
-<!-- STRIP -->
 <div class="strip" aria-hidden="true">
   <div class="strip-inner">
-    <span>Quote Builder</span><span>·</span>
-    <span>Item Library</span><span>·</span>
-    <span>Pull Sheets</span><span>·</span>
-    <span>Client Database</span><span>·</span>
-    <span>PDF Proposals</span><span>·</span>
-    <span>Revision History</span><span>·</span>
-    <span>Templates</span><span>·</span>
-    <span>Labor Overtime</span><span>·</span>
-    <span>Sub-rental Tracking</span><span>·</span>
-    <span>Cloud Sync</span><span>·</span>
-    <span>Quote Builder</span><span>·</span>
-    <span>Item Library</span><span>·</span>
-    <span>Pull Sheets</span><span>·</span>
-    <span>Client Database</span><span>·</span>
-    <span>PDF Proposals</span><span>·</span>
-    <span>Revision History</span><span>·</span>
-    <span>Templates</span><span>·</span>
-    <span>Labor Overtime</span><span>·</span>
-    <span>Sub-rental Tracking</span><span>·</span>
-    <span>Cloud Sync</span><span>·</span>
+    <span>Quote Builder</span><span>·</span><span>Item Library</span><span>·</span><span>Pull Sheets</span><span>·</span><span>Client Database</span><span>·</span><span>PDF Proposals</span><span>·</span><span>Revision History</span><span>·</span><span>Templates</span><span>·</span><span>Labor Overtime</span><span>·</span><span>Sub-rental Tracking</span><span>·</span><span>Cloud Sync</span><span>·</span>
+    <span>Quote Builder</span><span>·</span><span>Item Library</span><span>·</span><span>Pull Sheets</span><span>·</span><span>Client Database</span><span>·</span><span>PDF Proposals</span><span>·</span><span>Revision History</span><span>·</span><span>Templates</span><span>·</span><span>Labor Overtime</span><span>·</span><span>Sub-rental Tracking</span><span>·</span><span>Cloud Sync</span><span>·</span>
   </div>
 </div>
 
-<!-- INTRO / PROBLEM -->
 <section class="intro">
   <div class="intro-inner">
     <div>
@@ -432,209 +205,122 @@
       <p>AV companies are running proposals through spreadsheets that break, get emailed back and forth, and don't know the difference between a labor day rate and an OT hour. You end up copying formulas, reformatting PDFs, and chasing version history.</p>
     </div>
     <ul class="pain-list">
-      <li>
-        <span class="pain-icon">
-          <svg viewBox="0 0 12 12" fill="none" stroke="#f5c518" stroke-width="2"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
-        </span>
-        Formatting a quote PDF takes longer than writing the quote itself
-      </li>
-      <li>
-        <span class="pain-icon">
-          <svg viewBox="0 0 12 12" fill="none" stroke="#f5c518" stroke-width="2"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
-        </span>
-        No built-in revision history — "final_v3_REAL.xlsx" is not a workflow
-      </li>
-      <li>
-        <span class="pain-icon">
-          <svg viewBox="0 0 12 12" fill="none" stroke="#f5c518" stroke-width="2"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
-        </span>
-        Pull sheets have to be rebuilt manually from the quote every time
-      </li>
-      <li>
-        <span class="pain-icon">
-          <svg viewBox="0 0 12 12" fill="none" stroke="#f5c518" stroke-width="2"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
-        </span>
-        Labor OT and DT calculations done by hand, prone to errors
-      </li>
-      <li>
-        <span class="pain-icon">
-          <svg viewBox="0 0 12 12" fill="none" stroke="#f5c518" stroke-width="2"><path d="M1 6h10M6 1l5 5-5 5"/></svg>
-        </span>
-        Client history scattered across emails, folders, and spreadsheets
-      </li>
+      <li><span class="pain-arrow">→</span> Formatting a quote PDF takes longer than writing the quote itself</li>
+      <li><span class="pain-arrow">→</span> No built-in revision history — "final_v3_REAL.xlsx" is not a workflow</li>
+      <li><span class="pain-arrow">→</span> Pull sheets have to be rebuilt manually from the quote every time</li>
+      <li><span class="pain-arrow">→</span> Labor OT and DT calculations done by hand, prone to errors</li>
+      <li><span class="pain-arrow">→</span> Client history scattered across emails, folders, and spreadsheets</li>
     </ul>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features features-light" id="features">
+<section class="features" id="features">
   <div class="section-head">
     <span class="section-label">Features</span>
     <h2>Everything an AV company actually needs</h2>
   </div>
   <div class="features-grid">
-
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
-      <h3>Room-based Quote Builder</h3>
-      <p>Organize line items by room or area — General Session, Breakout, Ballroom. Categories auto-sort Audio, Video, Lighting, Labor, and more.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      </div>
-      <h3>Saved Item Library</h3>
-      <p>Build a catalog of your gear and labor rates. Select from the library while quoting — rates auto-fill. Import from Excel, export any time.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
-      </div>
-      <h3>Clean PDF Proposals</h3>
-      <p>Print-ready proposals with your logo, company info, and pricing. Control which prices show — hide line items, show department totals only.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      </div>
-      <h3>Pull Sheet Generator</h3>
-      <p>Mark items as rental and generate a pull sheet for warehouse prep — with sub-rental tracking, load-in times, and checkbox columns for your crew.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <h3>Client Database</h3>
-      <p>Save client info and pull it into quotes with one click. See the full quote history for any client — every revision, every status, every total.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-      </div>
-      <h3>Labor OT &amp; DT Calculations</h3>
-      <p>Set base hours per day, add OT and DT hours — Desk calculates the blended total automatically at 1.5× and 2× the hourly rate.</p>
-    </div>
-
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Room-based Quote Builder</h3><p>Organize line items by room or area. Categories auto-sort Audio, Video, Lighting, Labor, and more.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h3>Saved Item Library</h3><p>Build a catalog of your gear and labor rates. Select items while quoting — rates auto-fill. Import from Excel, export any time.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>Clean PDF Proposals</h3><p>Print-ready proposals with your logo and branding. Control which prices show — hide line items, show department totals only.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Pull Sheet Generator</h3><p>Mark items as rental and generate a warehouse pull sheet — with sub-rental tracking, load-in times, and checkbox columns.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Client Database</h3><p>Save client info and pull it into quotes with one click. See the full quote history for any client — every revision, every total.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3>Labor OT &amp; DT Calculations</h3><p>Set base hours per day, add OT and DT — Desk calculates the blended total at 1.5× and 2× the hourly rate automatically.</p></div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how" id="how">
   <div class="section-head">
     <span class="section-label">How it works</span>
     <h2>From blank to proposal in minutes</h2>
   </div>
   <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Build your library</h3>
-      <p>Add your gear, labor, and services with day rates. Import from Excel if you already have a list. Takes 10 minutes once.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Create a quote</h3>
-      <p>Add rooms, select items from your library, enter quantities. Discounts, tax, deposits, and OT are built in.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Print or share</h3>
-      <p>Print to PDF directly from the browser — your logo, your branding, clean layout. Generate the pull sheet for your crew in one click.</p>
-    </div>
+    <div class="step"><div class="step-num">1</div><h3>Build your library</h3><p>Add your gear, labor, and services with day rates. Import from Excel if you already have a list. Takes 10 minutes once.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Create a quote</h3><p>Add rooms, select items from your library, enter quantities. Discounts, tax, deposits, and OT are all built in.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Print or share</h3><p>Print to PDF from the browser — your logo, your branding, clean layout. Generate the pull sheet for your crew in one click.</p></div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="section-head">
     <span class="section-label">Pricing</span>
     <h2>Simple plans. Cancel any time.</h2>
   </div>
   <div class="pricing-grid">
-
     <div class="plan">
       <p class="plan-name">Basic</p>
       <p class="plan-price">$9<span>.99/mo</span></p>
       <p class="plan-desc">For freelancers and solo operators getting started.</p>
       <ul class="plan-features">
-        <li class="active"><span class="check">✓</span> Up to 10 saved quotes</li>
-        <li class="active"><span class="check">✓</span> Up to 25 library items</li>
-        <li class="active"><span class="check">✓</span> Quote templates</li>
-        <li class="active"><span class="check">✓</span> PDF proposals</li>
-        <li><span class="cross">✕</span> Client database</li>
-        <li><span class="cross">✕</span> Pull sheet</li>
-        <li><span class="cross">✕</span> Team members</li>
+        <li class="on"><span class="ck">✓</span> Up to 10 saved quotes</li>
+        <li class="on"><span class="ck">✓</span> Up to 25 library items</li>
+        <li class="on"><span class="ck">✓</span> Quote templates</li>
+        <li class="on"><span class="ck">✓</span> PDF proposals</li>
+        <li><span class="cx">✕</span> Client database</li>
+        <li><span class="cx">✕</span> Pull sheet</li>
+        <li><span class="cx">✕</span> Team members</li>
       </ul>
-      <span class="plan-btn plan-btn-disabled">Coming Soon</span>
+      <span class="plan-btn-disabled">Coming Soon</span>
     </div>
-
     <div class="plan plan-featured">
       <div class="plan-badge">Most Popular</div>
       <p class="plan-name">Pro</p>
       <p class="plan-price">$14<span>.99/mo</span></p>
       <p class="plan-desc">For working AV professionals who need everything.</p>
       <ul class="plan-features">
-        <li class="active"><span class="check">✓</span> Unlimited saved quotes</li>
-        <li class="active"><span class="check">✓</span> Unlimited library items</li>
-        <li class="active"><span class="check">✓</span> Quote templates</li>
-        <li class="active"><span class="check">✓</span> PDF proposals</li>
-        <li class="active"><span class="check">✓</span> Client database</li>
-        <li class="active"><span class="check">✓</span> Pull sheet</li>
-        <li><span class="cross">✕</span> Team members</li>
+        <li class="on"><span class="ck">✓</span> Unlimited saved quotes</li>
+        <li class="on"><span class="ck">✓</span> Unlimited library items</li>
+        <li class="on"><span class="ck">✓</span> Quote templates</li>
+        <li class="on"><span class="ck">✓</span> PDF proposals</li>
+        <li class="on"><span class="ck">✓</span> Client database</li>
+        <li class="on"><span class="ck">✓</span> Pull sheet</li>
+        <li><span class="cx">✕</span> Team members</li>
       </ul>
-      <span class="plan-btn plan-btn-disabled plan-btn-disabled-gold">Coming Soon</span>
+      <span class="plan-btn-disabled plan-btn-gold">Coming Soon</span>
     </div>
-
     <div class="plan">
       <p class="plan-name">Team</p>
       <p class="plan-price">$29<span>.99/mo</span></p>
       <p class="plan-desc">For AV companies with a crew that quotes together.</p>
       <ul class="plan-features">
-        <li class="active"><span class="check">✓</span> Everything in Pro</li>
-        <li class="active"><span class="check">✓</span> Up to 5 team members</li>
-        <li class="active"><span class="check">✓</span> Shared workspace</li>
-        <li class="active"><span class="check">✓</span> Shared item library</li>
-        <li class="active"><span class="check">✓</span> Shared client database</li>
-        <li class="active"><span class="check">✓</span> Role-based access</li>
-        <li class="active"><span class="check">✓</span> Admin controls</li>
+        <li class="on"><span class="ck">✓</span> Everything in Pro</li>
+        <li class="on"><span class="ck">✓</span> Up to 5 team members</li>
+        <li class="on"><span class="ck">✓</span> Shared workspace</li>
+        <li class="on"><span class="ck">✓</span> Shared item library</li>
+        <li class="on"><span class="ck">✓</span> Shared client database</li>
+        <li class="on"><span class="ck">✓</span> Role-based access</li>
+        <li class="on"><span class="ck">✓</span> Admin controls</li>
       </ul>
-      <span class="plan-btn plan-btn-disabled">Coming Soon</span>
+      <span class="plan-btn-disabled">Coming Soon</span>
     </div>
-
   </div>
 </section>
 
-<!-- TRIAL CTA -->
-<div style="padding: 0 2.5rem 6rem; max-width: 1100px; margin: 0 auto;">
+<div class="trial-wrap">
   <div class="trial">
     <div>
       <h2>Start your 7-day free trial.</h2>
       <p>Full Pro access. No credit card required. Cancel any time.</p>
     </div>
-    <a class="btn-primary" href="https://desk.av.land" style="white-space:nowrap; flex-shrink:0;">
-      Open Desk →
-    </a>
+    <a class="btn-primary" href="https://desk.av.land" style="white-space:nowrap;flex-shrink:0;">Open Desk →</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk" onerror="this.style.display='none'"/>
+      <div class="footer-logo">
+        <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk"
+          onerror="this.style.display='none';document.getElementById('flfb').style.display='block'"/>
+        <span id="flfb" class="footer-logo-fb">DESK</span>
+      </div>
       <p>an AV.Land App &nbsp;·&nbsp; © 2025 AV Land LLC</p>
     </div>
-    <nav class="footer-links" aria-label="Footer">
+    <div class="footer-links">
       <a href="https://desk.av.land">Launch App</a>
       <a href="mailto:desk@av.land">Contact</a>
-    </nav>
-    <p class="footer-copy">California, United States<br/>legal@av.land</p>
+    </div>
+    <p class="footer-copy">California, United States<br/>desk@av.land</p>
   </div>
 </footer>
 
