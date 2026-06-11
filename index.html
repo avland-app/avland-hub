@@ -263,7 +263,7 @@
       max-width: 1100px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
     }
-    .footer-brand img { height: 22px; width: auto; opacity: .7; }
+    .footer-brand img { height: 34px; width: auto; opacity: .85; }
     .footer-brand p { color: var(--muted); font-size: .8rem; margin-top: .3rem; }
     .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .footer-links a { color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s; }
@@ -285,6 +285,52 @@
       .intro, .features, .how, .pricing, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
       .trial { padding: 2rem 1.5rem; }
       .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── Hero brand logo ─────────────────────────────── */
+    .hero-brand-logo {
+      height: 36px; width: auto; display: block;
+      margin-bottom: 1.75rem;
+    }
+    .beta-badge {
+      display: inline-block;
+      background: rgba(245,197,24,0.15);
+      border: 1px solid rgba(245,197,24,0.35);
+      color: var(--gold);
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      padding: .15rem .5rem; border-radius: 4px;
+      vertical-align: middle; margin-left: .4rem;
+      text-transform: uppercase;
+    }
+
+    /* ── Features light section ──────────────────────── */
+    .features-light {
+      background: #f9f9fb;
+      color: #0d1520;
+    }
+    .features-light .section-label { color: #c9a000; }
+    .features-light .section-head h2 { color: #0d1520; }
+    .features-light .feature-card {
+      background: #ffffff;
+      border-color: #e4e4e8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .features-light .feature-card:hover { border-color: rgba(201,160,0,0.4); }
+    .features-light .feature-card h3 { color: #0d1520; }
+    .features-light .feature-card p { color: #555; }
+
+    /* ── Disabled plan button ────────────────────────── */
+    .plan-btn-disabled {
+      display: block; text-align: center; width: 100%;
+      padding: .85rem; border-radius: 8px; font-weight: 600;
+      font-size: .95rem; cursor: not-allowed;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #555; background: rgba(255,255,255,0.04);
+      user-select: none;
+    }
+    .plan-btn-disabled-gold {
+      background: rgba(245,197,24,0.15);
+      color: #a08200; border-color: rgba(245,197,24,0.2);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -312,9 +358,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">an AV.Land App</span>
+    <img src="https://desk.av.land/desk-logo-hero.png" alt="Desk" class="hero-brand-logo" onerror="this.style.display='none'"/>
+    <span class="hero-eyebrow">an AV.Land App &nbsp;<span class="beta-badge">Public Beta</span></span>
     <h1>AV quoting.<br/><em>Done right.</em></h1>
-    <p class="hero-sub">Desk is the quoting tool built specifically for AV production companies. Build proposals, manage your gear library, track clients, and generate pull sheets — all in one place.</p>
+    <p class="hero-sub"><strong>Desk</strong> is the quoting tool built specifically for AV production companies. Build proposals, manage your gear library, track clients, and generate pull sheets — all in one place.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="https://desk.av.land">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -396,7 +443,7 @@
 </section>
 
 <!-- FEATURES -->
-<section class="features" id="features">
+<section class="features features-light" id="features">
   <div class="section-head">
     <span class="section-label">Features</span>
     <h2>Everything an AV company actually needs</h2>
@@ -500,7 +547,7 @@
         <li><span class="cross">✕</span> Pull sheet</li>
         <li><span class="cross">✕</span> Team members</li>
       </ul>
-      <a class="plan-btn plan-btn-outline" href="https://desk.av.land">Start free trial</a>
+      <span class="plan-btn plan-btn-disabled">Coming Soon</span>
     </div>
 
     <div class="plan plan-featured">
@@ -517,7 +564,7 @@
         <li class="active"><span class="check">✓</span> Pull sheet</li>
         <li><span class="cross">✕</span> Team members</li>
       </ul>
-      <a class="plan-btn plan-btn-gold" href="https://desk.av.land">Start free trial</a>
+      <span class="plan-btn plan-btn-disabled plan-btn-disabled-gold">Coming Soon</span>
     </div>
 
     <div class="plan">
@@ -533,7 +580,7 @@
         <li class="active"><span class="check">✓</span> Role-based access</li>
         <li class="active"><span class="check">✓</span> Admin controls</li>
       </ul>
-      <a class="plan-btn plan-btn-outline" href="https://desk.av.land">Start free trial</a>
+      <span class="plan-btn plan-btn-disabled">Coming Soon</span>
     </div>
 
   </div>
@@ -561,9 +608,7 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="https://desk.av.land">Launch App</a>
-      <a href="mailto:info@av.land">Contact</a>
-      <a href="https://desk.av.land" id="terms-link">Terms &amp; Conditions</a>
-      <a href="https://desk.av.land" id="privacy-link">Privacy Policy</a>
+      <a href="mailto:desk@av.land">Contact</a>
     </nav>
     <p class="footer-copy">California, United States<br/>legal@av.land</p>
   </div>
