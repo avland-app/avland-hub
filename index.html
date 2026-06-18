@@ -33,6 +33,8 @@
     .btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
     .btn-ghost{color:rgba(255,255,255,0.72);font-weight:600;padding:.9rem 1.3rem;border-radius:8px;text-decoration:none;font-size:1.08rem;border:1px solid var(--border);transition:all .2s}
     .btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.25)}
+    .btn-cancel{background:rgba(255,255,255,.05);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);box-shadow:none}
+    .btn-cancel:hover{background:rgba(255,255,255,.09);color:var(--white);border-color:rgba(255,255,255,.32)}
     .hero-note{font-size:1.06rem;color:var(--muted)}
     .discount-note{margin-top:1rem;padding:1rem 1.15rem;border-radius:12px;background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.24);color:#f8df78;font-size:1.1rem;line-height:1.5;max-width:540px}
     .hero-right{background:var(--navy)}
@@ -347,13 +349,11 @@
         <label for="waitNotes">What would you want Desk to help with?</label>
         <textarea id="waitNotes" name="notes" placeholder="Quotes, PDFs, item library, pull sheets, client database, team access..."></textarea>
       </div>
-      <input type="hidden" name="source" value="app.av.land"/>
-      <input type="hidden" name="offer" value="First 100 - 50% off first year"/>
       <div class="form-status" id="waitlistStatus"></div>
       <p class="form-small">We will only use this to contact you about Desk early access. No spam.</p>
       <div class="form-actions">
         <button class="btn-primary btn-reset" type="submit" id="waitlistSubmit">Join Waitlist</button>
-        <button class="btn-ghost btn-reset" type="button" data-close-waitlist>Cancel</button>
+        <button class="btn-cancel btn-reset" type="button" data-close-waitlist>Cancel</button>
       </div>
     </form>
   </div>
@@ -401,7 +401,6 @@
 
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
-    payload.page_url = window.location.href;
     payload.user_agent = navigator.userAgent;
     payload.submitted_at = new Date().toISOString();
 
