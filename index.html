@@ -103,10 +103,32 @@
     .footer-links a:hover{color:var(--white)}
     .footer-copy{color:var(--muted);font-size:.98rem;text-align:right;line-height:1.6}
 
+
+    .btn-reset{font-family:inherit;border:none;cursor:pointer}
+    .waitlist-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:1.25rem;background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}
+    .waitlist-modal.is-open{display:flex}
+    .waitlist-card{width:min(560px,100%);background:#111b29;border:1px solid rgba(245,197,24,.24);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.45);overflow:hidden}
+    .waitlist-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.5rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
+    .waitlist-head h2{font-family:'Barlow Condensed',sans-serif;font-size:2.05rem;line-height:1;font-weight:800;color:var(--white)}
+    .waitlist-head p{color:var(--muted);font-size:1.04rem;margin-top:.35rem;line-height:1.45}
+    .waitlist-close{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--white);font-size:1.4rem;line-height:1;cursor:pointer;flex-shrink:0}
+    .waitlist-form{padding:1.4rem 1.5rem 1.5rem;display:grid;gap:.85rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+    .field label{display:block;font-weight:700;font-size:.95rem;color:rgba(255,255,255,.82);margin-bottom:.28rem}
+    .field input,.field textarea,.field select{width:100%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.055);color:var(--white);border-radius:10px;padding:.78rem .85rem;font-family:inherit;font-size:1rem;outline:none}
+    .field select option{background:#111b29;color:var(--white)}
+    .field textarea{min-height:82px;resize:vertical}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(245,197,24,.55);box-shadow:0 0 0 3px rgba(245,197,24,.12)}
+    .form-small{color:var(--muted);font-size:.95rem;line-height:1.45}
+    .form-status{display:none;border-radius:10px;padding:.75rem .9rem;font-weight:700;font-size:1rem;line-height:1.4}
+    .form-status.ok{display:block;background:rgba(64,210,111,.12);border:1px solid rgba(64,210,111,.3);color:#9ff0b7}
+    .form-status.err{display:block;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.3);color:#ffb3b3}
+    .form-actions{display:flex;align-items:center;gap:.9rem;justify-content:flex-start;flex-wrap:wrap;margin-top:.2rem}
+
     @media(max-width:900px){
       .hero{grid-template-columns:1fr;min-height:auto}.hero-right{height:60vw;order:-1}.hero-left{padding:5rem 1.5rem 3rem}.features-grid,.compare-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr;max-width:400px}.intro-inner{grid-template-columns:1fr;gap:2.5rem}nav{gap:1.25rem;padding:.85rem 1.25rem}nav a{font-size:.98rem}.intro,.features,.compare,.pricing,.trial-wrap,footer{padding-left:1.25rem;padding-right:1.25rem}
     }
-    @media(max-width:520px){.features-grid,.compare-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}.trial{padding:2rem 1.25rem}nav{justify-content:center;gap:.9rem}nav a{font-size:.92rem}.hero h1{font-size:3.2rem}}
+    @media(max-width:520px){.features-grid,.compare-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}.trial{padding:2rem 1.25rem}nav{justify-content:center;gap:.9rem}nav a{font-size:.92rem}.hero h1{font-size:3.2rem}.form-row{grid-template-columns:1fr}.waitlist-head,.waitlist-form{padding-left:1.1rem;padding-right:1.1rem}}
     @media(prefers-reduced-motion:reduce){.strip-inner{animation:none}*{transition:none!important}}
   </style>
 </head>
@@ -116,7 +138,7 @@
   <a href="#problem">Problem</a>
   <a href="#features">Features</a>
   <a href="#pricing">Pricing</a>
-  <a href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist" class="nav-contact">Join Waitlist</a>
+  <a href="#waitlist" class="nav-contact" data-open-waitlist>Join Waitlist</a>
 </nav>
 
 <section class="hero">
@@ -126,9 +148,9 @@
     <h1>AV quoting.<br/><em>Without the mess.</em></h1>
     <p class="hero-sub"><strong>Desk</strong> is a simple quoting app built for AV freelancers, technical directors, and small AV companies that need clean estimates, item libraries, client records, PDFs, and pull sheets — without expensive software.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist&body=Hi%20AV%20Land%2C%0A%0AI%20would%20like%20to%20join%20the%20Desk%20early%20access%20waitlist.%0A%0AName%3A%0ACompany%3A%0ARole%3A%0AWebsite%3A%0AHow%20do%20you%20currently%20build%20AV%20quotes%3F%0A">
+      <button class="btn-primary btn-reset" type="button" data-open-waitlist>
         Join Early Access
-      </a>
+      </button>
       <a class="btn-ghost" href="#features">See what's inside →</a>
     </div>
     <p class="hero-note">Private beta is invite-only right now.</p>
@@ -248,7 +270,7 @@
       <h2>Private beta is open by invitation.</h2>
       <p>We are testing Desk with a small group of AV professionals before public launch. Join the waitlist for early access and the first 100 users will receive 50% off for the first year.</p>
     </div>
-    <a class="btn-primary" href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist&body=Hi%20AV%20Land%2C%0A%0AI%20would%20like%20to%20join%20the%20Desk%20early%20access%20waitlist.%0A%0AName%3A%0ACompany%3A%0ARole%3A%0AWebsite%3A%0AHow%20do%20you%20currently%20build%20AV%20quotes%3F%0A" style="white-space:nowrap;flex-shrink:0;">Join Waitlist →</a>
+    <button class="btn-primary btn-reset" type="button" data-open-waitlist style="white-space:nowrap;flex-shrink:0;">Join Waitlist →</button>
   </div>
 </div>
 
@@ -259,12 +281,149 @@
       <p>an AV.Land App &nbsp;·&nbsp; © 2026 AV Land LLC</p>
     </div>
     <div class="footer-links">
-      <a href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist">Join Waitlist</a>
+      <a href="#waitlist" data-open-waitlist>Join Waitlist</a>
       <a href="mailto:desk@av.land">Contact</a>
     </div>
     <p class="footer-copy">California, United States<br/>desk@av.land</p>
   </div>
 </footer>
+
+
+<div class="waitlist-modal" id="waitlistModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="waitlistTitle">
+  <div class="waitlist-card">
+    <div class="waitlist-head">
+      <div>
+        <h2 id="waitlistTitle">Join the Desk waitlist</h2>
+        <p>First 100 early-access users receive 50% off for the first year. Private beta access is invite-only.</p>
+      </div>
+      <button class="waitlist-close" type="button" data-close-waitlist aria-label="Close waitlist form">×</button>
+    </div>
+    <form class="waitlist-form" id="waitlistForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="waitName">Name *</label>
+          <input id="waitName" name="name" type="text" autocomplete="name" required/>
+        </div>
+        <div class="field">
+          <label for="waitEmail">Email *</label>
+          <input id="waitEmail" name="email" type="email" autocomplete="email" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="waitCompany">Company</label>
+          <input id="waitCompany" name="company" type="text" autocomplete="organization"/>
+        </div>
+        <div class="field">
+          <label for="waitRole">Role</label>
+          <select id="waitRole" name="role">
+            <option value="">Select one</option>
+            <option>Freelancer</option>
+            <option>Technical Director</option>
+            <option>Project Manager</option>
+            <option>AV Company Owner</option>
+            <option>Rental Company</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="waitWebsite">Website or Instagram</label>
+        <input id="waitWebsite" name="website" type="text" placeholder="https:// or @company"/>
+      </div>
+      <div class="field">
+        <label for="waitTool">How do you currently build AV quotes?</label>
+        <select id="waitTool" name="current_quote_tool">
+          <option value="">Select one</option>
+          <option>Excel / Google Sheets</option>
+          <option>QuickBooks</option>
+          <option>Rental software</option>
+          <option>PDF / Word templates</option>
+          <option>Something custom</option>
+          <option>I need a better system</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="waitNotes">What would you want Desk to help with?</label>
+        <textarea id="waitNotes" name="notes" placeholder="Quotes, PDFs, item library, pull sheets, client database, team access..."></textarea>
+      </div>
+      <input type="hidden" name="source" value="app.av.land"/>
+      <input type="hidden" name="offer" value="First 100 - 50% off first year"/>
+      <div class="form-status" id="waitlistStatus"></div>
+      <p class="form-small">We will only use this to contact you about Desk early access. No spam.</p>
+      <div class="form-actions">
+        <button class="btn-primary btn-reset" type="submit" id="waitlistSubmit">Join Waitlist</button>
+        <button class="btn-ghost btn-reset" type="button" data-close-waitlist>Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const WAITLIST_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwPhYYIJTD75B7yaSZx30ApbZi2ger_K32fSh2P-ZOBlFLlWt_drgL_ndoZm06aVjIBMQ/exec';
+
+  const modal = document.getElementById('waitlistModal');
+  const form = document.getElementById('waitlistForm');
+  const statusBox = document.getElementById('waitlistStatus');
+  const submitBtn = document.getElementById('waitlistSubmit');
+
+  function openWaitlist(event){
+    if(event) event.preventDefault();
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    setTimeout(() => document.getElementById('waitName')?.focus(), 50);
+  }
+  function closeWaitlist(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+  }
+  function showStatus(type, message){
+    statusBox.className = 'form-status ' + type;
+    statusBox.textContent = message;
+  }
+
+  document.querySelectorAll('[data-open-waitlist]').forEach((el) => el.addEventListener('click', openWaitlist));
+  document.querySelectorAll('[data-close-waitlist]').forEach((el) => el.addEventListener('click', closeWaitlist));
+  modal.addEventListener('click', (event) => { if(event.target === modal) closeWaitlist(); });
+  document.addEventListener('keydown', (event) => { if(event.key === 'Escape') closeWaitlist(); });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if(!WAITLIST_WEB_APP_URL || WAITLIST_WEB_APP_URL.includes('PASTE_GOOGLE_APPS_SCRIPT')){
+      showStatus('err', 'Waitlist form is not connected yet. Please email desk@av.land.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    showStatus('ok', 'Submitting your request...');
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+    payload.page_url = window.location.href;
+    payload.user_agent = navigator.userAgent;
+    payload.submitted_at = new Date().toISOString();
+
+    try {
+      await fetch(WAITLIST_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      form.reset();
+      showStatus('ok', 'Thank you — you are on the Desk early access waitlist.');
+      submitBtn.textContent = 'Submitted';
+      setTimeout(closeWaitlist, 1800);
+    } catch (error) {
+      console.error(error);
+      showStatus('err', 'Something went wrong. Please try again or email desk@av.land.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Join Waitlist';
+    }
+  });
+</script>
 
 </body>
 </html>
