@@ -360,7 +360,7 @@
 </div>
 
 <script>
-  const WAITLIST_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbztCG9sb8c7DBTRm1i9ml95lIVMYgRuicJ_BWBViuRWa3jhIRabor1HWKn9kW_lh76vaA/exec';
+  const WAITLIST_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwPhYYIJTD75B7yaSZx30ApbZi2ger_K32fSh2P-ZOBlFLlWt_drgL_ndoZm06aVjIBMQ/exec';
 
   const modal = document.getElementById('waitlistModal');
   const form = document.getElementById('waitlistForm');
@@ -401,7 +401,6 @@
 
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
-    payload.user_agent = navigator.userAgent;
     payload.submitted_at = new Date().toISOString();
 
     try {
