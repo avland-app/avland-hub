@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desk — Coming Soon | AV Quoting Software</title>
+  <meta name="description" content="Desk is a simple AV quoting app for freelancers, technical directors, and small AV companies. Coming soon — join the early access waitlist."/>
+  <link rel="icon" type="image/png" href="desk-logo-hero.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0d1520;--navy2:#151f2e;--gold:#f5c518;--gold2:#c9a000;--muted:#9aa3b2;--white:#ffffff;--border:rgba(255,255,255,0.10);--soft:#e5e5ea}
+    html{scroll-behavior:smooth}
+    body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-end;padding:.85rem 2.5rem;background:rgba(13,21,32,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);gap:2rem}
+    nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:1.08rem;font-weight:500;transition:color .2s;white-space:nowrap}
+    nav a:hover{color:var(--white)}
+    .nav-contact{color:var(--gold)!important;font-weight:700!important}
+
+    .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;padding-top:70px;min-height:720px}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:4rem 3.5rem;max-width:660px;margin:0 auto}
+    .hero-brand-logo{width:205px;height:auto;display:block;margin-bottom:1.35rem;max-width:100%}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:1rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;flex-wrap:wrap}
+    .beta-badge{background:rgba(245,197,24,0.15);border:1px solid rgba(245,197,24,0.35);color:var(--gold);font-size:.88rem;font-weight:800;letter-spacing:.1em;padding:.16rem .55rem;border-radius:4px;text-transform:uppercase}
+    .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,5.4vw,5.8rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:1.25rem}
+    .hero h1 em{font-style:normal;color:var(--gold)}
+    .hero-sub{font-size:1.33rem;color:var(--muted);max-width:520px;margin-bottom:2rem;line-height:1.65}
+    .hero-sub strong{color:var(--white);font-weight:700}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:.9rem}
+    .btn-primary{background:var(--gold);color:#111;font-weight:800;padding:.9rem 1.85rem;border-radius:8px;text-decoration:none;font-size:1.08rem;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+    .btn-ghost{color:rgba(255,255,255,0.72);font-weight:600;padding:.9rem 1.3rem;border-radius:8px;text-decoration:none;font-size:1.08rem;border:1px solid var(--border);transition:all .2s}
+    .btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.25)}
+    .hero-note{font-size:1.06rem;color:var(--muted)}
+    .discount-note{margin-top:1rem;padding:1rem 1.15rem;border-radius:12px;background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.24);color:#f8df78;font-size:1.1rem;line-height:1.5;max-width:540px}
+    .hero-right{background:var(--navy)}
+    .hero-right img{width:100%;height:auto;display:block;vertical-align:top}
+
+    .strip{background:var(--gold);color:#111;font-weight:800;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 0;overflow:hidden;white-space:nowrap}
+    .strip-inner{display:inline-flex;gap:3rem;animation:marquee 28s linear infinite}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .section-head{text-align:center;margin-bottom:3.5rem}
+    .section-label{font-size:.98rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem}
+    .section-head h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,2.9rem);font-weight:800;line-height:1.1}
+
+    .intro{padding:6rem 2.5rem;background:var(--navy2)}
+    .intro-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .intro-label{font-size:.98rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+    .intro h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,2.9rem);font-weight:800;line-height:1.05;margin-bottom:1.25rem}
+    .intro p{color:var(--muted);font-size:1.26rem;line-height:1.75}
+    .pain-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+    .pain-list li{display:flex;align-items:flex-start;gap:.75rem;color:var(--muted);font-size:1.18rem;line-height:1.5}
+    .pain-arrow{color:var(--gold);flex-shrink:0;margin-top:2px;font-weight:800}
+
+    .features{padding:6rem 2.5rem;background:#e5e5ea}
+    .features .section-label{color:#9a7800}
+    .features .section-head h2{color:#0d1520}
+    .features-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .feature-card{background:#fff;border:1px solid #d0d0d6;border-radius:14px;padding:1.75rem;transition:border-color .25s,transform .2s,box-shadow .2s}
+    .feature-card:hover{border-color:#c9a000;transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+    .feature-icon{width:40px;height:40px;border-radius:10px;background:rgba(180,140,0,.1);border:1px solid rgba(180,140,0,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#9a7800;font-weight:800;font-size:1.25rem}
+    .feature-card h3{font-size:1.21rem;font-weight:800;margin-bottom:.35rem;color:#0d1520}
+    .feature-card p{color:#555;font-size:1.13rem;line-height:1.6}
+
+    .compare{padding:6rem 2.5rem;background:var(--navy2)}
+    .compare-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .compare-card{border:1px solid var(--border);background:rgba(255,255,255,.03);border-radius:16px;padding:1.6rem}
+    .compare-card h3{font-size:1.28rem;margin-bottom:.55rem}
+    .compare-card p{color:var(--muted);font-size:1.12rem;line-height:1.6}
+    .compare-card.desk{border-color:rgba(245,197,24,.35);background:rgba(245,197,24,.07)}
+
+    .pricing{padding:6rem 2.5rem}
+    .pricing-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
+    .plan{background:var(--navy2);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative}
+    .plan-featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 20px 60px rgba(245,197,24,.1)}
+    .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#111;font-size:.78rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .7rem;border-radius:99px;white-space:nowrap}
+    .plan-name{font-size:.98rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+    .plan-price{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:.25rem}
+    .plan-price span{font-size:1.15rem;font-weight:400;color:var(--muted)}
+    .plan-desc{color:var(--muted);font-size:1.1rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .plan-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+    .plan-features li{display:flex;align-items:flex-start;gap:.55rem;font-size:1.12rem;color:var(--muted)}
+    .plan-features li.on{color:var(--white)}
+    .ck{color:var(--gold);flex-shrink:0;margin-top:1px}
+    .cx{color:#454b56;flex-shrink:0;margin-top:1px}
+    .plan-btn-disabled{display:block;text-align:center;width:100%;padding:.8rem;border-radius:8px;font-weight:700;font-size:1.08rem;cursor:not-allowed;border:1px solid rgba(255,255,255,.08);color:#747b87;background:rgba(255,255,255,.04);user-select:none}
+    .plan-btn-gold{background:rgba(245,197,24,.09);color:#f8df78;border-color:rgba(245,197,24,.22)}
+
+    .trial-wrap{padding:0 2.5rem 6rem}
+    .trial{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,rgba(245,197,24,.12) 0%,rgba(245,197,24,.035) 100%);border:1px solid rgba(245,197,24,.24);border-radius:20px;padding:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .trial h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3vw,2.55rem);font-weight:800;margin-bottom:.4rem}
+    .trial p{color:var(--muted);font-size:1.22rem;max-width:680px}
+
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:2.5rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+    .footer-logo img{height:32px;width:auto;display:block}
+    .footer-brand p{color:var(--muted);font-size:1rem;margin-top:.3rem}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .footer-links a{color:var(--muted);text-decoration:none;font-size:1.08rem;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+    .footer-copy{color:var(--muted);font-size:.98rem;text-align:right;line-height:1.6}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;min-height:auto}.hero-right{height:60vw;order:-1}.hero-left{padding:5rem 1.5rem 3rem}.features-grid,.compare-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr;max-width:400px}.intro-inner{grid-template-columns:1fr;gap:2.5rem}nav{gap:1.25rem;padding:.85rem 1.25rem}nav a{font-size:.98rem}.intro,.features,.compare,.pricing,.trial-wrap,footer{padding-left:1.25rem;padding-right:1.25rem}
+    }
+    @media(max-width:520px){.features-grid,.compare-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}.trial{padding:2rem 1.25rem}nav{justify-content:center;gap:.9rem}nav a{font-size:.92rem}.hero h1{font-size:3.2rem}}
+    @media(prefers-reduced-motion:reduce){.strip-inner{animation:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#problem">Problem</a>
+  <a href="#features">Features</a>
+  <a href="#pricing">Pricing</a>
+  <a href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist" class="nav-contact">Join Waitlist</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <img src="desk-logo-hero.png" alt="Desk" class="hero-brand-logo"/>
+    <span class="hero-eyebrow">an AV.Land App <span class="beta-badge">Coming Soon</span></span>
+    <h1>AV quoting.<br/><em>Without the mess.</em></h1>
+    <p class="hero-sub"><strong>Desk</strong> is a simple quoting app built for AV freelancers, technical directors, and small AV companies that need clean estimates, item libraries, client records, PDFs, and pull sheets — without expensive software.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist&body=Hi%20AV%20Land%2C%0A%0AI%20would%20like%20to%20join%20the%20Desk%20early%20access%20waitlist.%0A%0AName%3A%0ACompany%3A%0ARole%3A%0AWebsite%3A%0AHow%20do%20you%20currently%20build%20AV%20quotes%3F%0A">
+        Join Early Access
+      </a>
+      <a class="btn-ghost" href="#features">See what's inside →</a>
+    </div>
+    <p class="hero-note">Private beta is invite-only right now.</p>
+    <div class="discount-note"><strong>Early access offer:</strong> first 100 waitlist users will receive 50% off for the first year when Desk launches publicly.</div>
+  </div>
+  <div class="hero-right">
+    <img src="hero-mockup.jpg" alt="Desk AV quoting app on desktop monitor"/>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-inner">
+    <span>Quote Builder</span><span>·</span><span>Item Library</span><span>·</span><span>Pull Sheets</span><span>·</span><span>Client Database</span><span>·</span><span>PDF Proposals</span><span>·</span><span>Revision History</span><span>·</span><span>Templates</span><span>·</span><span>Labor Overtime</span><span>·</span><span>Sub-rental Tracking</span><span>·</span><span>Cloud Sync</span><span>·</span>
+    <span>Quote Builder</span><span>·</span><span>Item Library</span><span>·</span><span>Pull Sheets</span><span>·</span><span>Client Database</span><span>·</span><span>PDF Proposals</span><span>·</span><span>Revision History</span><span>·</span><span>Templates</span><span>·</span><span>Labor Overtime</span><span>·</span><span>Sub-rental Tracking</span><span>·</span><span>Cloud Sync</span><span>·</span>
+  </div>
+</div>
+
+<section class="intro" id="problem">
+  <div class="intro-inner">
+    <div>
+      <p class="intro-label">The problem</p>
+      <h2>AV estimates should not take all night.</h2>
+      <p>QuickBooks is great for accounting and invoices, but it was not designed around AV quotes. Excel and Google Sheets work at first, but they get messy when you need revisions, rooms, labor, rentals, PDFs, and pull sheets.</p>
+    </div>
+    <ul class="pain-list">
+      <li><span class="pain-arrow">→</span> You copy an old spreadsheet and hope the formulas still work.</li>
+      <li><span class="pain-arrow">→</span> Client names, gear, labor, tax, and discounts live in too many places.</li>
+      <li><span class="pain-arrow">→</span> Pull sheets have to be rebuilt manually after the quote is approved.</li>
+      <li><span class="pain-arrow">→</span> Big rental software can be too expensive or too complicated for small AV teams.</li>
+      <li><span class="pain-arrow">→</span> A simple quote revision can turn into a new file, new PDF, and new headache.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="section-head">
+    <span class="section-label">Features</span>
+    <h2>Built around the way AV quotes actually work</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon">1</div><h3>Room-based Quote Builder</h3><p>Organize line items by room or area. Add Audio, Video, Lighting, Labor, Delivery, and support items in a clean quote layout.</p></div>
+    <div class="feature-card"><div class="feature-icon">2</div><h3>Saved Item Library</h3><p>Save your gear, labor, and service rates once, then pull them into new quotes fast.</p></div>
+    <div class="feature-card"><div class="feature-icon">3</div><h3>Clean PDF Proposals</h3><p>Generate client-ready PDFs with your branding, quote totals, deposits, tax, and optional line item visibility.</p></div>
+    <div class="feature-card"><div class="feature-icon">4</div><h3>Pull Sheets</h3><p>Turn rental items into an internal pull sheet for warehouse prep, crew notes, load-in, and sub-rental tracking.</p></div>
+    <div class="feature-card"><div class="feature-icon">5</div><h3>Client Database</h3><p>Save client details and reuse them in future quotes instead of digging through old emails and spreadsheets.</p></div>
+    <div class="feature-card"><div class="feature-icon">6</div><h3>Labor, OT &amp; DT</h3><p>Track labor day rates, overtime, and double time in a way that makes sense for AV production.</p></div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="section-head">
+    <span class="section-label">Why Desk</span>
+    <h2>Not accounting software. Not another spreadsheet.</h2>
+  </div>
+  <div class="compare-grid">
+    <div class="compare-card"><h3>QuickBooks</h3><p>Great for bookkeeping and invoicing, but not built for AV estimating, room-based quotes, pull sheets, or gear libraries.</p></div>
+    <div class="compare-card"><h3>Excel / Sheets</h3><p>Flexible, but easy to break, hard to track, and messy when you need revisions, PDFs, client history, and crew documents.</p></div>
+    <div class="compare-card desk"><h3>Desk</h3><p>Built specifically for AV quoting: items, labor, clients, PDFs, pull sheets, and revisions in one simple workflow.</p></div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="section-head">
+    <span class="section-label">Planned Pricing</span>
+    <h2>Simple plans for freelancers and small AV companies</h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="plan">
+      <p class="plan-name">Basic</p>
+      <p class="plan-price">$9<span>.99/mo</span></p>
+      <p class="plan-desc">For freelancers and solo operators getting started.</p>
+      <ul class="plan-features">
+        <li class="on"><span class="ck">✓</span> Up to 10 saved quotes</li>
+        <li class="on"><span class="ck">✓</span> Up to 25 library items</li>
+        <li class="on"><span class="ck">✓</span> Quote templates</li>
+        <li class="on"><span class="ck">✓</span> PDF proposals</li>
+        <li><span class="cx">✕</span> Client database</li>
+        <li><span class="cx">✕</span> Pull sheet</li>
+      </ul>
+      <span class="plan-btn-disabled">Coming Soon</span>
+    </div>
+    <div class="plan plan-featured">
+      <div class="plan-badge">Most Popular</div>
+      <p class="plan-name">Pro</p>
+      <p class="plan-price">$14<span>.99/mo</span></p>
+      <p class="plan-desc">For working AV professionals who need everything.</p>
+      <ul class="plan-features">
+        <li class="on"><span class="ck">✓</span> Unlimited saved quotes</li>
+        <li class="on"><span class="ck">✓</span> Unlimited library items</li>
+        <li class="on"><span class="ck">✓</span> Client database</li>
+        <li class="on"><span class="ck">✓</span> Pull sheet</li>
+        <li class="on"><span class="ck">✓</span> PDF proposals</li>
+        <li><span class="cx">✕</span> Team members</li>
+      </ul>
+      <span class="plan-btn-disabled plan-btn-gold">Coming Soon</span>
+    </div>
+    <div class="plan">
+      <p class="plan-name">Team</p>
+      <p class="plan-price">$29<span>.99/mo</span></p>
+      <p class="plan-desc">For AV companies with a crew that quotes together.</p>
+      <ul class="plan-features">
+        <li class="on"><span class="ck">✓</span> Everything in Pro</li>
+        <li class="on"><span class="ck">✓</span> Up to 5 team members</li>
+        <li class="on"><span class="ck">✓</span> Shared workspace</li>
+        <li class="on"><span class="ck">✓</span> Shared item library</li>
+        <li class="on"><span class="ck">✓</span> Shared client database</li>
+        <li class="on"><span class="ck">✓</span> Admin controls</li>
+      </ul>
+      <span class="plan-btn-disabled">Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<div class="trial-wrap">
+  <div class="trial">
+    <div>
+      <h2>Private beta is open by invitation.</h2>
+      <p>We are testing Desk with a small group of AV professionals before public launch. Join the waitlist for early access and the first 100 users will receive 50% off for the first year.</p>
+    </div>
+    <a class="btn-primary" href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist&body=Hi%20AV%20Land%2C%0A%0AI%20would%20like%20to%20join%20the%20Desk%20early%20access%20waitlist.%0A%0AName%3A%0ACompany%3A%0ARole%3A%0AWebsite%3A%0AHow%20do%20you%20currently%20build%20AV%20quotes%3F%0A" style="white-space:nowrap;flex-shrink:0;">Join Waitlist →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="desk-logo-hero.png" alt="Desk"/></div>
+      <p>an AV.Land App &nbsp;·&nbsp; © 2026 AV Land LLC</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:desk@av.land?subject=Desk%20Early%20Access%20Waitlist">Join Waitlist</a>
+      <a href="mailto:desk@av.land">Contact</a>
+    </div>
+    <p class="footer-copy">California, United States<br/>desk@av.land</p>
+  </div>
+</footer>
+
+</body>
+</html>
