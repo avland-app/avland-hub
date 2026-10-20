@@ -134,6 +134,20 @@ section.block + section.block{border-top:1px solid var(--rule)}
 @media (max-width:760px){.cue{grid-template-columns:36px 1fr;gap:6px 12px;padding:16px 18px;align-items:baseline}.cue-num{font-size:1.35rem}.cue-num small{display:none}.cue-how{grid-column:1/-1;font-size:.98rem}.cue-head{display:none}}
 
 
+
+/* Mobile button and toggle layout */
+@media (max-width:600px){
+  .hero-actions{flex-wrap:nowrap;gap:10px}
+  .hero .hero-actions .btn{flex:1 1 0;padding:0 .6em;font-size:.95rem;white-space:nowrap}
+  .offer .wrap{justify-content:center;text-align:center}
+  .free > div:first-child .btn{display:flex;width:fit-content;margin:0 auto}
+  #pricing .toggles{flex-wrap:nowrap;gap:6px}
+  #pricing .seg{flex:1 1 auto;min-width:0}
+  #pricing .seg button{flex:1 1 auto;padding:8px 6px;font-size:.78rem;white-space:nowrap}
+  .lbl-yr{display:none}
+}
+@media (max-width:360px){.hero .hero-actions .btn{font-size:.85rem}#pricing .seg button{font-size:.68rem;padding:8px 3px}}
+
 /* Freelancers */
 .free{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .free .lede{margin:0 0 28px}
@@ -235,8 +249,8 @@ footer a:hover{text-decoration:underline}
       <h1 class="display">Quote the job. Staff&nbsp;it. Bill&nbsp;it.</h1>
       <p class="lede">GaffDesk is quoting and invoicing software for AV companies and freelancers. Build quotes from your own gear list, calculate crew overtime, check that your gear is free on show dates, and send a branded PDF. When the client says yes, the same quote becomes the invoice and the pull sheet.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start your free trial</a>
-        <a class="btn btn-quiet" href="#how">See how a job runs</a>
+        <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+        <a class="btn btn-quiet" href="#how">How it works</a>
       </div>
       <p class="hero-note">7 days free with full Pro access. No card needed to start.</p>
     </div>
@@ -382,11 +396,11 @@ footer a:hover{text-decoration:underline}
     <div class="toggles">
       <div class="seg" role="group" aria-label="Billing period">
         <button type="button" data-period="month" aria-pressed="true">Monthly</button>
-        <button type="button" data-period="year" aria-pressed="false">Yearly, 2 months free</button>
+        <button type="button" data-period="year" aria-pressed="false">Yearly<span class="lbl-yr">, 2 months free</span></button>
       </div>
       <div class="seg" role="group" aria-label="Workspaces">
         <button type="button" data-spaces="one" aria-pressed="true">Event or Install</button>
-        <button type="button" data-spaces="both" aria-pressed="false">Both workspaces</button>
+        <button type="button" data-spaces="both" aria-pressed="false">Both</button>
       </div>
     </div>
 
