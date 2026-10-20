@@ -29,9 +29,11 @@ written as HTML fragments and built by `node scripts/build-blog.mjs`
      "cta": "Optional one-line call to action shown above the trial button."
    }
    ```
-3. Run `node scripts/build-blog.mjs`. It fails loudly on missing fields,
+3. Make the title card: `python3 scripts/make-card.py <slug> "<title>"`
+   (writes `blog/img/<slug>.jpg`; set `"image": "<slug>.jpg"` in posts.json).
+4. Run `node scripts/build-blog.mjs`. It fails loudly on missing fields,
    duplicate slugs or descriptions over 160 characters.
-4. Open a pull request. The Vercel preview is the review. Merging publishes.
+5. Open a pull request. The Vercel preview is the review. Merging publishes.
 
 ## Rules for every post
 
