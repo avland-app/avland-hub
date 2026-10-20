@@ -61,14 +61,16 @@ h3{font-variation-settings:"wdth" 85;font-weight:750;font-size:1.25rem;line-heig
 .nav-links a{text-decoration:none;font-weight:600;font-size:.98rem}
 .nav-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .nav-actions{display:flex;gap:10px}
-.nav-actions .btn{min-height:40px;padding:0 1em;font-size:.95rem}
+.nav-actions .btn{min-height:40px;padding:0 1em;font-size:.95rem;white-space:nowrap}
+.lbl-short{display:none}
+@media (max-width:360px){.lbl-long{display:none}.lbl-short{display:inline}.nav-logo img{height:30px!important}}
 .nav .btn-quiet{color:var(--paper);border-color:#6B6F6A}
 .nav .btn-quiet:hover{background:#26292C}
 .nav .btn-primary{background:var(--gaff);color:var(--ink);border-color:var(--gaff)}
 .nav .btn-primary:hover{background:#fff;border-color:#fff}
 .nav :focus-visible{outline-color:var(--gaff)}
 @media (max-width:860px){.nav-links{display:none}.nav-actions{margin-left:auto}}
-@media (max-width:480px){.nav-login{display:none}.nav-logo img{height:40px}}
+@media (max-width:480px){.nav .wrap{gap:12px}.nav-logo img{height:36px}.nav-actions{gap:6px}.nav-actions .btn{padding:0 .8em;font-size:.9rem}.nav .nav-login{border-color:transparent;padding:0 .5em}}
 
 /* Hero */
 .hero{padding:72px 0 88px}
@@ -116,7 +118,7 @@ h3{font-variation-settings:"wdth" 85;font-weight:750;font-size:1.25rem;line-heig
 /* Sections */
 section.block{padding:96px 0}
 section.block + section.block{border-top:1px solid var(--rule)}
-@media (max-width:700px){section.block{padding:64px 0}}
+@media (max-width:700px){section.block{padding:52px 0}.block-head{margin-bottom:28px}.hero .lede{font-size:1.05rem}.final{padding:60px 0}.sheet{padding:26px 18px 18px}.space{padding:24px 20px}.plan{padding:24px 20px}.compare > div{padding:22px 20px}}
 .block-head{max-width:44em;margin-bottom:44px}
 
 /* Cue list */
@@ -129,7 +131,7 @@ section.block + section.block{border-top:1px solid var(--rule)}
 .cue-how{color:var(--ink-soft);max-width:40em}
 .cue-head{background:var(--ink);color:var(--paper);font-size:.82rem;font-weight:650;padding-top:11px;padding-bottom:11px}
 .cue-head span{color:#B9BCB6}
-@media (max-width:760px){.cue{grid-template-columns:72px 1fr;gap:4px 16px}.cue-how{grid-column:2}.cue-head{display:none}}
+@media (max-width:760px){.cue{grid-template-columns:36px 1fr;gap:6px 12px;padding:16px 18px;align-items:baseline}.cue-num{font-size:1.35rem}.cue-num small{display:none}.cue-how{grid-column:1/-1;font-size:.98rem}.cue-head{display:none}}
 
 
 /* Freelancers */
@@ -220,7 +222,7 @@ footer a:hover{text-decoration:underline}
     </nav>
     <div class="nav-actions">
       <a class="btn btn-quiet nav-login" href="https://app.gaffdesk.com/">Log in</a>
-      <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+      <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1"><span class="lbl-long">Start free trial</span><span class="lbl-short">Free trial</span></a>
     </div>
   </div>
 </header>
@@ -317,6 +319,7 @@ footer a:hover{text-decoration:underline}
     <ul class="free-list">
       <li><b>No quote needed.</b> Create an invoice on its own for any gig.</li>
       <li><b>Your rates, saved once.</b> Day rate, hourly, travel, parking and kit fees stay in your item library.</li>
+      <li><b>Your clients, saved.</b> Keep up to 5 AV companies you bill on Basic, unlimited on Pro.</li>
       <li><b>Your name on it.</b> Logo, contact details and payment terms on every PDF.</li>
       <li><b>Know who has paid.</b> Every invoice shows Draft, Sent or Paid.</li>
       <li><b>Basic is $9.99 a month.</b> Upgrade only if you start quoting full jobs.</li>
@@ -398,7 +401,7 @@ footer a:hover{text-decoration:underline}
           <li>Up to 25 library items</li>
           <li>PDF quotes and invoices</li>
           <li>One workspace</li>
-          <li class="no">Client database</li>
+          <li>Up to 5 saved clients</li>
           <li class="no">Pull sheets</li>
         </ul>
         <a class="btn btn-quiet" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
@@ -411,7 +414,7 @@ footer a:hover{text-decoration:underline}
         <ul>
           <li>Unlimited quotes and invoices</li>
           <li>Unlimited library items</li>
-          <li>Client database</li>
+          <li>Unlimited saved clients</li>
           <li>Pull sheets</li>
           <li data-spaces-label>One workspace</li>
           <li>1 user</li>
