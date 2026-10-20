@@ -1,477 +1,518 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShowDesk — Coming Soon | AV Quote, Invoice & Pull Sheet Software</title>
-  <meta name="description" content="ShowDesk helps AV freelancers and small AV companies build quotes, convert them to invoices, send PDFs, manage clients, and print warehouse pull sheets."/>
-  <link rel="icon" type="image/png" href="favicon.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0d1520;--navy2:#151f2e;--gold:#f5c518;--gold2:#c9a000;--muted:#9aa3b2;--white:#ffffff;--border:rgba(255,255,255,0.10);--soft:#e5e5ea}
-    html{scroll-behavior:smooth}
-    body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-end;padding:.85rem 2.5rem;background:rgba(13,21,32,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);gap:2rem}
-    nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:1.08rem;font-weight:500;transition:color .2s;white-space:nowrap}
-    nav a:hover{color:var(--white)}
-    .nav-contact{color:var(--gold)!important;font-weight:700!important}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GaffDesk — AV quoting, crew and invoicing software</title>
+<meta name="description" content="GaffDesk is quoting and invoicing software for AV companies and freelancers. Build quotes from your own gear list, calculate crew overtime, check gear availability, send branded PDFs, and turn approved quotes into invoices and pull sheets.">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="GaffDesk — AV quoting, crew and invoicing software">
+<meta property="og:description" content="Quote the job, staff it, prep it and bill it. Built by a working AV company.">
+<meta property="og:image" content="https://gaffdesk.com/gaffdesk-logo.png">
+<meta property="og:url" content="https://gaffdesk.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{
+  --case:#E3E4E0;      /* road-case aluminum */
+  --case-deep:#D3D5D0;
+  --ink:#17191B;       /* gaff black */
+  --ink-soft:#4A4E52;
+  --desk:#545454;      /* logo gray */
+  --gaff:#FED600;      /* logo yellow */
+  --paper:#FBFBF8;     /* label white */
+  --rule:#BFC2BC;
+  --wrap:1180px;
+  --cond:'Archivo',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--case);color:var(--ink);font-family:var(--cond);font-size:1.0625rem;line-height:1.55;font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
 
-    .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;padding-top:70px;min-height:650px}
-    .hero-left{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:3rem 3.5rem 2.4rem;max-width:640px;margin:0 auto}
-    .hero-brand-logo{width:180px;height:auto;display:block;margin-bottom:1.05rem;max-width:100%}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.94rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;flex-wrap:wrap}
-    .beta-badge{background:rgba(245,197,24,0.15);border:1px solid rgba(245,197,24,0.35);color:var(--gold);font-size:.88rem;font-weight:800;letter-spacing:.1em;padding:.16rem .55rem;border-radius:4px;text-transform:uppercase}
-    .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,5vw,5.2rem);font-weight:800;line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
-    .hero h1 em{font-style:normal;color:var(--gold)}
-    .hero-sub{font-size:1.18rem;color:var(--muted);max-width:510px;margin-bottom:1.55rem;line-height:1.58}
-    .hero-sub strong{color:var(--white);font-weight:700}
-    .hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;align-items:center;margin-bottom:.65rem}
-    .btn-primary{background:var(--gold);color:#111;font-weight:800;padding:.9rem 1.85rem;border-radius:8px;text-decoration:none;font-size:1.08rem;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
-    .btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
-    .btn-ghost{color:rgba(255,255,255,0.72);font-weight:600;padding:.9rem 1.3rem;border-radius:8px;text-decoration:none;font-size:1.08rem;border:1px solid var(--border);transition:all .2s}
-    .btn-ghost:hover{color:var(--white);border-color:rgba(255,255,255,0.25)}
-    .btn-cancel{background:rgba(255,255,255,.05);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);box-shadow:none}
-    .btn-cancel:hover{background:rgba(255,255,255,.09);color:var(--white);border-color:rgba(255,255,255,.32)}
-    .hero-note{font-size:1rem;color:var(--muted)}
-    .discount-note{position:absolute;top:-.35rem;left:-8rem;z-index:3;max-width:380px;padding:0;background:none;border:none;box-shadow:none;backdrop-filter:none}
-    .discount-note img{display:block;width:min(380px,36vw);height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.28))}
-    .hero-right{background:var(--navy);position:relative;min-height:650px;display:flex;align-items:flex-end;justify-content:flex-end}
-    .mobile-hero-logo{display:none}
-    .mobile-hero-kicker{display:none}
-    .hero-right .hero-mockup{width:94%;height:auto;display:block;vertical-align:top}
+/* Type */
+.display{font-variation-settings:"wdth" 70;font-weight:850;letter-spacing:-.01em;line-height:.95}
+h1.display{font-size:clamp(3rem,7.4vw,6.4rem)}
+h2.display{font-size:clamp(2.1rem,4.6vw,3.6rem);margin-bottom:.4em}
+h3{font-variation-settings:"wdth" 85;font-weight:750;font-size:1.25rem;line-height:1.2}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--ink-soft);max-width:36em}
+.muted{color:var(--ink-soft)}
 
-    .strip{background:var(--gold);color:#111;font-weight:800;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 0;overflow:hidden;white-space:nowrap}
-    .strip-inner{display:inline-flex;gap:3rem;animation:marquee 28s linear infinite}
-    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:0 1.35em;border-radius:6px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid var(--ink);transition:transform .12s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--ink);color:var(--gaff)}
+.btn-primary:hover{background:#000}
+.btn-quiet{background:transparent;color:var(--ink)}
+.btn-quiet:hover{background:var(--paper)}
 
-    .section-head{text-align:center;margin-bottom:3.5rem}
-    .section-label{font-size:.98rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem}
-    .section-head h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,2.9rem);font-weight:800;line-height:1.1}
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--paper);border-bottom:3px solid var(--gaff)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.nav-logo img{height:50px;width:auto}
+.nav-links{display:flex;gap:24px;margin-left:auto}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.98rem}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.nav-actions{display:flex;gap:10px}
+.nav-actions .btn{min-height:40px;padding:0 1em;font-size:.95rem}
+.nav .btn-quiet{color:var(--paper);border-color:#6B6F6A}
+.nav .btn-quiet:hover{background:#26292C}
+.nav .btn-primary{background:var(--gaff);color:var(--ink);border-color:var(--gaff)}
+.nav .btn-primary:hover{background:#fff;border-color:#fff}
+.nav :focus-visible{outline-color:var(--gaff)}
+@media (max-width:860px){.nav-links{display:none}.nav-actions{margin-left:auto}}
+@media (max-width:480px){.nav-login{display:none}.nav-logo img{height:40px}}
 
-    .intro{padding:6rem 2.5rem;background:var(--navy2)}
-    .intro-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .intro-label{font-size:.98rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-    .intro h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,2.9rem);font-weight:800;line-height:1.05;margin-bottom:1.25rem}
-    .intro p{color:var(--muted);font-size:1.26rem;line-height:1.75}
-    .pain-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
-    .pain-list li{display:flex;align-items:flex-start;gap:.75rem;color:var(--muted);font-size:1.18rem;line-height:1.5}
-    .pain-arrow{color:var(--gold);flex-shrink:0;margin-top:2px;font-weight:800}
+/* Hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero-copy .lede{margin:24px 0 32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-note{margin-top:14px;font-size:.95rem;color:var(--ink-soft)}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:64px}.hero{padding:48px 0 72px}}
 
-    .features{padding:6rem 2.5rem;background:#e5e5ea}
-    .features .section-label{color:#9a7800}
-    .features .section-head h2{color:#0d1520}
-    .features-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-    .feature-card{background:#fff;border:1px solid #d0d0d6;border-radius:14px;padding:1.75rem;transition:border-color .25s,transform .2s,box-shadow .2s}
-    .feature-card:hover{border-color:#c9a000;transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
-    .feature-icon{width:40px;height:40px;border-radius:10px;background:rgba(180,140,0,.1);border:1px solid rgba(180,140,0,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#9a7800;font-weight:800;font-size:1.25rem}
-    .feature-card h3{font-size:1.21rem;font-weight:800;margin-bottom:.35rem;color:#0d1520}
-    .feature-card p{color:#555;font-size:1.13rem;line-height:1.6}
+/* The quote sheet + gaff tape (the one loud element) */
+.sheet-zone{position:relative;padding-top:26px}
+.tape{position:absolute;z-index:3;top:0;left:50%;transform:translateX(-50%) rotate(-3deg);width:min(78%,400px);padding:12px 22px 10px;text-align:center;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 5px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 4px),
+    #222426;
+  color:#F4F3EE;font-family:'Permanent Marker',cursive;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.15;letter-spacing:.01em;
+  box-shadow:0 2px 3px rgba(0,0,0,.25);
+  clip-path:polygon(0 6%,3% 0,8% 5%,13% 0,19% 4%,26% 0,33% 5%,41% 1%,49% 5%,56% 0,64% 4%,71% 0,79% 5%,86% 1%,93% 5%,100% 0,100% 94%,96% 100%,90% 95%,83% 100%,76% 96%,69% 100%,61% 95%,53% 100%,45% 96%,37% 100%,29% 95%,21% 100%,14% 96%,7% 100%,0 95%)}
+.sheet{position:relative;background:var(--paper);border-radius:4px;box-shadow:0 1px 0 var(--rule),0 18px 40px -18px rgba(23,25,27,.35);padding:30px 26px 22px;font-size:.92rem}
+.sheet-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:6px}
+.sheet-title{font-variation-settings:"wdth" 75;font-weight:800;font-size:1.35rem;line-height:1.1}
+.sheet-sub{color:var(--ink-soft);font-size:.85rem;margin-top:2px}
+.rev{flex-shrink:0;font-weight:800;font-variation-settings:"wdth" 75;background:var(--gaff);padding:3px 9px;border-radius:3px;font-size:.85rem}
+.lines{list-style:none}
+.line{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:11px 0;border-bottom:1px solid #E4E5E0}
+.line-name{font-weight:650}
+.line-amt{font-variant-numeric:tabular-nums;font-weight:650;text-align:right}
+.line-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;color:var(--ink-soft)}
+.tag{display:inline-block;padding:1px 7px;border-radius:3px;border:1px solid var(--rule);background:#fff;color:var(--ink)}
+.tag-ok{border-color:#3E7B4F;color:#2C5E3A}
+.tag-sub{border-color:var(--desk);background:var(--desk);color:#fff}
+.tag-ot{border-color:var(--ink);background:var(--ink);color:var(--gaff)}
+.sheet-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:14px;font-variation-settings:"wdth" 75;font-weight:850;font-size:1.3rem}
+.sheet-total span:last-child{font-variant-numeric:tabular-nums}
+.sheet-foot{margin-top:4px;font-size:.78rem;color:var(--ink-soft)}
 
-    .compare{padding:6rem 2.5rem;background:var(--navy2)}
-    .compare-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-    .compare-card{border:1px solid var(--border);background:rgba(255,255,255,.03);border-radius:16px;padding:1.6rem}
-    .compare-card h3{font-size:1.28rem;margin-bottom:.55rem}
-    .compare-card p{color:var(--muted);font-size:1.12rem;line-height:1.6}
-    .compare-card.desk{border-color:rgba(245,197,24,.35);background:rgba(245,197,24,.07)}
+/* Founding offer */
+.offer{background:var(--gaff);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.offer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px}
+.offer p{font-weight:650;font-size:1.12rem;max-width:44em}
+.offer strong{font-variation-settings:"wdth" 75;font-weight:850;font-size:1.25em}
+.code{font-family:var(--cond);font-variation-settings:"wdth" 100;font-weight:800;background:var(--ink);color:var(--gaff);padding:2px 8px;border-radius:3px;letter-spacing:.04em}
 
-    .pricing{padding:6rem 2.5rem}
-    .pricing-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
-    .plan{background:var(--navy2);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative}
-    .plan-featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 20px 60px rgba(245,197,24,.1)}
-    .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#111;font-size:.78rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .7rem;border-radius:99px;white-space:nowrap}
-    .plan-name{font-size:.98rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-    .plan-price{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:.25rem}
-    .plan-price span{font-size:1.15rem;font-weight:400;color:var(--muted)}
-    .plan-desc{color:var(--muted);font-size:1.1rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
-    .plan-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
-    .plan-features li{display:flex;align-items:flex-start;gap:.55rem;font-size:1.12rem;color:var(--muted)}
-    .plan-features li.on{color:var(--white)}
-    .ck{color:var(--gold);flex-shrink:0;margin-top:1px}
-    .cx{color:#454b56;flex-shrink:0;margin-top:1px}
-    .plan-btn-disabled{display:block;text-align:center;width:100%;padding:.8rem;border-radius:8px;font-weight:700;font-size:1.08rem;cursor:not-allowed;border:1px solid rgba(255,255,255,.08);color:#747b87;background:rgba(255,255,255,.04);user-select:none}
-    .plan-btn-gold{background:rgba(245,197,24,.09);color:#f8df78;border-color:rgba(245,197,24,.22)}
+/* Sections */
+section.block{padding:96px 0}
+section.block + section.block{border-top:1px solid var(--rule)}
+@media (max-width:700px){section.block{padding:64px 0}}
+.block-head{max-width:44em;margin-bottom:44px}
 
-    .trial-wrap{padding:6rem 2.5rem 6rem}
-    .trial{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,rgba(245,197,24,.12) 0%,rgba(245,197,24,.035) 100%);border:1px solid rgba(245,197,24,.24);border-radius:20px;padding:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-    .trial h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3vw,2.55rem);font-weight:800;margin-bottom:.4rem}
-    .trial p{color:var(--muted);font-size:1.22rem;max-width:680px}
-
-
-    .faq{padding:6rem 2.5rem;background:#e5e5ea;color:#0d1520}
-    .faq .section-label{color:#9a7800}
-    .faq .section-head h2{color:#0d1520}
-    .faq-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    .faq-item{background:#fff;border:1px solid #d0d0d6;border-radius:14px;padding:1.35rem 1.45rem;box-shadow:0 8px 24px rgba(0,0,0,.06)}
-    .faq-item h3{font-size:1.14rem;font-weight:800;line-height:1.3;color:#0d1520;margin-bottom:.45rem}
-    .faq-item p{font-size:1.06rem;line-height:1.62;color:#555}
-    .faq-note{max-width:880px;margin:2rem auto 0;text-align:center;color:#555;font-size:1.12rem;line-height:1.65}
-
-    footer{background:var(--navy2);border-top:1px solid var(--border);padding:2.5rem}
-    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-    .footer-logo img{height:32px;width:auto;display:block}
-    .footer-brand p{color:var(--muted);font-size:1rem;margin-top:.3rem}
-    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
-    .footer-links a{color:var(--muted);text-decoration:none;font-size:1.08rem;transition:color .2s}
-    .footer-links a:hover{color:var(--white)}
-    .footer-copy{color:var(--muted);font-size:.98rem;text-align:right;line-height:1.6}
+/* Cue list */
+.cues{background:var(--paper);border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+.cue{display:grid;grid-template-columns:110px 220px 1fr;gap:20px;padding:20px 24px;border-top:1px solid #E4E5E0;align-items:baseline}
+.cue:first-child{border-top:0}
+.cue-num{font-variation-settings:"wdth" 70;font-weight:850;font-size:1.5rem;line-height:1}
+.cue-num small{display:block;font-size:.72rem;font-weight:600;font-variation-settings:"wdth" 100;color:var(--ink-soft);margin-bottom:3px}
+.cue-what{font-weight:750;font-variation-settings:"wdth" 85;font-size:1.1rem}
+.cue-how{color:var(--ink-soft);max-width:40em}
+.cue-head{background:var(--ink);color:var(--paper);font-size:.82rem;font-weight:650;padding-top:11px;padding-bottom:11px}
+.cue-head span{color:#B9BCB6}
+@media (max-width:760px){.cue{grid-template-columns:72px 1fr;gap:4px 16px}.cue-how{grid-column:2}.cue-head{display:none}}
 
 
-    .btn-reset{font-family:inherit;border:none;cursor:pointer}
-    .waitlist-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:1.25rem;background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}
-    .waitlist-modal.is-open{display:flex}
-    .waitlist-card{width:min(560px,100%);background:#111b29;border:1px solid rgba(245,197,24,.24);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.45);overflow:hidden}
-    .waitlist-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.5rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
-    .waitlist-head h2{font-family:'Barlow Condensed',sans-serif;font-size:2.05rem;line-height:1;font-weight:800;color:var(--white)}
-    .waitlist-head p{color:var(--muted);font-size:1.04rem;margin-top:.35rem;line-height:1.45}
-    .waitlist-close{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--white);font-size:1.4rem;line-height:1;cursor:pointer;flex-shrink:0}
-    .waitlist-form{padding:1.4rem 1.5rem 1.5rem;display:grid;gap:.85rem}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-    .field label{display:block;font-weight:700;font-size:.95rem;color:rgba(255,255,255,.82);margin-bottom:.28rem}
-    .field input,.field textarea,.field select{width:100%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.055);color:var(--white);border-radius:10px;padding:.78rem .85rem;font-family:inherit;font-size:1rem;outline:none}
-    .field select option{background:#111b29;color:var(--white)}
-    .field textarea{min-height:82px;resize:vertical}
-    .field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(245,197,24,.55);box-shadow:0 0 0 3px rgba(245,197,24,.12)}
-    .form-small{color:var(--muted);font-size:.95rem;line-height:1.45}
-    .form-status{display:none;border-radius:10px;padding:.75rem .9rem;font-weight:700;font-size:1rem;line-height:1.4}
-    .form-status.ok{display:block;background:rgba(64,210,111,.12);border:1px solid rgba(64,210,111,.3);color:#9ff0b7}
-    .form-status.err{display:block;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.3);color:#ffb3b3}
-    .form-actions{display:flex;align-items:center;gap:.9rem;justify-content:flex-start;flex-wrap:wrap;margin-top:.2rem}
+/* Freelancers */
+.free{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.free .lede{margin:0 0 28px}
+.free-list{list-style:none;background:var(--paper);border-left:10px solid var(--gaff);border-radius:6px;padding:10px 28px}
+.free-list li{padding:14px 0;border-top:1px solid #E4E5E0}
+.free-list li:first-child{border-top:0}
+@media (max-width:860px){.free{grid-template-columns:1fr;gap:32px}}
 
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;min-height:auto}.hero-right{height:auto;min-height:0;order:-1;padding:5.1rem 1.25rem 0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:visible}.mobile-hero-logo{display:block;width:min(270px,70vw);height:auto;margin:0 auto .45rem}.mobile-hero-kicker{display:block;color:var(--gold);font-size:1.05rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;text-align:center;margin:0 auto 1.5rem}.hero-left .hero-brand-logo,.hero-left .hero-eyebrow{display:none}.discount-note{position:relative;top:auto;left:auto;right:auto;z-index:3;width:min(180px,48vw);max-width:180px;margin:-2.45rem auto 0;transform:none;order:3}.discount-note img{width:100%;filter:drop-shadow(0 12px 28px rgba(0,0,0,.25))}.hero-right .hero-mockup{width:100%;max-width:560px;margin:0 auto;order:2}.hero-left{padding:4.1rem 1.5rem 3rem}.features-grid,.compare-grid{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr;max-width:400px}.intro-inner{grid-template-columns:1fr;gap:2.5rem}nav{gap:1.25rem;padding:.85rem 1.25rem}nav a{font-size:.98rem}.intro,.features,.compare,.pricing,.trial-wrap,footer{padding-left:1.25rem;padding-right:1.25rem}
-    }
-    @media(max-width:520px){.features-grid,.compare-grid,.faq-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}.trial{padding:2rem 1.25rem}nav{justify-content:center;gap:.9rem}nav a{font-size:.92rem}.hero h1{font-size:3.2rem}.form-row{grid-template-columns:1fr}.waitlist-head,.waitlist-form{padding-left:1.1rem;padding-right:1.1rem}}
-    @media(prefers-reduced-motion:reduce){.strip-inner{animation:none}*{transition:none!important}}
-  </style>
+/* Compare */
+.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--paper)}
+.compare > div{padding:28px 26px}
+.compare > div + div{border-left:1px solid var(--rule)}
+.compare h3{margin-bottom:10px}
+.compare .ours{background:var(--ink);color:var(--paper)}
+.compare .ours h3{color:var(--gaff)}
+.compare .ours p{color:#D4D6D1}
+@media (max-width:820px){.compare{grid-template-columns:1fr}.compare > div + div{border-left:0;border-top:1px solid var(--rule)}}
+
+/* Workspaces */
+.spaces{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.space{background:var(--paper);border-radius:6px;padding:30px 28px;border-left:10px solid var(--desk)}
+.space.event{border-left-color:var(--gaff)}
+.space h3{font-size:1.6rem;font-variation-settings:"wdth" 70;font-weight:850;margin-bottom:8px}
+.space ul{margin-top:14px;padding-left:1.1em}
+.space li{margin:6px 0}
+@media (max-width:760px){.spaces{grid-template-columns:1fr}}
+
+/* Pricing */
+.toggles{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--paper)}
+.seg button{font:inherit;font-weight:700;font-size:.95rem;padding:9px 16px;border:0;background:transparent;cursor:pointer;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--gaff)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{background:var(--paper);border:2px solid var(--rule);border-radius:6px;padding:28px 24px;display:flex;flex-direction:column}
+.plan.pro{border-color:var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.plan h3{font-size:1.7rem;font-variation-settings:"wdth" 70;font-weight:850}
+.plan-for{color:var(--ink-soft);margin:4px 0 18px;min-height:3em}
+.price{font-variation-settings:"wdth" 70;font-weight:850;font-size:3rem;line-height:1;font-variant-numeric:tabular-nums}
+.price small{font-size:1rem;font-weight:600;font-variation-settings:"wdth" 100;color:var(--ink-soft)}
+.price-note{font-size:.85rem;color:var(--ink-soft);min-height:1.4em;margin:6px 0 18px}
+.plan ul{list-style:none;margin-bottom:24px;flex:1}
+.plan li{padding:7px 0;border-top:1px solid #E4E5E0;font-size:.97rem}
+.plan li.no{color:#8A8E89;text-decoration:line-through;text-decoration-color:#B5B8B2}
+.plan .btn{width:100%}
+.addon{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between;background:var(--paper);border:2px dashed var(--desk);border-radius:6px;padding:18px 22px}
+.addon b{font-variation-settings:"wdth" 85}
+.fine{margin-top:16px;font-size:.9rem;color:var(--ink-soft)}
+@media (max-width:900px){.plans{grid-template-columns:1fr}.plan.pro{box-shadow:6px 6px 0 var(--ink)}.plan-for{min-height:0}}
+
+/* FAQ */
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--rule)}
+.faq details:last-child{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 40px 18px 0;font-weight:700;font-size:1.1rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:12px;font-size:1.6rem;font-weight:500;transition:transform .15s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--ink-soft);max-width:44em}
+
+/* Final CTA + footer */
+.final{background:var(--ink);color:var(--paper);padding:88px 0}
+.final h2{color:var(--paper)}
+.final .lede{color:#C9CCC6;margin-bottom:28px}
+.final .btn-primary{background:var(--gaff);color:var(--ink);border-color:var(--gaff)}
+.final .btn-primary:hover{background:#fff}
+.final .btn-quiet{color:var(--paper);border-color:#6B6F6A}
+.final .btn-quiet:hover{background:#26292C}
+footer{background:var(--ink);color:#9EA29C;border-top:1px solid #2E3134;padding:28px 0 36px;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{color:#D7D9D4;text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
 
-<nav>
-  <a href="#problem">Problem</a>
-  <a href="#features">Features</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#faq">FAQ</a>
-  <a href="#waitlist" class="nav-contact" data-open-waitlist>Join Waitlist</a>
-</nav>
+<header class="nav">
+  <div class="wrap">
+    <a class="nav-logo" href="#top" aria-label="GaffDesk home"><img src="gaffdesk-logo.png" alt="GaffDesk" width="148" height="50"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#freelancers">Freelancers</a>
+      <a href="#workspaces">Event and Install</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-quiet nav-login" href="https://app.gaffdesk.com/">Log in</a>
+      <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
 
 <section class="hero">
-  <div class="hero-left">
-    <img src="desk-logo-hero.png" alt="ShowDesk" class="hero-brand-logo"/>
-    <span class="hero-eyebrow">an AV.Land App <span class="beta-badge">Coming Soon</span></span>
-    <h1>AV quoting.<br/><em>Without the mess.</em></h1>
-    <p class="hero-sub"><strong>ShowDesk</strong> helps AV freelancers and small AV teams build quotes, revise them, convert them to invoices, email PDFs, manage clients, and prep warehouse pull sheets from one clean workflow.</p>
-    <div class="hero-actions">
-      <button class="btn-primary btn-reset" type="button" data-open-waitlist>
-        Join Early Access
-      </button>
-      <a class="btn-ghost" href="#features">See what's inside →</a>
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1 class="display">Quote the job. Staff&nbsp;it. Bill&nbsp;it.</h1>
+      <p class="lede">GaffDesk is quoting and invoicing software for AV companies and freelancers. Build quotes from your own gear list, calculate crew overtime, check that your gear is free on show dates, and send a branded PDF. When the client says yes, the same quote becomes the invoice and the pull sheet.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start your free trial</a>
+        <a class="btn btn-quiet" href="#how">See how a job runs</a>
+      </div>
+      <p class="hero-note">7 days free with full Pro access. No card needed to start.</p>
     </div>
-    <p class="hero-note">Join the waitlist for early access and launch updates.</p>
-  </div>
-  <div class="hero-right">
-    <img src="desk-logo-hero.png" alt="ShowDesk" class="mobile-hero-logo"/>
-    <span class="mobile-hero-kicker">An AV.Land App</span>
-    <img src="hero-mockup.jpg" alt="ShowDesk AV quoting app on desktop monitor" class="hero-mockup"/>
-    <div class="discount-note"><img src="early-access-offer.png" alt="First 100 waitlist users get 50% off for the first year when ShowDesk launches publicly"/></div>
+
+    <div class="sheet-zone" aria-label="Example quote in GaffDesk">
+      <div class="tape" aria-hidden="true">Built by a working AV company</div>
+      <div class="sheet">
+        <div class="sheet-head">
+          <div>
+            <div class="sheet-title">Quote AV-1042</div>
+            <div class="sheet-sub">Northgate Partners offsite, Pier 3 Ballroom, Mar 12–13</div>
+          </div>
+          <span class="rev">Rev B</span>
+        </div>
+        <ul class="lines">
+          <li class="line">
+            <span class="line-name">LED wall 12 × 8 ft</span><span class="line-amt">$4,800.00</span>
+            <span class="line-meta"><span>2 days at $2,400</span><span class="tag tag-ok">Available on show dates</span></span>
+          </li>
+          <li class="line">
+            <span class="line-name">Video switcher and operator position</span><span class="line-amt">$1,300.00</span>
+            <span class="line-meta"><span>2 days at $650</span><span class="tag tag-ok">2 of 2 free</span></span>
+          </li>
+          <li class="line">
+            <span class="line-name">Wireless mic kit, 4 channels</span><span class="line-amt">$720.00</span>
+            <span class="line-meta"><span>2 days at $360</span><span class="tag">Kit: receivers, antennas, 4 handhelds included</span></span>
+          </li>
+          <li class="line">
+            <span class="line-name">Line array system</span><span class="line-amt">$3,200.00</span>
+            <span class="line-meta"><span>Flat rate</span><span class="tag tag-sub">Sub-rental</span><span>from your vendor list</span></span>
+          </li>
+          <li class="line">
+            <span class="line-name">A1 audio engineer</span><span class="line-amt">$2,400.00</span>
+            <span class="line-meta"><span>13 hr days × 2 at $75/hr</span><span class="tag tag-ot">8 regular, 4 OT, 1 DT per day</span></span>
+          </li>
+          <li class="line">
+            <span class="line-name">Delivery and pickup</span><span class="line-amt">$450.00</span>
+          </li>
+        </ul>
+        <div class="sheet-total"><span>Subtotal</span><span>$12,870.00</span></div>
+        <p class="sheet-foot">Example quote with sample data.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="strip" aria-hidden="true">
-  <div class="strip-inner">
-    <span>Quote Builder</span><span>·</span><span>Invoices</span><span>·</span><span>Email PDFs</span><span>·</span><span>Invoice Pull Sheets</span><span>·</span><span>Client Database</span><span>·</span><span>Item Library</span><span>·</span><span>Revision History</span><span>·</span><span>Templates</span><span>·</span><span>Reports</span><span>·</span><span>Team Workspace</span><span>·</span>
-    <span>Quote Builder</span><span>·</span><span>Invoices</span><span>·</span><span>Email PDFs</span><span>·</span><span>Invoice Pull Sheets</span><span>·</span><span>Client Database</span><span>·</span><span>Item Library</span><span>·</span><span>Revision History</span><span>·</span><span>Templates</span><span>·</span><span>Reports</span><span>·</span><span>Team Workspace</span><span>·</span>
+<div class="offer" role="note">
+  <div class="wrap">
+    <p><strong>Founding offer.</strong> The first 25 subscribers get 50% off their first year. Use code <span class="code">FOUNDER</span> at checkout.</p>
+    <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Claim it with a free trial</a>
   </div>
 </div>
 
-<section class="intro" id="problem">
-  <div class="intro-inner">
-    <div>
-      <p class="intro-label">The problem</p>
-      <h2>AV jobs should not live in five different files.</h2>
-      <p>Spreadsheets can start a quote, accounting tools can send an invoice, and notes can help the warehouse. The mess begins when revisions, approvals, PDFs, client records, rental counts, and pull sheets stop matching each other.</p>
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="display">How a job runs through GaffDesk</h2>
+      <p class="lede">From the first email to getting paid, one record follows the job. Nothing gets retyped between the quote, the invoice and the warehouse.</p>
     </div>
-    <ul class="pain-list">
-      <li><span class="pain-arrow">→</span> A quote changes, but the invoice and pull sheet do not get the same update.</li>
-      <li><span class="pain-arrow">→</span> Client info, gear, labor, tax, deposits, and terms live in too many places.</li>
-      <li><span class="pain-arrow">→</span> Warehouse teams need pull sheets by date, not a rebuilt spreadsheet.</li>
-      <li><span class="pain-arrow">→</span> Emailing client-ready PDFs should not require exporting and renaming files all day.</li>
-      <li><span class="pain-arrow">→</span> Full rental platforms can be more software than a small AV team wants to carry.</li>
+    <div class="cues" role="list">
+      <div class="cue cue-head" aria-hidden="true"><span>Cue</span><span>What happens</span><span>In GaffDesk</span></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>1</div><div class="cue-what">The request comes in</div><p class="cue-how">Start a quote from a saved client, a template or a past job you can duplicate.</p></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>2</div><div class="cue-what">You build the quote</div><p class="cue-how">Pick gear and labor from your own item library at your own rates. Kits add their parts automatically. Crew lines work out overtime and double time from the hours you enter, and you can override them.</p></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>3</div><div class="cue-what">You check the gear</div><p class="cue-how">See whether owned gear is free on those dates before you promise it. Anything you don't own goes on the quote as a sub-rental with its source.</p></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>4</div><div class="cue-what">You send it</div><p class="cue-how">Email a PDF with your logo and terms straight from GaffDesk. Changes become Rev B, Rev C, with the history kept.</p></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>5</div><div class="cue-what">The client approves</div><p class="cue-how">Convert the approved quote into an invoice in one step, with every line carried over.</p></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>6</div><div class="cue-what">The warehouse preps</div><p class="cue-how">Print a pull sheet with load-in details and the source of every item, so prep matches what was sold.</p></div>
+      <div class="cue" role="listitem"><div class="cue-num"><small>Cue</small>7</div><div class="cue-what">You get paid</div><p class="cue-how">Send the invoice to QuickBooks as a draft with the PDF attached, if you use the QuickBooks add-on.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="freelancers">
+  <div class="wrap free">
+    <div>
+      <h2 class="display">Freelancer? Use it just for invoices.</h2>
+      <p class="lede">You don't need to quote in GaffDesk to bill in it. Start an invoice directly, add your day rate and hours, and email a clean PDF to the AV company that booked you.</p>
+      <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start free, send your first invoice</a>
+    </div>
+    <ul class="free-list">
+      <li><b>No quote needed.</b> Create an invoice on its own for any gig.</li>
+      <li><b>Your rates, saved once.</b> Day rate, hourly, travel, parking and kit fees stay in your item library.</li>
+      <li><b>Your name on it.</b> Logo, contact details and payment terms on every PDF.</li>
+      <li><b>Know who has paid.</b> Every invoice shows Draft, Sent or Paid.</li>
+      <li><b>Basic is $9.99 a month.</b> Upgrade only if you start quoting full jobs.</li>
     </ul>
   </div>
 </section>
 
-<section class="features" id="features">
-  <div class="section-head">
-    <span class="section-label">Features</span>
-    <h2>Built around the full AV job workflow</h2>
-  </div>
-  <div class="features-grid">
-    <div class="feature-card"><div class="feature-icon">1</div><h3>Quote Builder</h3><p>Build organized AV quotes with rooms, categories, rental days, labor, delivery, tax, discounts, deposits, notes, and terms.</p></div>
-    <div class="feature-card"><div class="feature-icon">2</div><h3>Quote to Invoice</h3><p>Convert approved quotes into invoices so the paid job and the production paperwork stay connected.</p></div>
-    <div class="feature-card"><div class="feature-icon">3</div><h3>Email &amp; PDF Documents</h3><p>Preview, print, save, and email polished quote and invoice PDFs with your company branding.</p></div>
-    <div class="feature-card"><div class="feature-icon">4</div><h3>Invoice Pull Sheets</h3><p>Create final warehouse pull sheets from invoices, with load-in, warehouse out, warehouse in, source, and notes.</p></div>
-    <div class="feature-card"><div class="feature-icon">5</div><h3>Item Library</h3><p>Save gear, labor, services, rates, rental status, inventory counts, and sub-rental sources. Import and export CSV lists.</p></div>
-    <div class="feature-card"><div class="feature-icon">6</div><h3>Client Database</h3><p>Store companies, contacts, emails, phone numbers, addresses, and quote history so repeat jobs start faster.</p></div>
-    <div class="feature-card"><div class="feature-icon">7</div><h3>Revisions &amp; Templates</h3><p>Keep revision history, duplicate past jobs, and save reusable templates instead of starting from a blank file every time.</p></div>
-    <div class="feature-card"><div class="feature-icon">8</div><h3>Reports</h3><p>Track workspace activity across quotes, invoices, clients, and document opens so the business side is easier to review.</p></div>
-    <div class="feature-card"><div class="feature-icon">9</div><h3>Team Workspace</h3><p>Team plans support shared clients, library items, quotes, invoices, assigned work, and admin-controlled settings.</p></div>
-  </div>
-</section>
-
-<section class="compare">
-  <div class="section-head">
-    <span class="section-label">Why ShowDesk</span>
-    <h2>Not accounting software. Not another spreadsheet.</h2>
-  </div>
-  <div class="compare-grid">
-    <div class="compare-card"><h3>QuickBooks</h3><p>Great for bookkeeping, but not built for AV line items, revisions, warehouse pull sheets, source tracking, or item libraries.</p></div>
-    <div class="compare-card"><h3>Excel / Sheets</h3><p>Flexible at first, then fragile when quotes become invoices, PDFs get emailed, and warehouse sheets need to match.</p></div>
-    <div class="compare-card desk"><h3>ShowDesk</h3><p>Built specifically for AV jobs: quotes, invoices, clients, items, emailed PDFs, pull sheets, reports, and team prep.</p></div>
-  </div>
-</section>
-
-<section class="pricing" id="pricing">
-  <div class="section-head">
-    <span class="section-label">Planned Pricing</span>
-    <h2>Simple plans for freelancers and small AV companies</h2>
-  </div>
-  <div class="pricing-grid">
-    <div class="plan">
-      <p class="plan-name">Basic</p>
-      <p class="plan-price">$9<span>.99/mo</span></p>
-      <p class="plan-desc">For freelancers and solo operators getting started.</p>
-      <ul class="plan-features">
-        <li class="on"><span class="ck">✓</span> Up to 10 saved quotes</li>
-        <li class="on"><span class="ck">✓</span> Up to 25 library items</li>
-        <li class="on"><span class="ck">✓</span> Quote templates</li>
-        <li class="on"><span class="ck">✓</span> PDF quotes and invoices</li>
-        <li><span class="cx">✕</span> Client database</li>
-        <li><span class="cx">✕</span> Pull sheet</li>
-      </ul>
-      <span class="plan-btn-disabled">Coming Soon</span>
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="display">Not a spreadsheet. Not accounting software.</h2>
+      <p class="lede">Most AV shops quote in Excel and bill in QuickBooks. GaffDesk covers the part in between that neither was built for.</p>
     </div>
-    <div class="plan plan-featured">
-      <div class="plan-badge">Most Popular</div>
-      <p class="plan-name">Pro</p>
-      <p class="plan-price">$14<span>.99/mo</span></p>
-      <p class="plan-desc">For working AV professionals who need everything.</p>
-      <ul class="plan-features">
-        <li class="on"><span class="ck">✓</span> Unlimited saved quotes</li>
-        <li class="on"><span class="ck">✓</span> Unlimited library items</li>
-        <li class="on"><span class="ck">✓</span> Client database</li>
-        <li class="on"><span class="ck">✓</span> Quote and invoice pull sheets</li>
-        <li class="on"><span class="ck">✓</span> Email templates and PDFs</li>
-        <li><span class="cx">✕</span> Team members</li>
-      </ul>
-      <span class="plan-btn-disabled plan-btn-gold">Coming Soon</span>
-    </div>
-    <div class="plan">
-      <p class="plan-name">Team</p>
-      <p class="plan-price">$29<span>.99/mo</span></p>
-      <p class="plan-desc">For AV companies with a crew that quotes together.</p>
-      <ul class="plan-features">
-        <li class="on"><span class="ck">✓</span> Everything in Pro</li>
-        <li class="on"><span class="ck">✓</span> Up to 3 team members</li>
-        <li class="on"><span class="ck">✓</span> Shared workspace</li>
-        <li class="on"><span class="ck">✓</span> Shared item library</li>
-        <li class="on"><span class="ck">✓</span> Shared client database</li>
-        <li class="on"><span class="ck">✓</span> Admin controls</li>
-      </ul>
-      <span class="plan-btn-disabled">Coming Soon</span>
+    <div class="compare">
+      <div><h3>Excel or Google Sheets</h3><p class="muted">Flexible until the quote becomes an invoice, the PDF needs your branding, and the warehouse list has to match. Overtime math and double-booked gear are on you.</p></div>
+      <div><h3>QuickBooks</h3><p class="muted">Great for bookkeeping. Not built for rental days, crew calls, kits, sub-rentals, revisions or pull sheets. GaffDesk hands it the finished invoice.</p></div>
+      <div class="ours"><h3>GaffDesk</h3><p>Built around AV jobs: your gear and rates, crew hours, availability, kits, sub-rentals, revisions, invoices and pull sheets in one place.</p></div>
     </div>
   </div>
 </section>
 
-
-<section class="faq" id="faq">
-  <div class="section-head">
-    <span class="section-label">Questions & Answers</span>
-    <h2>Common questions about ShowDesk</h2>
+<section class="block" id="workspaces">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="display">Two kinds of work, two workspaces</h2>
+      <p class="lede">Rental shows and installation projects are quoted differently. GaffDesk keeps them apart, with their own numbering and settings. Use one, or both.</p>
+    </div>
+    <div class="spaces">
+      <div class="space event">
+        <h3>Event</h3>
+        <p class="muted">For shows, conferences and rentals.</p>
+        <ul>
+          <li>Rental days and show dates on every line</li>
+          <li>Crew hours with overtime and double time</li>
+          <li>Gear availability across overlapping shows</li>
+          <li>Pull sheets for warehouse prep</li>
+        </ul>
+      </div>
+      <div class="space install">
+        <h3>Install</h3>
+        <p class="muted">For installation projects.</p>
+        <ul>
+          <li>Scope organized by room or area</li>
+          <li>Equipment, materials, labor and delivery</li>
+          <li>Material lists for approved projects</li>
+          <li>Separate quote numbering from your events</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="faq-grid">
-    <div class="faq-item"><h3>Is ShowDesk accounting software?</h3><p>No. ShowDesk helps you create AV quotes and invoices, but it is not a bookkeeping system. You can still use QuickBooks or your accountant for accounting.</p></div>
-    <div class="faq-item"><h3>Why not just use QuickBooks?</h3><p>QuickBooks is useful for accounting, but AV jobs often need gear lists, labor, rooms, rental days, revisions, source tracking, branded PDFs, and pull sheets.</p></div>
-    <div class="faq-item"><h3>Why not just use Excel or Google Sheets?</h3><p>Sheets work at the beginning, but they can get messy when the quote, invoice, emailed PDF, revision history, client record, and warehouse pull sheet all need to match.</p></div>
-    <div class="faq-item"><h3>What is the Item Library?</h3><p>It is your saved list of equipment, labor, delivery, and service items so you can build quotes faster without typing the same gear and rates every time.</p></div>
-    <div class="faq-item"><h3>How do categories work?</h3><p>Categories organize quote items and library items, such as Audio, Video, Lighting, Stage / Support, Labor, Delivery, or custom categories you create in Admin.</p></div>
-    <div class="faq-item"><h3>Can I save clients?</h3><p>Yes. Pro and Team include the Client Database so you can save company and contact details and reuse them on future quotes. Basic users can still type client info manually.</p></div>
-    <div class="faq-item"><h3>Can I search saved items, clients, or quotes?</h3><p>Yes. ShowDesk includes search areas to help you find saved items, clients, and existing quotes faster instead of scrolling through old spreadsheets or files.</p></div>
-    <div class="faq-item"><h3>Does ShowDesk have quote templates?</h3><p>ShowDesk is currently focused on saved items, saved clients, and duplicating or reusing quote workflows. Full quote templates are a planned improvement based on beta feedback.</p></div>
-    <div class="faq-item"><h3>Are quotes saved?</h3><p>Yes. Quotes are saved in ShowDesk so you can come back later, search them, revise them, export PDFs, and use them as a reference for future jobs.</p></div>
-    <div class="faq-item"><h3>How do quote revisions work?</h3><p>ShowDesk is designed to help track revised quotes instead of overwriting everything in a spreadsheet. Approved quotes should be handled carefully, and revisions help keep quote history cleaner.</p></div>
-    <div class="faq-item"><h3>Can I customize quote numbering?</h3><p>Yes. Admin settings include quote numbering options so your quote numbers can follow your company style instead of using random file names or spreadsheet copies.</p></div>
-    <div class="faq-item"><h3>Can I add my company branding?</h3><p>Yes. Add your company name, logo, contact info, terms, PDF branding, and quote defaults so client-facing PDFs look more professional.</p></div>
-    <div class="faq-item"><h3>Can I email quote and invoice PDFs?</h3><p>Yes. ShowDesk includes document email workflows and editable email templates for quote and invoice messages.</p></div>
-    <div class="faq-item"><h3>What is a pull sheet?</h3><p>A pull sheet is the internal gear, labor, source, and logistics list used for prep, warehouse, crew, and show execution. Quote pull sheets are previews; final pull sheets come from invoices.</p></div>
-    <div class="faq-item"><h3>Can I use my own pricing?</h3><p>Yes. Add your own items, descriptions, rates, categories, tax settings, terms, and company branding. ShowDesk does not force you into a fixed rental catalog.</p></div>
-    <div class="faq-item"><h3>Who is ShowDesk built for?</h3><p>ShowDesk is built for AV freelancers, technical directors, production managers, and small AV companies that need quoting to be faster and simpler than large rental software.</p></div>
-    <div class="faq-item"><h3>What is included in Basic?</h3><p>Basic is for simple quoting. It includes limited saved quotes and limited library items, but does not include the client database or pull sheets.</p></div>
-    <div class="faq-item"><h3>What is included in Pro?</h3><p>Pro is best for most freelancers and small AV companies. It includes unlimited quotes, unlimited library items, the client database, and pull sheets.</p></div>
-    <div class="faq-item"><h3>What is included in Team?</h3><p>Team includes Pro features plus team seats so multiple people can help manage quotes, clients, items, and production prep.</p></div>
-    <div class="faq-item"><h3>Is ShowDesk finished?</h3><p>ShowDesk is in private beta. Core quoting, invoices, emailed PDFs, library, clients, pull sheets, reporting, and billing are working, and beta feedback will guide what improves next.</p></div>
-  </div>
-  <p class="faq-note">Have another question? Join the waitlist and tell us how you currently build AV quotes. We are shaping ShowDesk around real AV workflows.</p>
 </section>
 
-<div class="trial-wrap">
-  <div class="trial">
-    <div>
-      <h2>Early access is opening soon.</h2>
-      <p>Join the ShowDesk waitlist, share a little about your AV workflow, and the first 100 early-access users get 50% off the first year.</p>
+<section class="block" id="pricing">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="display">Pricing</h2>
+      <p class="lede">Every plan starts with a 7-day free trial with full Pro access.</p>
     </div>
-    <button class="btn-primary btn-reset" type="button" data-open-waitlist style="white-space:nowrap;flex-shrink:0;">Join Waitlist →</button>
+
+    <div class="toggles">
+      <div class="seg" role="group" aria-label="Billing period">
+        <button type="button" data-period="month" aria-pressed="true">Monthly</button>
+        <button type="button" data-period="year" aria-pressed="false">Yearly, 2 months free</button>
+      </div>
+      <div class="seg" role="group" aria-label="Workspaces">
+        <button type="button" data-spaces="one" aria-pressed="true">Event or Install</button>
+        <button type="button" data-spaces="both" aria-pressed="false">Both workspaces</button>
+      </div>
+    </div>
+
+    <div class="plans">
+      <div class="plan" data-plan="basic">
+        <h3>Basic</h3>
+        <p class="plan-for">For freelancers who mostly send invoices or quote a few jobs a month.</p>
+        <div class="price"><span data-price>$9.99</span> <small data-unit>/month</small></div>
+        <p class="price-note" data-note></p>
+        <ul>
+          <li>Up to 10 saved quotes</li>
+          <li>Up to 25 library items</li>
+          <li>PDF quotes and invoices</li>
+          <li>One workspace</li>
+          <li class="no">Client database</li>
+          <li class="no">Pull sheets</li>
+        </ul>
+        <a class="btn btn-quiet" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+      </div>
+      <div class="plan pro" data-plan="pro">
+        <h3>Pro</h3>
+        <p class="plan-for">For working AV pros and small companies. Most people start here.</p>
+        <div class="price"><span data-price>$19.99</span> <small data-unit>/month</small></div>
+        <p class="price-note" data-note></p>
+        <ul>
+          <li>Unlimited quotes and invoices</li>
+          <li>Unlimited library items</li>
+          <li>Client database</li>
+          <li>Pull sheets</li>
+          <li data-spaces-label>One workspace</li>
+          <li>1 user</li>
+        </ul>
+        <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+      </div>
+      <div class="plan" data-plan="team">
+        <h3>Team</h3>
+        <p class="plan-for">For AV companies with a few people quoting together.</p>
+        <div class="price"><span data-price>$39.99</span> <small data-unit>/month</small></div>
+        <p class="price-note" data-note></p>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Up to 3 team members</li>
+          <li>Shared clients, items and quotes</li>
+          <li>Admin controls</li>
+          <li data-spaces-label>One workspace</li>
+        </ul>
+        <a class="btn btn-quiet" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+      </div>
+    </div>
+
+    <div class="addon">
+      <p><b>QuickBooks add-on</b> <span class="muted">Import customers and send approved invoices to QuickBooks Online with the PDF attached.</span></p>
+      <p><b data-addon>+$9.99/month</b></p>
+    </div>
+    <p class="fine">Prices in USD, before any sales tax. Cancel anytime from the billing page in your account.</p>
   </div>
-</div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="block-head"><h2 class="display">Questions</h2></div>
+    <div class="faq">
+      <details><summary>Do I need a credit card to start the trial?</summary><p>No. The 7-day trial gives you full Pro access without a card. At the end of the trial, choose a plan to keep using GaffDesk.</p></details>
+      <details><summary>Is GaffDesk accounting software?</summary><p>No. GaffDesk handles quotes, invoices, crew, gear and pull sheets. Keep using QuickBooks or your accountant for bookkeeping. With the QuickBooks add-on, approved invoices go to QuickBooks Online as drafts.</p></details>
+      <details><summary>Can I use my own gear list and prices?</summary><p>Yes. Your item library holds your own gear, labor and services with your rates, categories, tax settings and terms. You can import it from a spreadsheet.</p></details>
+      <details><summary>How does crew overtime work?</summary><p>Enter the hours per day on a labor line and GaffDesk splits them into regular, overtime and double time using your company's labor rules. You can override the split on any line.</p></details>
+      <details><summary>What's the difference between Event and Install?</summary><p>Event is for shows and rentals, with rental days, crew calls and pull sheets. Install is for installation projects, organized by room or area with material lists. Pro and Team can include both.</p></details>
+      <details><summary>Can my team use it?</summary><p>Yes. The Team plan includes up to 3 people sharing clients, the item library and quotes, with admin controls over who can do what.</p></details>
+      <details><summary>Who can see my clients and prices?</summary><p>Only you and the team members you add. Your clients, prices and quotes stay in your account.</p></details>
+      <details><summary>Who makes GaffDesk?</summary><p>GaffDesk is built by AV Land Production LLC, a Bay Area AV production company. We use it to quote and bill our own shows.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 class="display">Your next quote, without the spreadsheet</h2>
+    <p class="lede">Set up your item library, build a real quote and send the PDF during your free trial.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://app.gaffdesk.com/?signup=1">Start your free trial</a>
+      <a class="btn btn-quiet" href="mailto:support@gaffdesk.com">Ask a question</a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo"><img src="desk-logo-hero.png" alt="ShowDesk"/></div>
-      <p>an AV.Land App &nbsp;·&nbsp; © 2026 AV Land LLC</p>
-    </div>
-    <div class="footer-links">
-      <a href="#waitlist" data-open-waitlist>Join Waitlist</a>
-      <a href="mailto:desk@av.land">Contact</a>
-    </div>
-    <p class="footer-copy">California, United States<br/>desk@av.land</p>
+  <div class="wrap">
+    <p>GaffDesk is a product of AV Land Production LLC.</p>
+    <nav aria-label="Footer">
+      <a href="https://app.gaffdesk.com/">Log in</a>
+      <a href="mailto:support@gaffdesk.com">support@gaffdesk.com</a>
+      <a href="https://app.gaffdesk.com/terms">Terms</a>
+      <a href="https://app.gaffdesk.com/privacy">Privacy</a>
+    </nav>
   </div>
 </footer>
 
-
-<div class="waitlist-modal" id="waitlistModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="waitlistTitle">
-  <div class="waitlist-card">
-    <div class="waitlist-head">
-      <div>
-        <h2 id="waitlistTitle">Join the ShowDesk waitlist</h2>
-        <p>First 100 early-access users get 50% off the first year. Tell us a little about your AV workflow so we can prioritize the right testers.</p>
-      </div>
-      <button class="waitlist-close" type="button" data-close-waitlist aria-label="Close waitlist form">×</button>
-    </div>
-    <form class="waitlist-form" id="waitlistForm">
-      <div class="form-row">
-        <div class="field">
-          <label for="waitName">Name *</label>
-          <input id="waitName" name="name" type="text" autocomplete="name" required/>
-        </div>
-        <div class="field">
-          <label for="waitEmail">Email *</label>
-          <input id="waitEmail" name="email" type="email" autocomplete="email" required/>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="waitCompany">Company</label>
-          <input id="waitCompany" name="company" type="text" autocomplete="organization"/>
-        </div>
-        <div class="field">
-          <label for="waitRole">Role</label>
-          <select id="waitRole" name="role">
-            <option value="">Select one</option>
-            <option>Freelancer</option>
-            <option>Technical Director</option>
-            <option>Project Manager</option>
-            <option>AV Company Owner</option>
-            <option>Rental Company</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="field">
-        <label for="waitWebsite">Website / Instagram (optional)</label>
-        <input id="waitWebsite" name="website" type="text" placeholder="https:// or @company"/>
-      </div>
-      <div class="field">
-        <label for="waitTool">How do you currently build AV quotes?</label>
-        <select id="waitTool" name="current_quote_tool">
-          <option value="">Select one</option>
-          <option>Excel / Google Sheets</option>
-          <option>QuickBooks</option>
-          <option>Rental software</option>
-          <option>PDF / Word templates</option>
-          <option>Something custom</option>
-          <option>I need a better system</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="waitNotes">What would you want ShowDesk to help with?</label>
-        <textarea id="waitNotes" name="notes" placeholder="Quotes, PDFs, item library, pull sheets, client database, team access..."></textarea>
-      </div>
-      <div class="form-status" id="waitlistStatus"></div>
-      <p class="form-small">We'll only contact you about ShowDesk early access and launch updates. No spam.</p>
-      <div class="form-actions">
-        <button class="btn-primary btn-reset" type="submit" id="waitlistSubmit">Join Waitlist</button>
-        <button class="btn-cancel btn-reset" type="button" data-close-waitlist>Cancel</button>
-      </div>
-    </form>
-  </div>
-</div>
-
 <script>
-  const WAITLIST_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwPhYYIJTD75B7yaSZx30ApbZi2ger_K32fSh2P-ZOBlFLlWt_drgL_ndoZm06aVjIBMQ/exec';
-
-  const modal = document.getElementById('waitlistModal');
-  const form = document.getElementById('waitlistForm');
-  const statusBox = document.getElementById('waitlistStatus');
-  const submitBtn = document.getElementById('waitlistSubmit');
-
-  function openWaitlist(event){
-    if(event) event.preventDefault();
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden','false');
-    setTimeout(() => document.getElementById('waitName')?.focus(), 50);
+(function(){
+  var prices={
+    basic:{one:{month:9.99,year:99.90},both:null},
+    pro:{one:{month:19.99,year:199.90},both:{month:29.99,year:299.90}},
+    team:{one:{month:39.99,year:399.90},both:{month:59.99,year:599.90}}
+  };
+  var addon={month:9.99,year:99.90};
+  var state={period:'month',spaces:'one'};
+  function fmt(n){return '$'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+  function render(){
+    document.querySelectorAll('.plan').forEach(function(card){
+      var p=prices[card.dataset.plan];
+      var set=(state.spaces==='both'&&p.both)?p.both:p.one;
+      var amount=set[state.period];
+      card.querySelector('[data-price]').textContent=fmt(amount);
+      card.querySelector('[data-unit]').textContent=state.period==='month'?'/month':'/year';
+      var note='';
+      if(state.period==='year') note='Works out to '+fmt(amount/12)+' a month';
+      if(state.spaces==='both'&&!p.both) note='One workspace only on Basic';
+      card.querySelector('[data-note]').textContent=note;
+      var label=card.querySelector('[data-spaces-label]');
+      if(label) label.textContent=state.spaces==='both'?'Event and Install workspaces':'One workspace: Event or Install';
+    });
+    document.querySelector('[data-addon]').textContent='+'+fmt(addon[state.period])+(state.period==='month'?'/month':'/year');
   }
-  function closeWaitlist(){
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden','true');
-  }
-  function showStatus(type, message){
-    statusBox.className = 'form-status ' + type;
-    statusBox.textContent = message;
-  }
-
-  document.querySelectorAll('[data-open-waitlist]').forEach((el) => el.addEventListener('click', openWaitlist));
-  document.querySelectorAll('[data-close-waitlist]').forEach((el) => el.addEventListener('click', closeWaitlist));
-  modal.addEventListener('click', (event) => { if(event.target === modal) closeWaitlist(); });
-  document.addEventListener('keydown', (event) => { if(event.key === 'Escape') closeWaitlist(); });
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    if(!WAITLIST_WEB_APP_URL || WAITLIST_WEB_APP_URL.includes('PASTE_GOOGLE_APPS_SCRIPT')){
-      showStatus('err', 'Waitlist form is not connected yet. Please email desk@av.land.');
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
-    showStatus('ok', 'Submitting your request...');
-
-    const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
-    payload.submitted_at = new Date().toISOString();
-
-    try {
-      await fetch(WAITLIST_WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
-      });
-      form.reset();
-      showStatus('ok', 'Thank you — you are on the ShowDesk early access waitlist.');
-      submitBtn.textContent = 'Submitted';
-      setTimeout(closeWaitlist, 1800);
-    } catch (error) {
-      console.error(error);
-      showStatus('err', 'Something went wrong. Please try again or email desk@av.land.');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Join Waitlist';
-    }
-  });
+  document.querySelectorAll('[data-period]').forEach(function(b){b.addEventListener('click',function(){state.period=b.dataset.period;document.querySelectorAll('[data-period]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render();});});
+  document.querySelectorAll('[data-spaces]').forEach(function(b){b.addEventListener('click',function(){state.spaces=b.dataset.spaces;document.querySelectorAll('[data-spaces]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render();});});
+  render();
+})();
 </script>
-
 </body>
 </html>
