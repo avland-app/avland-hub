@@ -52,9 +52,17 @@ written as HTML fragments and built by `node scripts/build-blog.mjs`
 - **Structure:** intro that answers the question in the first 2–3 sentences,
   3–6 `<h2>` sections, an FAQ section (also put the Q&As in `faq`), and one
   natural mention of GaffDesk where it genuinely helps. No hard sell.
-- **Links:** 1 link to an authoritative outside source where useful, 1–2 links
-  to other GaffDesk posts or the homepage sections (`/#pricing`,
-  `/#freelancers`).
+- **Outside source link (required):** every post links to at least 1
+  authoritative outside source that backs up a specific claim in the post,
+  e.g. U.S. Department of Labor (dol.gov), IRS (irs.gov), a state labor or tax
+  agency, AVIXA (avixa.org), or a manufacturer's official spec page. Link the
+  page that supports the claim, not a homepage. No competitors, no
+  Wikipedia, no blogs or forums, no affiliate links. Open it in a new tab:
+  `<a href="https://..." target="_blank" rel="noopener">`. Never invent a
+  URL: only use a page you have actually loaded and checked supports the
+  claim. The build fails if a post has no outside link.
+- **Internal links:** 1–2 links to other GaffDesk posts or the homepage
+  sections (`/#pricing`, `/#freelancers`).
 - **Images:** compressed JPG/WebP under 200 KB, 1600×900, real photos or app
   screenshots with demo data only. No AI-generated images. No real client
   names.

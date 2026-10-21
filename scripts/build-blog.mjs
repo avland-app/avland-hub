@@ -19,6 +19,12 @@ for (const p of manifest.posts || []) {
   if (!/^[a-z0-9-]+$/.test(p.slug)) throw new Error(`Bad slug: ${p.slug}`);
   if (p.description.length > 160) throw new Error(`Description over 160 chars: ${p.slug}`);
   if (!existsSync(`blog/_src/${p.slug}.html`)) throw new Error(`Missing blog/_src/${p.slug}.html`);
+  // Every post needs at least one outside source link (see BLOG_GUIDE.md).
+  const src = readFileSync(`blog/_src/${p.slug}.html`, 'utf8');
+  const outside = [...src.matchAll(/href=["'](https?:\/\/[^"']+)["']/gi)]
+    .map((m) => m[1])
+    .filter((u) => !/^https?:\/\/([a-z0-9-]+\.)*(gaffdesk\.com|gaffdesk\.app|gaffquote\.com|av\.land)(\/|$)/i.test(u));
+  if (outside.length === 0) throw new Error(`Post ${p.slug} has no outside source link (BLOG_GUIDE.md requires one)`);
 }
 const slugs = new Set();
 for (const p of manifest.posts || []) { if (slugs.has(p.slug)) throw new Error(`Duplicate slug ${p.slug}`); slugs.add(p.slug); }
