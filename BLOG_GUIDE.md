@@ -181,6 +181,9 @@ post also gets a social set, made from the post's own content.
   Under 1,500 characters. No emoji walls; at most 2 emoji.
 - When a revision changes the post's main points, remake the slides and
   caption so they still match.
+- **Storage:** slides sit in the Blog Desk database (100 MB cap). Delete
+  the `slides` docs of any post published more than 30 days ago; the post
+  doc keeps its caption.
 
 ## Pull request description
 
