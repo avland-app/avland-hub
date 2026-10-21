@@ -61,6 +61,14 @@ BLOG_GUIDE.md). Numbering continues from 37. When: `next`, a date window
 Angles from Kambiz's ideas that were folded into an existing row, as
 `#<row>: <angle>`. Use them when that row is written.
 
+- #27: Pros and cons of quoting and invoicing in QuickBooks alone (no rental days, crew calls, kits, revisions or pull sheets), and how GaffDesk builds the quote and hands QuickBooks the finished invoice. (idea 2026-10-21)
+- #27: Getting paid: once the invoice is in QuickBooks Online, QuickBooks Payments lets clients pay by card or bank transfer (ACH). That is a QuickBooks feature, not GaffDesk's; GaffDesk's add-on sends approved invoices to QBO as drafts with the PDF attached. Cite Intuit's help pages. (idea 2026-10-21)
+- #13: GaffDesk keeps every older revision (Rev A, B, C) saved while you work on the new one. Don't claim other apps lack this unless it can be sourced. (idea 2026-10-21)
+- #9: Show GaffDesk's pull sheet, made from the same approved quote, with the source of every item. (idea 2026-10-21)
+- #10: Sharing gear with a sister company or partner AV shop: put their list in GaffDesk as a vendor list and quote it as a sub-rental with its source. Confirm how the vendor list is loaded before describing it. (idea 2026-10-21)
+- #15: Specific problems with quoting and invoicing in Google Sheets (copying tabs, broken formulas, no branded PDF, quote to invoice retyping, no availability check), and how GaffDesk handles each. (idea 2026-10-21)
+- #26: Tip: preview the quote or invoice exactly as the client will see it before saving or sending the PDF. Describe GaffDesk's live preview only after confirming it in the app. (idea 2026-10-21)
+
 ## Notes
 
 - Posts 17 and 31 touch tax: general information only, link to IRS / state
