@@ -41,13 +41,14 @@ a{color:inherit}
 .post-card a:hover h2{text-decoration:underline;text-underline-offset:4px}
 /* Article */
 .article{padding:56px 0 24px}
-.article .wrap{max-width:780px}
+.article .wrap{max-width:min(80vw,1180px)}
+@media (max-width:900px){.article .wrap{max-width:none}}
 .crumbs{font-size:.9rem;color:var(--ink-soft);margin-bottom:18px}
 .crumbs a{text-decoration:none}.crumbs a:hover{text-decoration:underline}
 .article h1{font-variation-settings:"wdth" 72;font-weight:850;font-size:clamp(2.3rem,5.4vw,3.8rem);line-height:1}
 .meta{margin:16px 0 28px;color:var(--ink-soft);font-size:.95rem}
 .hero-img{border-radius:6px;margin-bottom:32px}
-.prose{background:var(--paper);border-radius:6px;padding:40px 44px}
+.prose{background:var(--paper);border-radius:6px;padding:48px 56px;font-size:1.125rem}
 @media (max-width:600px){.prose{padding:26px 20px}}
 .prose h2{font-variation-settings:"wdth" 80;font-weight:800;font-size:1.65rem;line-height:1.15;margin:1.6em 0 .5em}
 .prose h2:first-child{margin-top:0}
@@ -55,7 +56,8 @@ a{color:inherit}
 .prose p,.prose ul,.prose ol,.prose table,.prose figure{margin-bottom:1.1em}
 .prose ul,.prose ol{padding-left:1.3em}.prose li{margin:.35em 0}
 .prose a{text-underline-offset:3px;text-decoration-thickness:1.5px}
-.prose table{width:100%;border-collapse:collapse;font-size:.95rem;display:block;overflow-x:auto}
+.prose table{width:100%;border-collapse:collapse;font-size:1rem}
+@media (max-width:700px){.prose table{display:block;overflow-x:auto}}
 .prose th,.prose td{text-align:left;padding:9px 12px;border-bottom:1px solid #E4E5E0;white-space:nowrap}
 .prose th{background:var(--ink);color:var(--paper);font-weight:700}
 .prose figure img{border-radius:4px}
@@ -65,7 +67,8 @@ a{color:inherit}
 .cta p{font-weight:650;font-size:1.15rem;max-width:30em}
 .cta .btn{background:var(--gaff);color:var(--ink);border-color:var(--gaff)}
 @media (max-width:600px){.cta{justify-content:center;text-align:center}}
-.related{padding:48px 0 88px}.related .wrap{max-width:780px}
+.related{padding:48px 0 88px}.related .wrap{max-width:min(80vw,1180px)}
+@media (max-width:900px){.related .wrap{max-width:none}}
 .related h2{font-variation-settings:"wdth" 80;font-weight:800;font-size:1.5rem;margin-bottom:14px}
 .related ul{list-style:none}.related li{border-top:1px solid var(--rule)}.related li:last-child{border-bottom:1px solid var(--rule)}
 .related a{display:block;padding:14px 0;font-weight:650;text-decoration:none}.related a:hover{text-decoration:underline}
