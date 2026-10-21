@@ -1,16 +1,18 @@
 # GaffDesk blog topics — first 12 weeks
 
-Status: APPROVED by Kambiz on 2026-10-20. The agent writes posts in this
-order, one per run (Mon / Wed / Fri). Mark a row `done` when its PR is merged.
-Each keyword is used once only.
+Status: APPROVED by Kambiz on 2026-10-20. The agent writes one post per run
+for the Mon / Wed / Fri slots, choosing rows as described in BLOG_GUIDE.md
+("Picking the next topic"). Status values: `in review` (drafted, PR open),
+`done` (published), `discarded` (Kambiz threw it away; never reuse the
+keyword). Each keyword is used once only, across both tables.
 
 Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = install companies, **A** = all.
 
 | # | Week | Day | Aud | Working title | Target keyword | Real detail to ask Kambiz | Status |
 |---|---|---|---|---|---|---|---|
 | 1 | 1 | Mon | O | How to write an AV quote clients approve | av quote template | A real quote structure you send (sections, order) | in review |
-| 2 | 1 | Wed | F | The freelance AV invoice: what to include | av freelancer invoice template | What you put on your own freelance invoices | |
-| 3 | 1 | Fri | A | How to calculate overtime for AV crew calls | av crew overtime | A typical call: hours, rate, how you split OT/DT | |
+| 2 | 1 | Wed | F | The freelance AV invoice: what to include | av freelancer invoice template | What you put on your own freelance invoices | in review |
+| 3 | 1 | Fri | A | How to calculate overtime for AV crew calls | av crew overtime | A typical call: hours, rate, how you split OT/DT | in review |
 | 4 | 2 | Mon | O | Setting day rates for AV rental gear | av equipment rental rates | How you price a piece of gear you own (e.g. E2) | |
 | 5 | 2 | Wed | F | How to invoice an AV company as a freelance tech | how to invoice as a freelance av tech | A billing mistake you've seen or made | |
 | 6 | 2 | Fri | I | How to price an AV installation by room | av installation quote | A room you've scoped: what went in it | |
@@ -44,6 +46,20 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 34 | 12 | Mon | A | From quote to invoice without retyping | av quote to invoice | Your old process before GaffDesk | |
 | 35 | 12 | Wed | A | 7 AV quoting mistakes that cost money | av quoting mistakes | A mistake that cost you money | |
 | 36 | 12 | Fri | A | How to choose AV quoting software | av quoting software | What mattered most when you built GaffDesk | |
+
+## Added from Kambiz's ideas
+
+Rows added after evaluating ideas from the Blog Desk "Your ideas" box (see
+BLOG_GUIDE.md). Numbering continues from 37. When: `next`, a date window
+(e.g. `Nov 15–Dec 20`), `after #N`, or `anytime`.
+
+| # | Aud | Working title | Target keyword | Real detail to ask Kambiz | When | Why it's worth writing | Status |
+|---|---|---|---|---|---|---|---|
+
+## Idea notes
+
+Angles from Kambiz's ideas that were folded into an existing row, as
+`#<row>: <angle>`. Use them when that row is written.
 
 ## Notes
 
