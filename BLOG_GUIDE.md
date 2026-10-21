@@ -156,6 +156,35 @@ written again. If the reason shows a general rule, add it to this guide.
 The freed date is then filled like any empty slot. If the post came from an
 idea, set that idea back to `skipped` with the reason.
 
+## Instagram and Facebook set (every post)
+
+Freelancers and crews scroll Instagram and Facebook on standby, so every
+post also gets a social set, made from the post's own content.
+
+- **Slides:** 6–8 carousel slides via
+  `python3 scripts/make-slides.py <slug> <slides.json>` (format in the
+  script). Slide 1 `cover` (title + who it's for), then `tip` slides (one
+  idea each: heading under 10 words, body under 30 words, taken from the
+  post), last slide `cta` ("Link in bio · gaffdesk.com/blog"). Text and
+  brand only: no AI-generated images, no stock photos, no invented numbers.
+  `blog/social/` is git-ignored; the slides live only in Blog Desk.
+- **Upload the slides** to Blog Desk collection `slides`: one doc per slide,
+  doc id `<slug>-<n>`, from the `blog/social/<slug>/db/<n>.json` files
+  (ArtifactData batch with file_path). Delete any old `<slug>-<n>` docs
+  beyond the new count.
+- **Caption** (`socialCaption` on the post doc): one plain-text caption that
+  works on both Instagram and Facebook. First line is a hook a freelancer or
+  owner would stop for (under 125 characters). Then 3–5 short lines with the
+  main takeaways, then "Full guide: link in bio" (never a URL; Instagram
+  captions can't link). End with 4–6 relevant hashtags such as #avtech
+  #livesound #eventprofs #productionlife #avfreelancer #corporateevents.
+  Under 1,500 characters. No emoji walls; at most 2 emoji.
+- When a revision changes the post's main points, remake the slides and
+  caption so they still match.
+- **Storage:** slides sit in the Blog Desk database (100 MB cap). Delete
+  the `slides` docs of any post published more than 30 days ago; the post
+  doc keeps its caption.
+
 ## Pull request description
 
 Include: target keyword, the REAL DETAIL questions for Kambiz, and two
