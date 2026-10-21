@@ -1,4 +1,40 @@
 {
   "homeUpdated": "2026-10-20",
-  "posts": []
+  "posts": [
+    {
+      "slug": "how-to-invoice-as-a-freelance-av-tech",
+      "title": "How to invoice an AV company as a freelance tech",
+      "description": "How to invoice as a freelance AV tech: billing details to get before the gig, what to send after strike, and how to follow up when payment is late.",
+      "keyword": "how to invoice as a freelance av tech",
+      "date": "2026-10-28",
+      "published": true,
+      "readMinutes": 5,
+      "image": "how-to-invoice-as-a-freelance-av-tech.jpg",
+      "imageAlt": "How to invoice an AV company as a freelance tech",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "freelance-av-invoice"
+      ],
+      "faq": [
+        {
+          "q": "Who should I send my invoice to at an AV company?",
+          "a": "Send it to the billing or accounts payable address the company gives you, and copy the person who booked you. If no one has told you, ask when you're booked."
+        },
+        {
+          "q": "How soon after a gig should I invoice?",
+          "a": "Within a day or two of strike. Invoices sent while the show is fresh are matched to the crew sheet quickly and approved sooner."
+        },
+        {
+          "q": "Do I need to send a W-9 to every AV company?",
+          "a": "Send one to each new company you work for as an independent contractor, before or with your first invoice. They need it on file to report what they paid you. Ask your accountant about your own tax situation."
+        },
+        {
+          "q": "What should I do if an AV company pays late?",
+          "a": "Follow up on the due date with the invoice attached, again a week later with the booker copied, and call if it's still unpaid after two or three weeks. Most late payments are stuck, not disputed."
+        }
+      ],
+      "cta": "Invoice your next gig from saved rates and clients. 7 days free, no card needed."
+    }
+  ]
 }
