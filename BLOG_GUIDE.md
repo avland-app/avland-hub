@@ -29,9 +29,15 @@ written as HTML fragments and built by `node scripts/build-blog.mjs`
      "cta": "Optional one-line call to action shown above the trial button."
    }
    ```
-3. Run `node scripts/build-blog.mjs`. It fails loudly on missing fields,
+3. Make the title card: `python3 scripts/make-card.py <slug> "<title>"`
+   (writes `blog/img/<slug>.jpg`; set `"image": "<slug>.jpg"` in posts.json).
+   The title card is used only for the blog index thumbnail and social
+   sharing, never at the top of the post (the page already shows the title).
+   To show a real photo at the top of a post, set `"photo"` (plus
+   `photoAlt`, `photoWidth`, `photoHeight`).
+4. Run `node scripts/build-blog.mjs`. It fails loudly on missing fields,
    duplicate slugs or descriptions over 160 characters.
-4. Open a pull request. The Vercel preview is the review. Merging publishes.
+5. Open a pull request. The Vercel preview is the review. Merging publishes.
 
 ## Rules for every post
 
@@ -68,6 +74,87 @@ written as HTML fragments and built by `node scripts/build-blog.mjs`
   names.
 - **Voice:** plain verbs, sentence case, no filler, no "In today's fast-paced
   world". US English.
+
+## Kambiz's ideas (Blog Desk `ideas` collection)
+
+Kambiz drops topics, titles, keywords or client questions into the "Your
+ideas" box in Blog Desk. Every run, evaluate each idea with status `new`
+before doing anything else, and give it a verdict. An idea is a suggestion,
+not an order: judge it honestly, the way an SEO editor would.
+
+**1. Turn it into a post.** Rewrite the idea as one working title and one
+target keyword: a specific 2–6 word phrase an AV pro would type into Google
+(fix spelling, drop filler). Pick the audience (O / F / I / A).
+
+**2. Check it.** Use WebSearch to see what ranks for the keyword today and
+what people ask about it. There is no search-volume data, so judge from
+evidence: real questions on forums or "People also ask", how specific the
+results are, and whether a 900–1,600 word how-to can genuinely answer it.
+Then test these, in order:
+
+- **Off-topic:** not useful to AV company owners, AV freelancers or install
+  companies → skip.
+- **Duplicate:** the keyword (or a near-identical one that would compete for
+  the same searches) is already in BLOG_TOPICS.md or posts.json → do not add
+  a second post. If the idea adds a good angle, add a line for that row
+  under "Idea notes" in BLOG_TOPICS.md and mark the idea `merged`;
+  otherwise skip.
+- **Too broad:** one or two generic words ("audio", "lighting", "AV tips"),
+  or search results dominated by big general sites for a different intent →
+  skip, and suggest a narrower angle in the note.
+- **Too thin:** the full answer fits in a paragraph or two → skip, or fold
+  it into a related topic as an FAQ item (mark `merged`).
+- **Not true for GaffDesk:** needs a feature that doesn't exist → write the
+  post without that claim if it still helps readers; otherwise skip.
+- **Risky:** tax, legal or competitor claims → allowed only on the same
+  terms as topics #17, #24 and #31.
+
+**3. Decide when.** Give it a "When" value:
+- `next` — strong, timely or clearly better than the planned topics: write
+  it at the next matching slot, ahead of the plan.
+- a window like `Nov 15–Dec 20` — seasonal (year-end budgets, holiday
+  parties, tax time, conference season). Publish inside the window, early
+  enough for Google to pick it up (aim 2–4 weeks before the peak).
+- `after #N` — builds on another post; write it after that one is live.
+- `anytime` — good but not urgent: it joins the plan in normal order.
+
+**4. Record the verdict** (ArtifactData `update` on the idea, with if_version):
+- Added → add a row to the "Added from Kambiz's ideas" table in
+  BLOG_TOPICS.md (on main) and set the idea to `status: "added"`,
+  `topic: <row #>`, `keyword`, `title`, `when`, and `note`: one plain line,
+  e.g. "Added as #37 'av load in fee' — good, specific; planned for early
+  Nov (Wed freelancer slot)."
+- Merged → `status: "merged"`, `note` naming the row it was folded into.
+- Skipped → `status: "skipped"`, `note`: why, in plain words, plus a better
+  angle if there is one, e.g. "Too broad — 'lighting' can't rank. Try
+  'how to quote uplighting for a wedding'."
+
+When a row that came from an idea gets written, set that idea to
+`status: "used"`, `usedFor: <slug>`, `note: "Post #<n> for <Day Mon DD>"`.
+
+## Picking the next topic
+
+When a slot needs a new post, choose from rows in both tables of
+BLOG_TOPICS.md that have no status, in this order:
+
+1. A row whose "When" window would close before the following matching slot.
+2. A row marked `next`.
+3. Otherwise the lowest-numbered row whose audience fits the slot
+   (Mon: O; Wed: F; Fri: I or A). If none fits, the lowest-numbered row.
+
+Skip rows marked `after #N` until post #N is live, and rows whose window
+hasn't started. Never write a row whose keyword is already used.
+
+## Discarded posts
+
+Kambiz can tap **Discard** on a post in Blog Desk (status `discard`; his
+reason, if any, is in `changeNotes`). On the next run: close its pull
+request (REST: PATCH repos/avland-app/avland-hub/pulls/<n>, state "closed"),
+leave the branch (Kambiz deletes branches), delete the database doc, and
+mark its BLOG_TOPICS.md row `discarded` on main so the keyword is not
+written again. If the reason shows a general rule, add it to this guide.
+The freed date is then filled like any empty slot. If the post came from an
+idea, set that idea back to `skipped` with the reason.
 
 ## Pull request description
 

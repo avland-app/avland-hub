@@ -84,7 +84,7 @@ for (const p of posts) {
     <p class="crumbs"><a href="/">Home</a> / <a href="/blog">Blog</a></p>
     <h1>${esc(p.title)}</h1>
     <p class="meta"><time datetime="${p.date}">${fmtDate(p.date)}</time>${p.readMinutes ? ` · ${p.readMinutes} min read` : ''}</p>
-    ${p.image ? `<img class="hero-img" src="/blog/img/${p.image}" alt="${esc(p.imageAlt || p.title)}" width="${p.imageWidth || 1600}" height="${p.imageHeight || 900}">` : ''}
+    ${p.photo ? `<img class="hero-img" src="/blog/img/${p.photo}" alt="${esc(p.photoAlt || '')}" width="${p.photoWidth || 1600}" height="${p.photoHeight || 900}">` : ''}
     <div class="prose">
 ${content}
     </div>
