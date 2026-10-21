@@ -31,6 +31,10 @@ written as HTML fragments and built by `node scripts/build-blog.mjs`
    ```
 3. Make the title card: `python3 scripts/make-card.py <slug> "<title>"`
    (writes `blog/img/<slug>.jpg`; set `"image": "<slug>.jpg"` in posts.json).
+   The title card is used only for the blog index thumbnail and social
+   sharing, never at the top of the post (the page already shows the title).
+   To show a real photo at the top of a post, set `"photo"` (plus
+   `photoAlt`, `photoWidth`, `photoHeight`).
 4. Run `node scripts/build-blog.mjs`. It fails loudly on missing fields,
    duplicate slugs or descriptions over 160 characters.
 5. Open a pull request. The Vercel preview is the review. Merging publishes.
