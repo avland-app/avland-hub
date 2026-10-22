@@ -28,6 +28,41 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-installation-quote",
+      "title": "How to price an AV installation by room",
+      "description": "Price an AV installation room by room: scope the space, split equipment, materials, labor and programming, add contingency, and set change-order rules.",
+      "keyword": "av installation quote",
+      "date": "2026-10-30",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-installation-quote.jpg",
+      "imageAlt": "How to price an AV installation by room",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "Should I charge for the site visit?",
+          "a": "Many installers do, and credit it against the project if the client signs. Whatever you choose, state it in writing before you go."
+        },
+        {
+          "q": "How much contingency should I add?",
+          "a": "There is no standard figure. Use a percentage you can defend from your own past jobs, and show it as its own line so the client sees it is deliberate."
+        },
+        {
+          "q": "Should I give one price per room or an itemized quote?",
+          "a": "Give both: an itemized breakdown for the technical reader and a room total for whoever signs. The itemized version also protects you when scope changes."
+        },
+        {
+          "q": "Can I reuse a quote from a similar room?",
+          "a": "Yes, as a starting point. Copy it, then check the room against your scope list so you do not carry over assumptions that no longer apply."
+        }
+      ],
+      "cta": "Build room-by-room install quotes from your own item library. 7 days free, no card needed."
     }
   ]
 }
