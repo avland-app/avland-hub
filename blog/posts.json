@@ -28,6 +28,34 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-equipment-rental-rates",
+      "title": "Setting day rates for AV rental gear",
+      "description": "How to set a day rate for AV rental gear you own: work from payback and real utilization, then check it against your market.",
+      "keyword": "av equipment rental rates",
+      "date": "2026-11-02",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-equipment-rental-rates.jpg",
+      "imageAlt": "Setting day rates for AV rental gear",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "faq": [
+        {
+          "q": "How do I set a day rate for AV equipment I own?",
+          "a": "Add up the full cost of the item and its accessories, choose a target return and useful life, estimate how many days a year it will realistically rent, and divide. Then compare the result with what other rental houses in your market charge."
+        },
+        {
+          "q": "Is there a standard percentage of purchase price for a day rate?",
+          "a": "No. Percentage rules of thumb exist, but they ignore utilization and lifespan. Use them only as a quick sanity check on the number you calculate."
+        },
+        {
+          "q": "How often should I update my rental rates?",
+          "a": "Review them once or twice a year against your actual days out, repair costs and what the market is charging, and update the items that have drifted."
+        }
+      ],
+      "cta": "Keep your rental rates in one item library and quote from it. 7 days free, no card needed."
     }
   ]
 }
