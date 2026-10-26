@@ -6,7 +6,7 @@
       "title": "The freelance AV invoice: what to include",
       "description": "What to put on an AV freelancer invoice: gig details, line items, overtime, expenses and payment terms, so AV companies pay without questions.",
       "keyword": "av freelancer invoice template",
-      "date": "2026-10-23",
+      "date": "2026-10-26",
       "published": true,
       "readMinutes": 5,
       "image": "freelance-av-invoice.jpg",
@@ -35,6 +35,34 @@
         }
       ],
       "cta": "Send your next gig invoice from saved rates and clients. 7 days free, no card needed."
+    },
+    {
+      "slug": "how-to-write-an-av-quote",
+      "title": "How to write an AV quote clients approve",
+      "description": "The structure of a clear AV quote, from event details to labor and terms, and the details that get quotes approved faster.",
+      "keyword": "av quote template",
+      "date": "2026-10-22",
+      "published": true,
+      "readMinutes": 6,
+      "image": "how-to-write-an-av-quote.jpg",
+      "imageAlt": "How to write an AV quote clients approve",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "faq": [
+        {
+          "q": "What should an AV quote include?",
+          "a": "Your company details, client and event details, equipment grouped by category with quantities and rental days, labor lines with hours, delivery and setup, discount, tax and total, deposit and payment terms, and notes such as the cancellation policy."
+        },
+        {
+          "q": "Should labor be separate from equipment on an AV quote?",
+          "a": "Yes. Separate labor lines with hours make the quote easier to compare and prevent disputes about overtime after the event."
+        },
+        {
+          "q": "How do I handle changes to a quote?",
+          "a": "Save each change as a new revision instead of overwriting the original. That way you always know which version the client approved."
+        }
+      ],
+      "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
     }
   ]
 }
