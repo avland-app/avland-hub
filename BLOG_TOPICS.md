@@ -11,8 +11,8 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | # | Week | Day | Aud | Working title | Target keyword | Real detail to ask Kambiz | Status |
 |---|---|---|---|---|---|---|---|
 | 1 | 1 | Mon | O | How to write an AV quote clients approve | av quote template | A real quote structure you send (sections, order) | done |
-| 2 | 1 | Wed | F | The freelance AV invoice: what to include | av freelancer invoice template | What you put on your own freelance invoices | in review |
-| 3 | 1 | Fri | A | How to calculate overtime for AV crew calls | av crew overtime | A typical call: hours, rate, how you split OT/DT | in review |
+| 2 | 1 | Wed | F | The freelance AV invoice: what to include | av freelancer invoice template | What you put on your own freelance invoices | done |
+| 3 | 1 | Fri | A | How to calculate overtime for AV crew calls | av crew overtime | A typical call: hours, rate, how you split OT/DT | done |
 | 4 | 2 | Mon | O | Setting day rates for AV rental gear | av equipment rental rates | How you price a piece of gear you own (e.g. E2) | in review |
 | 5 | 2 | Wed | F | How to invoice an AV company as a freelance tech | how to invoice as a freelance av tech | A billing mistake you've seen or made | in review |
 | 6 | 2 | Fri | I | How to price an AV installation by room | av installation quote | A room you've scoped: what went in it | in review |
