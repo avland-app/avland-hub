@@ -99,6 +99,42 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-freelancer-day-rate",
+      "title": "Day rate or hourly? Pricing AV freelance work",
+      "description": "Day rate or hourly for AV freelance work? How each works, when to use which, a side-by-side example and what to put in writing.",
+      "keyword": "av freelancer day rate",
+      "date": "2026-11-04",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-freelancer-day-rate.jpg",
+      "imageAlt": "Day rate or hourly? Pricing AV freelance work",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-crew-overtime-calculation",
+        "freelance-av-invoice"
+      ],
+      "faq": [
+        {
+          "q": "Should an AV freelancer charge a day rate or an hourly rate?",
+          "a": "Use a day rate for full show days and installs with a fixed call, and an hourly rate with a minimum for short or open-ended work. State what the rate covers either way."
+        },
+        {
+          "q": "How do you convert a day rate to an hourly rate?",
+          "a": "Divide the day rate by the hours it covers. A $600 day covering 10 hours is $60 an hour."
+        },
+        {
+          "q": "What is a half-day rate in AV?",
+          "a": "A half-day rate is a lower flat price for a short call, often 4 to 5 hours. Many freelancers use it as the minimum call so a short booking still pays fairly."
+        },
+        {
+          "q": "Do I need to write down my rate?",
+          "a": "Yes. Put the rate, the hours it covers, the minimum call and your overtime start time in the booking email or invoice terms so everyone agrees before the call."
+        }
+      ],
+      "cta": "Save your rates once and bill hours with overtime split for you. 7 days free, no card needed."
     }
   ]
 }
