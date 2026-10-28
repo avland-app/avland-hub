@@ -10,14 +10,14 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 
 | # | Week | Day | Aud | Working title | Target keyword | Real detail to ask Kambiz | Status |
 |---|---|---|---|---|---|---|---|
-| 1 | 1 | Mon | O | How to write an AV quote clients approve | av quote template | A real quote structure you send (sections, order) | in review |
-| 2 | 1 | Wed | F | The freelance AV invoice: what to include | av freelancer invoice template | What you put on your own freelance invoices | in review |
-| 3 | 1 | Fri | A | How to calculate overtime for AV crew calls | av crew overtime | A typical call: hours, rate, how you split OT/DT | in review |
-| 4 | 2 | Mon | O | Setting day rates for AV rental gear | av equipment rental rates | How you price a piece of gear you own (e.g. E2) | |
+| 1 | 1 | Mon | O | How to write an AV quote clients approve | av quote template | A real quote structure you send (sections, order) | done |
+| 2 | 1 | Wed | F | The freelance AV invoice: what to include | av freelancer invoice template | What you put on your own freelance invoices | done |
+| 3 | 1 | Fri | A | How to calculate overtime for AV crew calls | av crew overtime | A typical call: hours, rate, how you split OT/DT | done |
+| 4 | 2 | Mon | O | Setting day rates for AV rental gear | av equipment rental rates | How you price a piece of gear you own (e.g. E2) | in review |
 | 5 | 2 | Wed | F | How to invoice an AV company as a freelance tech | how to invoice as a freelance av tech | A billing mistake you've seen or made | in review |
-| 6 | 2 | Fri | I | How to price an AV installation by room | av installation quote | A room you've scoped: what went in it | |
+| 6 | 2 | Fri | I | How to price an AV installation by room | av installation quote | A room you've scoped: what went in it | in review |
 | 7 | 3 | Mon | O | Multi-day AV rentals: how to price day 2 and 3 | multi day av rental pricing | Your own day-2/day-3 rule | |
-| 8 | 3 | Wed | F | Day rate or hourly? Pricing AV freelance work | av freelancer day rate | Which you use and why | |
+| 8 | 3 | Wed | F | Day rate or hourly? Pricing AV freelance work | av freelancer day rate | Which you use and why | in review |
 | 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | |
 | 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | |
 | 11 | 4 | Wed | F | Parking, travel and kit fees on a freelance invoice | freelance av invoice expenses | Expenses you add and how you word them | |

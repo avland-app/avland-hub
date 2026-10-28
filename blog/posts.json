@@ -35,6 +35,105 @@
         }
       ],
       "cta": "Invoice your next gig from saved rates and clients. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-crew-overtime-calculation",
+      "title": "How to calculate overtime for AV crew calls",
+      "description": "How to calculate AV crew overtime and double time from a day rate, what to agree before the call, and how to quote it so clients aren't surprised.",
+      "keyword": "av crew overtime",
+      "date": "2026-10-26",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-crew-overtime-calculation.jpg",
+      "imageAlt": "How to calculate overtime for AV crew calls",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote",
+        "freelance-av-invoice"
+      ],
+      "faq": [
+        {
+          "q": "How do you calculate overtime on a day rate?",
+          "a": "Divide the day rate by the number of hours it covers to get the hourly base. Overtime hours are paid at 1.5 times that base and double-time hours at 2 times. A $600 day covering 10 hours gives $90 an hour for overtime and $120 for double time."
+        },
+        {
+          "q": "When does overtime start for AV crew?",
+          "a": "For freelancers, when your agreement says it does, often after the hours the day rate covers. For employees, the law sets the minimum: after 40 hours a week federally, and in some states, such as California, also after 8 hours in a day."
+        },
+        {
+          "q": "What is double time for AV crew?",
+          "a": "Double time is pay at 2 times the hourly base for very long days. When it starts is set by your crew rules; 12 hours is a common threshold. California requires it for non-exempt employees after 12 hours in a workday."
+        },
+        {
+          "q": "Should overtime be on the quote?",
+          "a": "Yes. Quote the hours the crew will really work, put overtime on its own lines, and state your overtime terms in the notes so the final invoice matches what the client approved."
+        }
+      ],
+      "cta": "Enter crew hours and let GaffDesk split overtime and double time. 7 days free, no card needed."
+    },
+    {
+      "slug": "freelance-av-invoice",
+      "title": "The freelance AV invoice: what to include",
+      "description": "What to put on an AV freelancer invoice: gig details, line items, overtime, expenses and payment terms, so AV companies pay without questions.",
+      "keyword": "av freelancer invoice template",
+      "date": "2026-10-26",
+      "published": true,
+      "readMinutes": 5,
+      "image": "freelance-av-invoice.jpg",
+      "imageAlt": "The freelance AV invoice: what to include",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "What should a freelance AV invoice include?",
+          "a": "Your name and contact details, the AV company and contact you're billing, an invoice number and date, the event, venue, show dates and your position, one line per charge with quantity and rate, the total, and your payment terms and payment method."
+        },
+        {
+          "q": "Should I bill overtime on a separate line?",
+          "a": "Yes. Put overtime on its own line with the date and hours, and note on the day-rate line how many hours the day rate covers. That way the company can check it against the call times."
+        },
+        {
+          "q": "Do I need to send a W-9 with my invoice?",
+          "a": "Most US companies ask independent contractors for a Form W-9 before paying them the first time. Sending it with your first invoice to a new company avoids a delay. Ask your accountant about your own tax situation."
+        },
+        {
+          "q": "When should I send the invoice?",
+          "a": "As soon as the gig wraps, ideally within a day or two. Invoices sent while the show is fresh are easier for the company to match and approve."
+        }
+      ],
+      "cta": "Send your next gig invoice from saved rates and clients. 7 days free, no card needed."
+    },
+    {
+      "slug": "how-to-write-an-av-quote",
+      "title": "How to write an AV quote clients approve",
+      "description": "The structure of a clear AV quote, from event details to labor and terms, and the details that get quotes approved faster.",
+      "keyword": "av quote template",
+      "date": "2026-10-22",
+      "published": true,
+      "readMinutes": 6,
+      "image": "how-to-write-an-av-quote.jpg",
+      "imageAlt": "How to write an AV quote clients approve",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "faq": [
+        {
+          "q": "What should an AV quote include?",
+          "a": "Your company details, client and event details, equipment grouped by category with quantities and rental days, labor lines with hours, delivery and setup, discount, tax and total, deposit and payment terms, and notes such as the cancellation policy."
+        },
+        {
+          "q": "Should labor be separate from equipment on an AV quote?",
+          "a": "Yes. Separate labor lines with hours make the quote easier to compare and prevent disputes about overtime after the event."
+        },
+        {
+          "q": "How do I handle changes to a quote?",
+          "a": "Save each change as a new revision instead of overwriting the original. That way you always know which version the client approved."
+        }
+      ],
+      "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
     }
   ]
 }
