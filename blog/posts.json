@@ -134,6 +134,41 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-pull-sheet",
+      "title": "What an AV pull sheet is and how to make one",
+      "description": "What an AV pull sheet is, what goes on every line, and how to build one from the approved quote so nothing gets left behind.",
+      "keyword": "av pull sheet",
+      "date": "2026-11-06",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-pull-sheet.jpg",
+      "imageAlt": "What an AV pull sheet is and how to make one",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "What is an AV pull sheet?",
+          "a": "A pull sheet is a checklist of every item to pull from the warehouse, test and load for a job, with quantities, locations and case assignments. It's the crew's version of the quote."
+        },
+        {
+          "q": "What's the difference between a pull sheet and a pack list?",
+          "a": "The terms overlap, and shops use them differently. Many use pull sheet for the list of gear to take from the shelf, and pack list or load list for what goes in each case or truck. Pick one meaning and stay consistent."
+        },
+        {
+          "q": "Should a pull sheet include spares?",
+          "a": "Yes. List batteries, cables, adapters and consumables as their own section so they're pulled on purpose, not if there's room."
+        },
+        {
+          "q": "Who should make the pull sheet?",
+          "a": "Whoever owns the quote should generate it from the approved version. Building it separately is what lets the two drift apart."
+        }
+      ],
+      "cta": "Quote your next job from your own gear list. 7 days free, no card needed."
     }
   ]
 }
