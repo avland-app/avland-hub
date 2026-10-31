@@ -18,7 +18,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 6 | 2 | Fri | I | How to price an AV installation by room | av installation quote | A room you've scoped: what went in it | in review |
 | 7 | 3 | Mon | O | Multi-day AV rentals: how to price day 2 and 3 | multi day av rental pricing | Your own day-2/day-3 rule | |
 | 8 | 3 | Wed | F | Day rate or hourly? Pricing AV freelance work | av freelancer day rate | Which you use and why | in review |
-| 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | |
+| 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | in review |
 | 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | |
 | 11 | 4 | Wed | F | Parking, travel and kit fees on a freelance invoice | freelance av invoice expenses | Expenses you add and how you word them | |
 | 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | |
