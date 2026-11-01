@@ -134,6 +134,36 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "multi-day-av-rental-pricing",
+      "title": "Multi-day AV rentals: how to price day 2 and 3",
+      "description": "Multi day AV rental pricing: how to charge day 2, day 3 and a full week, with a worked example and how to show the rule on your quote.",
+      "keyword": "multi day av rental pricing",
+      "date": "2026-11-09",
+      "published": true,
+      "readMinutes": 5,
+      "image": "multi-day-av-rental-pricing.jpg",
+      "imageAlt": "Multi-day AV rentals: how to price day 2 and 3",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "How do you price day 2 and day 3 of an AV rental?",
+          "a": "Charge the full rate on day 1, then a set percentage of it on each extra day, often 50% to 75% depending on how fast the gear can be rebooked. Write the percentage on the quote."
+        },
+        {
+          "q": "Should every item get the same multi-day discount?",
+          "a": "No. Gear that is in constant demand can stay at a flat day rate, while specialty gear that rarely goes out can carry a deeper discount to win the booking. Group your items and set a rule for each group."
+        },
+        {
+          "q": "What is a weekly rate for AV equipment?",
+          "a": "A weekly rate is a cap on the total for a seven-day rental, written as a multiple of the day rate. Some published schedules use 3.5 times the day rate; yours should reflect how often the item is booked."
+        }
+      ]
     }
   ]
 }
