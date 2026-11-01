@@ -167,7 +167,11 @@ post also gets a social set, made from the post's own content.
   idea each: heading under 10 words, body under 30 words, taken from the
   post), last slide `cta` ("Link in bio · gaffdesk.com/blog"). Text and
   brand only: no AI-generated images, no stock photos, no invented numbers.
-  `blog/social/` is git-ignored; the slides live only in Blog Desk.
+  The script writes the public copies to `social/<slug>/<n>.jpg`: commit
+  them in the post's pull request (they go live with the post, at
+  `https://gaffdesk.com/social/<slug>/<n>.jpg`, which is what Buffer posts).
+  If a revision changes the slide count, commit the removals too.
+  `blog/social/` (the Blog Desk JSON) stays git-ignored.
 - **Upload the slides** to Blog Desk collection `slides`: one doc per slide,
   doc id `<slug>-<n>`, from the `blog/social/<slug>/db/<n>.json` files
   (ArtifactData batch with file_path). Delete any old `<slug>-<n>` docs
@@ -183,7 +187,19 @@ post also gets a social set, made from the post's own content.
   caption so they still match.
 - **Storage:** slides sit in the Blog Desk database (100 MB cap). Delete
   the `slides` docs of any post published more than 30 days ago; the post
-  doc keeps its caption.
+  doc keeps its caption. Never delete the committed `social/<slug>/` images:
+  posts already scheduled in Buffer point at them.
+
+## Social auto-posting (Buffer)
+
+A separate daily scheduled task sends each newly published post to Buffer.
+It only reads the post doc and the committed `social/<slug>/` images, so
+keep these right: `socialCaption`, `linkedinPage`, `linkedinPersonal`,
+`liveUrl`, and the slide images. When it has queued a post it writes
+`buffer: {queuedAt, posts: {<channel>: <buffer post id>}}` on the post doc;
+a post with a `buffer` field is never sent again. Don't remove or edit that
+field. LinkedIn texts may say "link in comments": the task puts `liveUrl`
+in the first comment.
 
 ## Pull request description
 
