@@ -12,9 +12,11 @@ slides.json:
   ]
 }
 
-Writes blog/social/<slug>/<n>.jpg and blog/social/<slug>/db/<n>.json
-(the Blog Desk `slides` docs: {post, n, image: data-URL}). blog/social/ is
-git-ignored: slides live in Blog Desk, not on the website. Requires Pillow.
+Writes social/<slug>/<n>.jpg (committed with the post, served at
+https://gaffdesk.com/social/<slug>/<n>.jpg so Buffer can post them) and
+blog/social/<slug>/db/<n>.json (the Blog Desk `slides` docs:
+{post, n, total, url, image: data-URL}; blog/social/ is git-ignored).
+Requires Pillow.
 Text only, brand colors, real logo: never AI-generated images.
 """
 import sys, os, json, base64, io
@@ -156,13 +158,20 @@ def main(slug, spec_path):
     if slides[0].get('kind') != 'cover' or slides[-1].get('kind') != 'cta':
         raise SystemExit('First slide must be "cover", last must be "cta".')
     out = os.path.join(ROOT, 'blog', 'social', slug)
+    pub = os.path.join(ROOT, 'social', slug)
     os.makedirs(os.path.join(out, 'db'), exist_ok=True)
+    os.makedirs(pub, exist_ok=True)
     total = len(slides)
+    for old in os.listdir(pub):  # drop slides left over from a longer set
+        if old.endswith('.jpg') and old[:-4].isdigit() and int(old[:-4]) > total:
+            os.remove(os.path.join(pub, old))
     for i, s in enumerate(slides, 1):
         im = {'cover': cover, 'tip': tip, 'cta': cta}[s.get('kind', 'tip')](s, i, total)
         data = jpeg_bytes(im)
         open(os.path.join(out, f'{i}.jpg'), 'wb').write(data)
+        open(os.path.join(pub, f'{i}.jpg'), 'wb').write(data)
         doc = {'post': slug, 'n': i, 'total': total,
+               'url': f'https://gaffdesk.com/social/{slug}/{i}.jpg',
                'image': 'data:image/jpeg;base64,' + base64.b64encode(data).decode()}
         json.dump(doc, open(os.path.join(out, 'db', f'{i}.json'), 'w'))
         print(f'{out}/{i}.jpg', len(data) // 1024, 'KB')
