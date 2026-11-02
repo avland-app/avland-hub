@@ -2,6 +2,69 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "av-equipment-rental-rates",
+      "title": "Setting day rates for AV rental gear",
+      "description": "How to set a day rate for AV rental gear you own: work from payback and real utilization, then check it against your market.",
+      "keyword": "av equipment rental rates",
+      "date": "2026-11-02",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-equipment-rental-rates.jpg",
+      "imageAlt": "Setting day rates for AV rental gear",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "faq": [
+        {
+          "q": "How do I set a day rate for AV equipment I own?",
+          "a": "Add up the full cost of the item and its accessories, choose a target return and useful life, estimate how many days a year it will realistically rent, and divide. Then compare the result with what other rental houses in your market charge."
+        },
+        {
+          "q": "Is there a standard percentage of purchase price for a day rate?",
+          "a": "No. Percentage rules of thumb exist, but they ignore utilization and lifespan. Use them only as a quick sanity check on the number you calculate."
+        },
+        {
+          "q": "How often should I update my rental rates?",
+          "a": "Review them once or twice a year against your actual days out, repair costs and what the market is charging, and update the items that have drifted."
+        }
+      ],
+      "cta": "Keep your rental rates in one item library and quote from it. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-installation-quote",
+      "title": "How to price an AV installation by room",
+      "description": "Price an AV installation room by room: scope the space, split equipment, materials, labor and programming, add contingency, and set change-order rules.",
+      "keyword": "av installation quote",
+      "date": "2026-11-02",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-installation-quote.jpg",
+      "imageAlt": "How to price an AV installation by room",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "Should I charge for the site visit?",
+          "a": "Many installers do, and credit it against the project if the client signs. Whatever you choose, state it in writing before you go."
+        },
+        {
+          "q": "How much contingency should I add?",
+          "a": "There is no standard figure. Use a percentage you can defend from your own past jobs, and show it as its own line so the client sees it is deliberate."
+        },
+        {
+          "q": "Should I give one price per room or an itemized quote?",
+          "a": "Give both: an itemized breakdown for the technical reader and a room total for whoever signs. The itemized version also protects you when scope changes."
+        },
+        {
+          "q": "Can I reuse a quote from a similar room?",
+          "a": "Yes, as a starting point. Copy it, then check the room against your scope list so you do not carry over assumptions that no longer apply."
+        }
+      ],
+      "cta": "Build room-by-room install quotes from your own item library. 7 days free, no card needed."
+    },
+    {
       "slug": "how-to-invoice-as-a-freelance-av-tech",
       "title": "How to invoice an AV company as a freelance tech",
       "description": "How to invoice as a freelance AV tech: billing details to get before the gig, what to send after strike, and how to follow up when payment is late.",
@@ -134,41 +197,6 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
-    },
-    {
-      "slug": "av-installation-quote",
-      "title": "How to price an AV installation by room",
-      "description": "Price an AV installation room by room: scope the space, split equipment, materials, labor and programming, add contingency, and set change-order rules.",
-      "keyword": "av installation quote",
-      "date": "2026-11-02",
-      "published": true,
-      "readMinutes": 6,
-      "image": "av-installation-quote.jpg",
-      "imageAlt": "How to price an AV installation by room",
-      "imageWidth": 1600,
-      "imageHeight": 900,
-      "related": [
-        "how-to-write-an-av-quote"
-      ],
-      "faq": [
-        {
-          "q": "Should I charge for the site visit?",
-          "a": "Many installers do, and credit it against the project if the client signs. Whatever you choose, state it in writing before you go."
-        },
-        {
-          "q": "How much contingency should I add?",
-          "a": "There is no standard figure. Use a percentage you can defend from your own past jobs, and show it as its own line so the client sees it is deliberate."
-        },
-        {
-          "q": "Should I give one price per room or an itemized quote?",
-          "a": "Give both: an itemized breakdown for the technical reader and a room total for whoever signs. The itemized version also protects you when scope changes."
-        },
-        {
-          "q": "Can I reuse a quote from a similar room?",
-          "a": "Yes, as a starting point. Copy it, then check the room against your scope list so you do not carry over assumptions that no longer apply."
-        }
-      ],
-      "cta": "Build room-by-room install quotes from your own item library. 7 days free, no card needed."
     }
   ]
 }
