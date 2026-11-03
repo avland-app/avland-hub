@@ -197,6 +197,38 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-quoting-spreadsheet",
+      "title": "Spreadsheet vs software for AV quoting",
+      "description": "When a spreadsheet is enough for AV quotes, where Excel and Google Sheets break down, and how to decide when to switch.",
+      "keyword": "av quoting spreadsheet",
+      "date": "2026-11-13",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-quoting-spreadsheet.jpg",
+      "imageAlt": "Spreadsheet vs software for AV quoting",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote",
+        "av-crew-overtime-calculation"
+      ],
+      "faq": [
+        {
+          "q": "Is a spreadsheet good enough for AV quoting?",
+          "a": "For a small number of similar jobs, yes. It stops being good enough when you revise quotes often, calculate crew overtime by hand, or retype quotes into invoices."
+        },
+        {
+          "q": "What are the biggest risks of quoting in Excel or Google Sheets?",
+          "a": "Stale prices in copied files, formula errors that nobody notices, overtime calculated inconsistently, and lost earlier versions of a quote."
+        },
+        {
+          "q": "Can I fix a spreadsheet instead of switching?",
+          "a": "Partly. Keep one locked price tab, pull prices with lookup formulas, and save every revision under a clear name. It takes discipline, and it still won't turn the approved quote into an invoice for you."
+        }
+      ],
+      "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
     }
   ]
 }
