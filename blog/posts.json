@@ -233,6 +233,42 @@
         }
       ],
       "cta": "Save your rates once and bill hours with overtime split for you. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-sub-rental",
+      "title": "Quoting gear you don't own: sub-rentals done right",
+      "description": "AV sub rental explained: when to sub-rent gear, how to mark it up, what to confirm with the vendor and how to show it on the quote.",
+      "keyword": "av sub rental",
+      "date": "2026-11-16",
+      "published": true,
+      "readMinutes": 4,
+      "image": "av-sub-rental.jpg",
+      "imageAlt": "Quoting gear you don't own: sub-rentals done right",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-equipment-rental-rates",
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "What is a sub-rental in AV?",
+          "a": "A sub-rental is equipment you rent from another company and supply to your own client, usually because you do not own it or your stock is already booked."
+        },
+        {
+          "q": "How much should I mark up sub-rented gear?",
+          "a": "There is no standard figure. Many shops use cost plus a percentage and add a handling fee on small items. Set yours so it covers pickup, prep, testing and the risk of damage."
+        },
+        {
+          "q": "Should the client see the vendor's price?",
+          "a": "No. The client buys the item from you at your price. Keep the vendor's cost on your internal sheet."
+        },
+        {
+          "q": "Who is responsible if sub-rented gear fails on site?",
+          "a": "You are, from the client's point of view. Confirm the vendor's damage, loss and replacement terms in writing before the show."
+        }
+      ],
+      "cta": "Keep your rates in one library and send the quote as a PDF in minutes."
     }
   ]
 }
