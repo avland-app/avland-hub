@@ -2,6 +2,42 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "av-freelancer-payment-terms",
+      "title": "Payment terms that get AV freelancers paid faster",
+      "description": "Payment terms for AV freelancers: what to write, which phrases stall payment, what California requires, and how to follow up on late invoices.",
+      "keyword": "av freelancer payment terms",
+      "date": "2026-11-18",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-freelancer-payment-terms.jpg",
+      "imageAlt": "Payment terms that get AV freelancers paid faster",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "freelance-av-invoice",
+        "how-to-invoice-as-a-freelance-av-tech"
+      ],
+      "faq": [
+        {
+          "q": "What payment terms should an AV freelancer use?",
+          "a": "Net 15 or Net 30 from the invoice date, stated in your booking message and repeated on the invoice. Shorter is better, and Net 15 is a reasonable first ask."
+        },
+        {
+          "q": "How long does a company have to pay a freelancer in California?",
+          "a": "Under California's Freelance Worker Protection Act, for covered contracts, the company pays on the date in the contract, or within 30 days of finishing the work if the contract names no date. Check the law's text and ask a professional how it applies to you."
+        },
+        {
+          "q": "Should I charge a late fee?",
+          "a": "You can, but only if you stated it before the job. Many freelancers skip fees and rely on short terms and a clear follow-up schedule instead."
+        },
+        {
+          "q": "When should I send the invoice?",
+          "a": "Within a day of your last show day. The payment clock usually starts when the invoice is received, so every day you wait is a day added to your wait."
+        }
+      ],
+      "cta": "Save your rates and clients once and send clean invoices fast. 7 days free, no card needed."
+    },
+    {
       "slug": "av-equipment-rental-rates",
       "title": "Setting day rates for AV rental gear",
       "description": "How to set a day rate for AV rental gear you own: work from payback and real utilization, then check it against your market.",
