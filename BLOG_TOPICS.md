@@ -30,7 +30,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 18 | 6 | Fri | O | How to quote a corporate event AV package | corporate event av quote | A typical breakout + general session setup | |
 | 19 | 7 | Mon | O | AV kits: bundle gear so nothing gets left off | av equipment kits | One kit you always send together | |
 | 20 | 7 | Wed | F | Tracking unpaid invoices as a freelancer | track unpaid invoices freelancer | How you follow up on late payments | |
-| 21 | 7 | Fri | I | From approved install quote to material list | av installation material list | Materials that are easy to forget | |
+| 21 | 7 | Fri | I | From approved install quote to material list | av installation material list | Materials that are easy to forget | in review |
 | 22 | 8 | Mon | O | Deposits and cancellation terms for AV rentals | av rental deposit policy | Your deposit % and cancellation rule | |
 | 23 | 8 | Wed | F | How much to charge as an AV technician | freelance av technician rates | Bay Area range you've seen (no names) | |
 | 24 | 8 | Fri | O | Rental software for small AV companies compared | av rental software small business | What you tried before building GaffDesk | |
