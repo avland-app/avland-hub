@@ -268,6 +268,41 @@
         }
       ],
       "cta": "Save your rates once and bill hours with overtime split for you. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-installation-material-list",
+      "title": "From approved install quote to material list",
+      "description": "Turn an approved AV install quote into a material list: five questions per device, the small parts people forget, cable types and spares.",
+      "keyword": "av installation material list",
+      "date": "2026-11-20",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-installation-material-list.jpg",
+      "imageAlt": "From approved install quote to material list",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-installation-quote",
+        "av-pull-sheet"
+      ],
+      "faq": [
+        {
+          "q": "What goes on an AV installation material list?",
+          "a": "Everything needed to mount, power, connect, route and label the equipment: mounts, fasteners, cable, connectors, plates, power items, rack hardware, conduit or pathway, firestop, labels and consumables."
+        },
+        {
+          "q": "How is a material list different from an equipment list?",
+          "a": "The equipment list is the gear the client is buying, such as displays, DSPs and cameras. The material list is the supporting parts that make it work in the building."
+        },
+        {
+          "q": "How much extra should I order?",
+          "a": "There is no standard figure. Use an allowance based on your own past jobs for cheap, high-use parts, and order exact counts for expensive items."
+        },
+        {
+          "q": "Do I need plenum-rated cable?",
+          "a": "If the cable runs through an air-handling space such as a return-air ceiling, it generally has to be a listed plenum type. Confirm with the current electrical code and your local authority."
+        }
+      ]
     }
   ]
 }
