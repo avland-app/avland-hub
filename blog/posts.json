@@ -2,6 +2,69 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "av-equipment-rental-rates",
+      "title": "Setting day rates for AV rental gear",
+      "description": "How to set a day rate for AV rental gear you own: work from payback and real utilization, then check it against your market.",
+      "keyword": "av equipment rental rates",
+      "date": "2026-11-02",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-equipment-rental-rates.jpg",
+      "imageAlt": "Setting day rates for AV rental gear",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "faq": [
+        {
+          "q": "How do I set a day rate for AV equipment I own?",
+          "a": "Add up the full cost of the item and its accessories, choose a target return and useful life, estimate how many days a year it will realistically rent, and divide. Then compare the result with what other rental houses in your market charge."
+        },
+        {
+          "q": "Is there a standard percentage of purchase price for a day rate?",
+          "a": "No. Percentage rules of thumb exist, but they ignore utilization and lifespan. Use them only as a quick sanity check on the number you calculate."
+        },
+        {
+          "q": "How often should I update my rental rates?",
+          "a": "Review them once or twice a year against your actual days out, repair costs and what the market is charging, and update the items that have drifted."
+        }
+      ],
+      "cta": "Keep your rental rates in one item library and quote from it. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-installation-quote",
+      "title": "How to price an AV installation by room",
+      "description": "Price an AV installation room by room: scope the space, split equipment, materials, labor and programming, add contingency, and set change-order rules.",
+      "keyword": "av installation quote",
+      "date": "2026-11-02",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-installation-quote.jpg",
+      "imageAlt": "How to price an AV installation by room",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "Should I charge for the site visit?",
+          "a": "Many installers do, and credit it against the project if the client signs. Whatever you choose, state it in writing before you go."
+        },
+        {
+          "q": "How much contingency should I add?",
+          "a": "There is no standard figure. Use a percentage you can defend from your own past jobs, and show it as its own line so the client sees it is deliberate."
+        },
+        {
+          "q": "Should I give one price per room or an itemized quote?",
+          "a": "Give both: an itemized breakdown for the technical reader and a room total for whoever signs. The itemized version also protects you when scope changes."
+        },
+        {
+          "q": "Can I reuse a quote from a similar room?",
+          "a": "Yes, as a starting point. Copy it, then check the room against your scope list so you do not carry over assumptions that no longer apply."
+        }
+      ],
+      "cta": "Build room-by-room install quotes from your own item library. 7 days free, no card needed."
+    },
+    {
       "slug": "how-to-invoice-as-a-freelance-av-tech",
       "title": "How to invoice an AV company as a freelance tech",
       "description": "How to invoice as a freelance AV tech: billing details to get before the gig, what to send after strike, and how to follow up when payment is late.",
@@ -134,6 +197,77 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-pull-sheet",
+      "title": "What an AV pull sheet is and how to make one",
+      "description": "What an AV pull sheet is, what goes on every line, and how to build one from the approved quote so nothing gets left behind.",
+      "keyword": "av pull sheet",
+      "date": "2026-11-06",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-pull-sheet.jpg",
+      "imageAlt": "What an AV pull sheet is and how to make one",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "What is an AV pull sheet?",
+          "a": "A pull sheet is a checklist of every item to pull from the warehouse, test and load for a job, with quantities, locations and case assignments. It's the crew's version of the quote."
+        },
+        {
+          "q": "What's the difference between a pull sheet and a pack list?",
+          "a": "The terms overlap, and shops use them differently. Many use pull sheet for the list of gear to take from the shelf, and pack list or load list for what goes in each case or truck. Pick one meaning and stay consistent."
+        },
+        {
+          "q": "Should a pull sheet include spares?",
+          "a": "Yes. List batteries, cables, adapters and consumables as their own section so they're pulled on purpose, not if there's room."
+        },
+        {
+          "q": "Who should make the pull sheet?",
+          "a": "Whoever owns the quote should generate it from the approved version. Building it separately is what lets the two drift apart."
+        }
+      ],
+      "cta": "Quote your next job from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-freelancer-day-rate",
+      "title": "Day rate or hourly? Pricing AV freelance work",
+      "description": "Day rate or hourly for AV freelance work? How each works, when to use which, a side-by-side example and what to put in writing.",
+      "keyword": "av freelancer day rate",
+      "date": "2026-11-04",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-freelancer-day-rate.jpg",
+      "imageAlt": "Day rate or hourly? Pricing AV freelance work",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-crew-overtime-calculation",
+        "freelance-av-invoice"
+      ],
+      "faq": [
+        {
+          "q": "Should an AV freelancer charge a day rate or an hourly rate?",
+          "a": "Use a day rate for full show days and installs with a fixed call, and an hourly rate with a minimum for short or open-ended work. State what the rate covers either way."
+        },
+        {
+          "q": "How do you convert a day rate to an hourly rate?",
+          "a": "Divide the day rate by the hours it covers. A $600 day covering 10 hours is $60 an hour."
+        },
+        {
+          "q": "What is a half-day rate in AV?",
+          "a": "A half-day rate is a lower flat price for a short call, often 4 to 5 hours. Many freelancers use it as the minimum call so a short booking still pays fairly."
+        },
+        {
+          "q": "Do I need to write down my rate?",
+          "a": "Yes. Put the rate, the hours it covers, the minimum call and your overtime start time in the booking email or invoice terms so everyone agrees before the call."
+        }
+      ],
+      "cta": "Save your rates once and bill hours with overtime split for you. 7 days free, no card needed."
     },
     {
       "slug": "multi-day-av-rental-pricing",
