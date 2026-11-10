@@ -298,6 +298,36 @@
           "a": "A weekly rate is a cap on the total for a seven-day rental, written as a multiple of the day rate. Some published schedules use 3.5 times the day rate; yours should reflect how often the item is booked."
         }
       ]
+    },
+    {
+      "slug": "av-equipment-availability",
+      "title": "How to stop double-booking AV gear",
+      "description": "AV equipment availability: how to block the real rental window, count quantities per date and check gear before you quote, so shows never overlap.",
+      "keyword": "av equipment availability",
+      "date": "2026-11-23",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-equipment-availability.jpg",
+      "imageAlt": "How to stop double-booking AV gear",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "How do you stop double-booking AV equipment?",
+          "a": "Keep one list of gear and bookings, block each booking from prep through check-in, count quantities per date range, and check availability before sending a quote. Re-check whenever the quote is revised."
+        },
+        {
+          "q": "Should you hold gear for a quote the client hasn't approved?",
+          "a": "Yes, but as a soft hold with an expiry date written on the quote. If the client has not approved by then, release the gear so it can be booked by someone else."
+        },
+        {
+          "q": "How much turnaround time should you leave between rentals?",
+          "a": "It depends on the gear. Cables and stands need little; cases of wireless, video and lighting gear need testing and sometimes repair. Set a turnaround block for each category and apply it to every booking."
+        }
+      ]
     }
   ]
 }
