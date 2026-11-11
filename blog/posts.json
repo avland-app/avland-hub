@@ -2,6 +2,42 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "freelance-av-invoice-expenses",
+      "title": "Parking, travel and kit fees on a freelance AV invoice",
+      "description": "Freelance AV invoice expenses: how to bill parking, mileage and your kit fee as separate lines, and how to word them so they get approved.",
+      "keyword": "freelance av invoice expenses",
+      "date": "2026-11-11",
+      "published": true,
+      "readMinutes": 5,
+      "image": "freelance-av-invoice-expenses.jpg",
+      "imageAlt": "Parking, travel and kit fees on a freelance AV invoice",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "freelance-av-invoice",
+        "how-to-invoice-as-a-freelance-av-tech"
+      ],
+      "faq": [
+        {
+          "q": "Should I mark up expenses on a freelance invoice?",
+          "a": "Only if you agreed to it before the job. The usual practice for pass-through costs like parking, tolls and parts is to bill them at cost with a receipt."
+        },
+        {
+          "q": "Can I charge a kit fee on top of my day rate?",
+          "a": "Only if you told the company your day rate didn't include your kit. If your quoted rate already covers your gear, adding a kit fee on top is double billing."
+        },
+        {
+          "q": "How should I bill mileage as a freelance AV tech?",
+          "a": "Use a per-mile rate you stated before the job, show the miles and the rate on the invoice, and say where you start from. The IRS standard mileage rate is a common reference point."
+        },
+        {
+          "q": "Do I need receipts for small expenses?",
+          "a": "Attach one for every pass-through cost, even parking. It's what lets accounts payable approve the line without a back-and-forth."
+        }
+      ],
+      "cta": "Save your rates and expense lines once. 7 days free, no card needed."
+    },
+    {
       "slug": "av-equipment-rental-rates",
       "title": "Setting day rates for AV rental gear",
       "description": "How to set a day rate for AV rental gear you own: work from payback and real utilization, then check it against your market.",
