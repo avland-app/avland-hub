@@ -24,7 +24,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | in review |
 | 13 | 5 | Mon | O | Quote revisions: keeping Rev A, B and C straight | av quote revisions | A job that went through several revisions | |
 | 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | in review |
-| 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | in review |
+| 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | done |
 | 16 | 6 | Mon | O | How to quote AV crew positions (A1, V1, L1, TD) | av crew positions | Rates or roles you list on quotes | |
 | 17 | 6 | Wed | F | 1099 basics for AV freelancers (not tax advice) | av freelancer 1099 | Nothing personal; general facts only | |
 | 18 | 6 | Fri | O | How to quote a corporate event AV package | corporate event av quote | A typical breakout + general session setup | |
