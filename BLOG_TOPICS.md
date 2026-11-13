@@ -16,21 +16,21 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 4 | 2 | Mon | O | Setting day rates for AV rental gear | av equipment rental rates | How you price a piece of gear you own (e.g. E2) | done |
 | 5 | 2 | Wed | F | How to invoice an AV company as a freelance tech | how to invoice as a freelance av tech | A billing mistake you've seen or made | done |
 | 6 | 2 | Fri | I | How to price an AV installation by room | av installation quote | A room you've scoped: what went in it | done |
-| 7 | 3 | Mon | O | Multi-day AV rentals: how to price day 2 and 3 | multi day av rental pricing | Your own day-2/day-3 rule | in review |
-| 8 | 3 | Wed | F | Day rate or hourly? Pricing AV freelance work | av freelancer day rate | Which you use and why | in review |
-| 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | in review |
-| 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | |
-| 11 | 4 | Wed | F | Parking, travel and kit fees on a freelance invoice | freelance av invoice expenses | Expenses you add and how you word them | in review |
-| 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | |
+| 7 | 3 | Mon | O | Multi-day AV rentals: how to price day 2 and 3 | multi day av rental pricing | Your own day-2/day-3 rule | done |
+| 8 | 3 | Wed | F | Day rate or hourly? Pricing AV freelance work | av freelancer day rate | Which you use and why | done |
+| 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | done |
+| 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | in review |
+| 11 | 4 | Wed | F | Parking, travel and kit fees on a freelance invoice | freelance av invoice expenses | Expenses you add and how you word them | done |
+| 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | in review |
 | 13 | 5 | Mon | O | Quote revisions: keeping Rev A, B and C straight | av quote revisions | A job that went through several revisions | |
-| 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | |
-| 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | |
+| 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | in review |
+| 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | in review |
 | 16 | 6 | Mon | O | How to quote AV crew positions (A1, V1, L1, TD) | av crew positions | Rates or roles you list on quotes | |
 | 17 | 6 | Wed | F | 1099 basics for AV freelancers (not tax advice) | av freelancer 1099 | Nothing personal; general facts only | |
 | 18 | 6 | Fri | O | How to quote a corporate event AV package | corporate event av quote | A typical breakout + general session setup | |
 | 19 | 7 | Mon | O | AV kits: bundle gear so nothing gets left off | av equipment kits | One kit you always send together | |
 | 20 | 7 | Wed | F | Tracking unpaid invoices as a freelancer | track unpaid invoices freelancer | How you follow up on late payments | |
-| 21 | 7 | Fri | I | From approved install quote to material list | av installation material list | Materials that are easy to forget | |
+| 21 | 7 | Fri | I | From approved install quote to material list | av installation material list | Materials that are easy to forget | in review |
 | 22 | 8 | Mon | O | Deposits and cancellation terms for AV rentals | av rental deposit policy | Your deposit % and cancellation rule | |
 | 23 | 8 | Wed | F | How much to charge as an AV technician | freelance av technician rates | Bay Area range you've seen (no names) | |
 | 24 | 8 | Fri | O | Rental software for small AV companies compared | av rental software small business | What you tried before building GaffDesk | |

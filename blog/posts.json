@@ -2,6 +2,42 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "freelance-av-invoice-expenses",
+      "title": "Parking, travel and kit fees on a freelance AV invoice",
+      "description": "Freelance AV invoice expenses: how to bill parking, mileage and your kit fee as separate lines, and how to word them so they get approved.",
+      "keyword": "freelance av invoice expenses",
+      "date": "2026-11-11",
+      "published": true,
+      "readMinutes": 5,
+      "image": "freelance-av-invoice-expenses.jpg",
+      "imageAlt": "Parking, travel and kit fees on a freelance AV invoice",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "freelance-av-invoice",
+        "how-to-invoice-as-a-freelance-av-tech"
+      ],
+      "faq": [
+        {
+          "q": "Should I mark up expenses on a freelance invoice?",
+          "a": "Only if you agreed to it before the job. The usual practice for pass-through costs like parking, tolls and parts is to bill them at cost with a receipt."
+        },
+        {
+          "q": "Can I charge a kit fee on top of my day rate?",
+          "a": "Only if you told the company your day rate didn't include your kit. If your quoted rate already covers your gear, adding a kit fee on top is double billing."
+        },
+        {
+          "q": "How should I bill mileage as a freelance AV tech?",
+          "a": "Use a per-mile rate you stated before the job, show the miles and the rate on the invoice, and say where you start from. The IRS standard mileage rate is a common reference point."
+        },
+        {
+          "q": "Do I need receipts for small expenses?",
+          "a": "Attach one for every pass-through cost, even parking. It's what lets accounts payable approve the line without a back-and-forth."
+        }
+      ],
+      "cta": "Save your rates and expense lines once. 7 days free, no card needed."
+    },
+    {
       "slug": "av-equipment-rental-rates",
       "title": "Setting day rates for AV rental gear",
       "description": "How to set a day rate for AV rental gear you own: work from payback and real utilization, then check it against your market.",
@@ -197,6 +233,107 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-pull-sheet",
+      "title": "What an AV pull sheet is and how to make one",
+      "description": "What an AV pull sheet is, what goes on every line, and how to build one from the approved quote so nothing gets left behind.",
+      "keyword": "av pull sheet",
+      "date": "2026-11-06",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-pull-sheet.jpg",
+      "imageAlt": "What an AV pull sheet is and how to make one",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "What is an AV pull sheet?",
+          "a": "A pull sheet is a checklist of every item to pull from the warehouse, test and load for a job, with quantities, locations and case assignments. It's the crew's version of the quote."
+        },
+        {
+          "q": "What's the difference between a pull sheet and a pack list?",
+          "a": "The terms overlap, and shops use them differently. Many use pull sheet for the list of gear to take from the shelf, and pack list or load list for what goes in each case or truck. Pick one meaning and stay consistent."
+        },
+        {
+          "q": "Should a pull sheet include spares?",
+          "a": "Yes. List batteries, cables, adapters and consumables as their own section so they're pulled on purpose, not if there's room."
+        },
+        {
+          "q": "Who should make the pull sheet?",
+          "a": "Whoever owns the quote should generate it from the approved version. Building it separately is what lets the two drift apart."
+        }
+      ],
+      "cta": "Quote your next job from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-freelancer-day-rate",
+      "title": "Day rate or hourly? Pricing AV freelance work",
+      "description": "Day rate or hourly for AV freelance work? How each works, when to use which, a side-by-side example and what to put in writing.",
+      "keyword": "av freelancer day rate",
+      "date": "2026-11-04",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-freelancer-day-rate.jpg",
+      "imageAlt": "Day rate or hourly? Pricing AV freelance work",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-crew-overtime-calculation",
+        "freelance-av-invoice"
+      ],
+      "faq": [
+        {
+          "q": "Should an AV freelancer charge a day rate or an hourly rate?",
+          "a": "Use a day rate for full show days and installs with a fixed call, and an hourly rate with a minimum for short or open-ended work. State what the rate covers either way."
+        },
+        {
+          "q": "How do you convert a day rate to an hourly rate?",
+          "a": "Divide the day rate by the hours it covers. A $600 day covering 10 hours is $60 an hour."
+        },
+        {
+          "q": "What is a half-day rate in AV?",
+          "a": "A half-day rate is a lower flat price for a short call, often 4 to 5 hours. Many freelancers use it as the minimum call so a short booking still pays fairly."
+        },
+        {
+          "q": "Do I need to write down my rate?",
+          "a": "Yes. Put the rate, the hours it covers, the minimum call and your overtime start time in the booking email or invoice terms so everyone agrees before the call."
+        }
+      ],
+      "cta": "Save your rates once and bill hours with overtime split for you. 7 days free, no card needed."
+    },
+    {
+      "slug": "multi-day-av-rental-pricing",
+      "title": "Multi-day AV rentals: how to price day 2 and 3",
+      "description": "Multi day AV rental pricing: how to charge day 2, day 3 and a full week, with a worked example and how to show the rule on your quote.",
+      "keyword": "multi day av rental pricing",
+      "date": "2026-11-09",
+      "published": true,
+      "readMinutes": 5,
+      "image": "multi-day-av-rental-pricing.jpg",
+      "imageAlt": "Multi-day AV rentals: how to price day 2 and 3",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote"
+      ],
+      "faq": [
+        {
+          "q": "How do you price day 2 and day 3 of an AV rental?",
+          "a": "Charge the full rate on day 1, then a set percentage of it on each extra day, often 50% to 75% depending on how fast the gear can be rebooked. Write the percentage on the quote."
+        },
+        {
+          "q": "Should every item get the same multi-day discount?",
+          "a": "No. Gear that is in constant demand can stay at a flat day rate, while specialty gear that rarely goes out can carry a deeper discount to win the booking. Group your items and set a rule for each group."
+        },
+        {
+          "q": "What is a weekly rate for AV equipment?",
+          "a": "A weekly rate is a cap on the total for a seven-day rental, written as a multiple of the day rate. Some published schedules use 3.5 times the day rate; yours should reflect how often the item is booked."
+        }
+      ]
     },
     {
       "slug": "av-quoting-spreadsheet",
