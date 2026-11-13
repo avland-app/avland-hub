@@ -26,7 +26,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | in review |
 | 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | done |
 | 16 | 6 | Mon | O | How to quote AV crew positions (A1, V1, L1, TD) | av crew positions | Rates or roles you list on quotes | |
-| 17 | 6 | Wed | F | 1099 basics for AV freelancers (not tax advice) | av freelancer 1099 | Nothing personal; general facts only | |
+| 17 | 6 | Wed | F | 1099 basics for AV freelancers (not tax advice) | av freelancer 1099 | Nothing personal; general facts only | in review |
 | 18 | 6 | Fri | O | How to quote a corporate event AV package | corporate event av quote | A typical breakout + general session setup | |
 | 19 | 7 | Mon | O | AV kits: bundle gear so nothing gets left off | av equipment kits | One kit you always send together | |
 | 20 | 7 | Wed | F | Tracking unpaid invoices as a freelancer | track unpaid invoices freelancer | How you follow up on late payments | |
