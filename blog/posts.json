@@ -366,6 +366,42 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-freelancer-1099",
+      "title": "1099 basics for AV freelancers (not tax advice)",
+      "description": "1099 basics for AV freelancers: what the form is, self-employment tax, quarterly estimates and what to track. General info, not tax advice.",
+      "keyword": "av freelancer 1099",
+      "date": "2026-11-25",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-freelancer-1099.jpg",
+      "imageAlt": "1099 basics for AV freelancers",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "freelance-av-invoice",
+        "av-freelancer-payment-terms"
+      ],
+      "faq": [
+        {
+          "q": "Do I need a 1099 to report freelance income?",
+          "a": "No. Freelance income is taxable whether or not a company sends a form. Keep your own records of every payment."
+        },
+        {
+          "q": "What is the self-employment tax rate?",
+          "a": "The IRS lists it as 15.3%: 12.4% Social Security and 2.9% Medicare, applied to net self-employment earnings up to the Social Security wage base."
+        },
+        {
+          "q": "Do AV freelancers pay quarterly taxes?",
+          "a": "Many do, because no tax is withheld from contractor pay. Whether you must, and how much, depends on your income, so ask an accountant."
+        },
+        {
+          "q": "Is this tax advice?",
+          "a": "No. It is general information. Ask an accountant about your situation."
+        }
+      ],
+      "cta": "Keep every invoice in one place. 7 days free, no card needed."
     }
   ]
 }
