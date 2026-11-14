@@ -366,6 +366,42 @@
         }
       ],
       "cta": "Build your next AV quote from your own gear list. 7 days free, no card needed."
+    },
+    {
+      "slug": "av-rental-sales-tax",
+      "title": "Sales tax on AV rentals and labor: what to check",
+      "description": "Is AV rental, labor and delivery taxable? The questions to ask your state, plus California's rental guidance as an example. General info, not tax advice.",
+      "keyword": "av rental sales tax",
+      "date": "2026-11-27",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-rental-sales-tax.jpg",
+      "imageAlt": "Sales tax on AV rentals and labor: what to check",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote",
+        "av-equipment-rental-rates"
+      ],
+      "faq": [
+        {
+          "q": "Do I charge sales tax on AV equipment rentals?",
+          "a": "It depends on your state and how the rental is structured. Many states tax equipment rentals, but the details differ. Check your state tax agency's guide for rental companies and ask your accountant."
+        },
+        {
+          "q": "Is AV labor taxable?",
+          "a": "States differ. Some tax certain labor connected to a rental, others do not, and a separately stated charge is often treated differently from a bundled one. Keep labor on its own line and confirm your state's rule."
+        },
+        {
+          "q": "Are delivery and setup fees taxable?",
+          "a": "Sometimes. In California, for example, delivery in your own vehicle is generally taxable, with exceptions for separately stated charges after the lease starts. Other states have other rules."
+        },
+        {
+          "q": "Where can I find my state's rules?",
+          "a": "Start with your state's department of revenue or tax agency website, look for guides for rental companies or equipment leasing, and confirm anything unclear with an accountant."
+        }
+      ],
+      "cta": "Keep gear, crew and fees on separate quote lines. 7 days free, no card needed."
     }
   ]
 }
