@@ -19,11 +19,11 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 7 | 3 | Mon | O | Multi-day AV rentals: how to price day 2 and 3 | multi day av rental pricing | Your own day-2/day-3 rule | done |
 | 8 | 3 | Wed | F | Day rate or hourly? Pricing AV freelance work | av freelancer day rate | Which you use and why | done |
 | 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | done |
-| 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | in review |
+| 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | done |
 | 11 | 4 | Wed | F | Parking, travel and kit fees on a freelance invoice | freelance av invoice expenses | Expenses you add and how you word them | done |
 | 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | in review |
-| 13 | 5 | Mon | O | Quote revisions: keeping Rev A, B and C straight | av quote revisions | A job that went through several revisions | |
-| 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | in review |
+| 13 | 5 | Mon | O | Quote revisions: keeping Rev A, B and C straight | av quote revisions | A job that went through several revisions | in review |
+| 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | done |
 | 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | done |
 | 16 | 6 | Mon | O | How to quote AV crew positions (A1, V1, L1, TD) | av crew positions | Rates or roles you list on quotes | |
 | 17 | 6 | Wed | F | 1099 basics for AV freelancers (not tax advice) | av freelancer 1099 | Nothing personal; general facts only | in review |
@@ -40,7 +40,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 28 | 10 | Mon | O | How to quote an LED wall rental | led wall rental quote | A real LED wall job: size, processor, crew | |
 | 29 | 10 | Wed | F | Keeping track of the AV companies you work for | av freelancer clients | How many companies you bill in a year | |
 | 30 | 10 | Fri | O | How to quote a livestream production | livestream production quote | A livestream setup you've run | |
-| 31 | 11 | Mon | A | Sales tax on AV rentals and labor (varies by state) | av rental sales tax | How California treats your jobs (general) | |
+| 31 | 11 | Mon | A | Sales tax on AV rentals and labor (varies by state) | av rental sales tax | How California treats your jobs (general) | in review |
 | 32 | 11 | Wed | O | Building the AV budget for an event | event av budget | A budget range for a typical event | |
 | 33 | 11 | Fri | I | Estimating labor hours for AV installs | av installation labor estimate | Hours a typical room takes | |
 | 34 | 12 | Mon | A | From quote to invoice without retyping | av quote to invoice | Your old process before GaffDesk | |
