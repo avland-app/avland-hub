@@ -2,6 +2,42 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "track-unpaid-invoices-freelancer",
+      "title": "How to track unpaid invoices as an AV freelancer",
+      "description": "Track unpaid invoices as an AV freelancer: what to log, how to sort by age, a weekly check, and what to do when an invoice is stuck.",
+      "keyword": "track unpaid invoices freelancer",
+      "date": "2026-12-02",
+      "published": true,
+      "readMinutes": 6,
+      "image": "track-unpaid-invoices-freelancer.jpg",
+      "imageAlt": "How to track unpaid invoices as an AV freelancer",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-freelancer-payment-terms",
+        "freelance-av-invoice-expenses"
+      ],
+      "faq": [
+        {
+          "q": "How do I keep track of unpaid invoices as a freelancer?",
+          "a": "Keep one list with invoice number, company, amount, due date and status. Add each invoice the day you send it, sort by how overdue it is, and review it once a week."
+        },
+        {
+          "q": "When is an invoice officially overdue?",
+          "a": "When the due date in your agreement has passed. If you stated Net 15 or Net 30 from the invoice date, the due date is that many days after you sent it. If no due date was agreed, ask which date applies before you follow up."
+        },
+        {
+          "q": "How soon should I follow up on a late invoice?",
+          "a": "A few days after the due date for a first, friendly check. Earlier is fine if you never confirmed the invoice arrived."
+        },
+        {
+          "q": "Should I stop working for a company that pays late?",
+          "a": "Many freelancers pause new bookings until the overdue invoice is paid. Decide your rule before the next gig and say it plainly if it comes up."
+        }
+      ],
+      "cta": "Keep your rates and clients saved and send invoices fast. 7 days free, no card needed."
+    },
+    {
       "slug": "av-freelancer-payment-terms",
       "title": "Payment terms that get AV freelancers paid faster",
       "description": "Payment terms for AV freelancers: what to write, which phrases stall payment, what California requires, and how to follow up on late invoices.",
