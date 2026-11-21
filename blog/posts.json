@@ -473,6 +473,41 @@
           "a": "If the cable runs through an air-handling space such as a return-air ceiling, it generally has to be a listed plenum type. Confirm with the current electrical code and your local authority."
         }
       ]
+    },
+    {
+      "slug": "av-installation-labor-estimate",
+      "title": "How to estimate labor hours for AV installs",
+      "description": "Estimate AV installation labor hours room by room: split tasks, adjust for site conditions, and add programming, travel and contingency.",
+      "keyword": "av installation labor estimate",
+      "date": "2026-12-04",
+      "published": true,
+      "readMinutes": 5,
+      "image": "av-installation-labor-estimate.jpg",
+      "imageAlt": "How to estimate labor hours for AV installs",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-installation-quote",
+        "av-installation-material-list"
+      ],
+      "faq": [
+        {
+          "q": "How do I estimate labor hours for an AV install?",
+          "a": "Break each room into tasks, assign base times from your past jobs or an industry guide, adjust for site conditions, then add programming, commissioning, travel and a contingency."
+        },
+        {
+          "q": "Are there standard labor hours for AV installation?",
+          "a": "Industry groups such as the NSCA publish labor unit surveys, but they are starting points that you adjust for each job. Your own records from past installs are usually more accurate."
+        },
+        {
+          "q": "How much contingency should I add?",
+          "a": "There is no fixed number. Use a higher percentage for first visits, old buildings and unclear scope, and a lower one for repeat work on sites you know."
+        },
+        {
+          "q": "Should programming be in the install hours?",
+          "a": "Quote it as its own line. Programming and commissioning are real labor, and hiding them inside general install time makes the estimate impossible to check afterward."
+        }
+      ]
     }
   ]
 }
