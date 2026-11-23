@@ -42,7 +42,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 30 | 10 | Fri | O | How to quote a livestream production | livestream production quote | A livestream setup you've run | |
 | 31 | 11 | Mon | A | Sales tax on AV rentals and labor (varies by state) | av rental sales tax | How California treats your jobs (general) | in review |
 | 32 | 11 | Wed | O | Building the AV budget for an event | event av budget | A budget range for a typical event | |
-| 33 | 11 | Fri | I | Estimating labor hours for AV installs | av installation labor estimate | Hours a typical room takes | |
+| 33 | 11 | Fri | I | Estimating labor hours for AV installs | av installation labor estimate | Hours a typical room takes | in review |
 | 34 | 12 | Mon | A | From quote to invoice without retyping | av quote to invoice | Your old process before GaffDesk | |
 | 35 | 12 | Wed | A | 7 AV quoting mistakes that cost money | av quoting mistakes | A mistake that cost you money | |
 | 36 | 12 | Fri | A | How to choose AV quoting software | av quoting software | What mattered most when you built GaffDesk | |
