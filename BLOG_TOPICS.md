@@ -21,7 +21,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 9 | 3 | Fri | A | What an AV pull sheet is and how to make one | av pull sheet | Something left behind because the list was wrong | done |
 | 10 | 4 | Mon | O | Quoting gear you don't own: sub-rentals done right | av sub rental | How you mark up a sub-rental | done |
 | 11 | 4 | Wed | F | Parking, travel and kit fees on a freelance invoice | freelance av invoice expenses | Expenses you add and how you word them | done |
-| 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | in review |
+| 12 | 4 | Fri | O | How to stop double-booking AV gear | av equipment availability | A near-miss with overlapping shows | done |
 | 13 | 5 | Mon | O | Quote revisions: keeping Rev A, B and C straight | av quote revisions | A job that went through several revisions | in review |
 | 14 | 5 | Wed | F | Payment terms that get freelancers paid faster | av freelancer payment terms | Your terms and how long companies really take | done |
 | 15 | 5 | Fri | A | Spreadsheet vs software for AV quoting | av quoting spreadsheet | What broke in your Excel workflow | done |
@@ -42,7 +42,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 30 | 10 | Fri | O | How to quote a livestream production | livestream production quote | A livestream setup you've run | |
 | 31 | 11 | Mon | A | Sales tax on AV rentals and labor (varies by state) | av rental sales tax | How California treats your jobs (general) | in review |
 | 32 | 11 | Wed | O | Building the AV budget for an event | event av budget | A budget range for a typical event | |
-| 33 | 11 | Fri | I | Estimating labor hours for AV installs | av installation labor estimate | Hours a typical room takes | |
+| 33 | 11 | Fri | I | Estimating labor hours for AV installs | av installation labor estimate | Hours a typical room takes | in review |
 | 34 | 12 | Mon | A | From quote to invoice without retyping | av quote to invoice | Your old process before GaffDesk | |
 | 35 | 12 | Wed | A | 7 AV quoting mistakes that cost money | av quoting mistakes | A mistake that cost you money | |
 | 36 | 12 | Fri | A | How to choose AV quoting software | av quoting software | What mattered most when you built GaffDesk | |
