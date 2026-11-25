@@ -188,6 +188,8 @@ section.block + section.block{border-top:1px solid var(--rule)}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 .plan{background:var(--paper);border:2px solid var(--rule);border-radius:6px;padding:28px 24px;display:flex;flex-direction:column}
 .plan.pro{border-color:var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.plan.off{opacity:.5}
+.plan.off .price-note{color:var(--ink);font-weight:700}
 .plan h3{font-size:1.7rem;font-variation-settings:"wdth" 70;font-weight:850}
 .plan-for{color:var(--ink-soft);margin:4px 0 18px;min-height:3em}
 .price{font-variation-settings:"wdth" 70;font-weight:850;font-size:3rem;line-height:1;font-variant-numeric:tabular-nums}
@@ -423,7 +425,7 @@ footer a:hover{text-decoration:underline}
           <li>Up to 5 saved clients</li>
           <li class="no">Pull sheets</li>
         </ul>
-        <a class="btn btn-quiet" href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
+        <a class="btn btn-quiet" data-basic-btn href="https://app.gaffdesk.com/?signup=1">Start free trial</a>
       </div>
       <div class="plan pro" data-plan="pro">
         <h3>Pro</h3>
@@ -530,7 +532,11 @@ footer a:hover{text-decoration:underline}
       card.querySelector('[data-unit]').textContent=state.period==='month'?'/month':'/year';
       var note='';
       if(state.period==='year') note='Works out to '+fmt(amount/12)+' a month';
-      if(state.spaces==='both'&&!p.both) note='One workspace only on Basic';
+      var off=state.spaces==='both'&&!p.both;
+      if(off) note='Not available with both workspaces';
+      card.classList.toggle('off',off);
+      var bb=card.querySelector('[data-basic-btn]');
+      if(bb){bb.textContent=off?'Switch to one workspace':'Start free trial';if(off){bb.setAttribute('href','#pricing');}else{bb.setAttribute('href','https://app.gaffdesk.com/?signup=1');}}
       card.querySelector('[data-note]').textContent=note;
       var label=card.querySelector('[data-spaces-label]');
       if(label) label.textContent=state.spaces==='both'?'Event and Install workspaces':'One workspace: Event or Install';
@@ -538,6 +544,8 @@ footer a:hover{text-decoration:underline}
     document.querySelector('[data-addon]').textContent='+'+fmt(addon[state.period])+(state.period==='month'?'/month':'/year');
   }
   document.querySelectorAll('[data-period]').forEach(function(b){b.addEventListener('click',function(){state.period=b.dataset.period;document.querySelectorAll('[data-period]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render();});});
+  var basicBtn=document.querySelector('[data-basic-btn]');
+  if(basicBtn) basicBtn.addEventListener('click',function(e){if(state.spaces!=='both')return;e.preventDefault();var one=document.querySelector('[data-spaces="one"]');if(one)one.click();});
   document.querySelectorAll('[data-spaces]').forEach(function(b){b.addEventListener('click',function(){state.spaces=b.dataset.spaces;document.querySelectorAll('[data-spaces]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render();});});
   render();
 })();
