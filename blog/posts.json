@@ -2,6 +2,42 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "av-quote-revisions",
+      "title": "Quote revisions: keeping Rev A, B and C straight",
+      "description": "AV quote revisions: how to label Rev A, B and C, what to put in the change note, and rules that keep the client and crew on the same version.",
+      "keyword": "av quote revisions",
+      "date": "2026-11-30",
+      "published": true,
+      "readMinutes": 4,
+      "image": "av-quote-revisions.jpg",
+      "imageAlt": "Quote revisions: keeping Rev A, B and C straight",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "how-to-write-an-av-quote",
+        "av-pull-sheet"
+      ],
+      "faq": [
+        {
+          "q": "What does Rev A, Rev B mean on a quote?",
+          "a": "They are revision letters. Rev A is the first version sent to the client, Rev B is the next version after a change, and so on. The highest letter is the current one."
+        },
+        {
+          "q": "Should I overwrite the old quote or save a new version?",
+          "a": "Save a new version. Keep every sent revision as it was sent, so you can show what the client saw and approved at each step."
+        },
+        {
+          "q": "Do I need a new quote number for each revision?",
+          "a": "No. Keep one quote number and change the letter. A new number makes it look like a different job and makes it harder to find the history."
+        },
+        {
+          "q": "How do I tell the client which version is current?",
+          "a": "State it in the email and at the top of the quote: \"Rev C replaces Rev B,\" plus a one-line note on what changed."
+        }
+      ],
+      "cta": "Keep every revision saved and send the approved quote straight to an invoice."
+    },
+    {
       "slug": "av-freelancer-payment-terms",
       "title": "Payment terms that get AV freelancers paid faster",
       "description": "Payment terms for AV freelancers: what to write, which phrases stall payment, what California requires, and how to follow up on late invoices.",
