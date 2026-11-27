@@ -2,6 +2,40 @@
   "homeUpdated": "2026-10-20",
   "posts": [
     {
+      "slug": "av-crew-positions",
+      "title": "How to quote AV crew positions (A1, V1, L1, TD)",
+      "description": "AV crew positions explained: what A1, V1, L1 and TD mean, how to price each role, and how to write crew on a quote so clients understand it.",
+      "keyword": "av crew positions",
+      "date": "2026-12-07",
+      "published": true,
+      "readMinutes": 6,
+      "image": "av-crew-positions.jpg",
+      "imageAlt": "How to quote AV crew positions (A1, V1, L1, TD)",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-crew-overtime-calculation"
+      ],
+      "faq": [
+        {
+          "q": "What does A1 mean in AV?",
+          "a": "A1 is the lead audio engineer, the person who mixes the show. The A2 is the audio assistant who handles mics, wireless and stage-side fixes. Exact titles vary by company, so define them on your quote."
+        },
+        {
+          "q": "How many crew positions does a corporate event need?",
+          "a": "It depends on the room, the program and the gear. A small meeting may need one tech. A general session with wireless mics, a switcher, lighting and presenters usually needs an A1, a V1, a lighting operator and a TD, and often a graphics operator."
+        },
+        {
+          "q": "Should crew be quoted as a day rate or hourly?",
+          "a": "Most AV quotes use a day rate that covers a stated number of hours, with overtime after that. It is easier for the client to compare and for you to staff. Hourly works for short calls."
+        },
+        {
+          "q": "Do I mark up freelancer rates on a quote?",
+          "a": "Most AV companies do. The rate you pay is a cost, and the quoted rate also covers your scheduling, your risk and your margin. Mark up labor consistently so a long day does not eat your profit."
+        }
+      ]
+    },
+    {
       "slug": "av-freelancer-payment-terms",
       "title": "Payment terms that get AV freelancers paid faster",
       "description": "Payment terms for AV freelancers: what to write, which phrases stall payment, what California requires, and how to follow up on late invoices.",
