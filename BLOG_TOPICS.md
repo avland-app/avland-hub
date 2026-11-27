@@ -32,7 +32,7 @@ Audience key: **O** = AV company owners/PMs, **F** = AV freelancers, **I** = ins
 | 20 | 7 | Wed | F | Tracking unpaid invoices as a freelancer | track unpaid invoices freelancer | How you follow up on late payments in review |
 | 21 | 7 | Fri | I | From approved install quote to material list | av installation material list | Materials that are easy to forget | done |
 | 22 | 8 | Mon | O | Deposits and cancellation terms for AV rentals | av rental deposit policy | Your deposit % and cancellation rule | |
-| 23 | 8 | Wed | F | How much to charge as an AV technician | freelance av technician rates | Bay Area range you've seen (no names) | |
+| 23 | 8 | Wed | F | How much to charge as an AV technician | freelance av technician rates | Bay Area range you've seen (no names) |in review |
 | 24 | 8 | Fri | O | Rental software for small AV companies compared | av rental software small business | What you tried before building GaffDesk | |
 | 25 | 9 | Mon | O | Delivery, setup and strike fees explained | av delivery setup strike fees | How you price delivery and strike | |
 | 26 | 9 | Wed | F | Make your invoices look professional | professional av invoice | What clients have commented on | |
