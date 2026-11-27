@@ -575,6 +575,42 @@
         }
       ],
       "cta": "Keep gear, crew and fees on separate quote lines. 7 days free, no card needed."
+    },
+    {
+      "slug": "freelance-av-technician-rates",
+      "title": "How much to charge as a freelance AV technician",
+      "description": "How much should a freelance AV technician charge? Build your day rate from a BLS wage benchmark, your costs and the days you really book.",
+      "keyword": "freelance av technician rates",
+      "date": "2026-12-09",
+      "published": true,
+      "readMinutes": 6,
+      "image": "freelance-av-technician-rates.jpg",
+      "imageAlt": "How much to charge as a freelance AV technician",
+      "imageWidth": 1600,
+      "imageHeight": 900,
+      "related": [
+        "av-freelancer-day-rate",
+        "av-crew-overtime-calculation"
+      ],
+      "faq": [
+        {
+          "q": "How much should a freelance AV technician charge per day?",
+          "a": "It depends on position, market and experience. Work it out from the income you need divided by the days you realistically book, then compare it to what local AV companies pay for the same role."
+        },
+        {
+          "q": "Is the BLS median wage what I should charge?",
+          "a": "No. It is a median wage for employees across a whole occupation. A freelancer also covers taxes, insurance, kit and unbooked days, so the rate you need is usually higher."
+        },
+        {
+          "q": "Should I charge the same rate to every client?",
+          "a": "Keep one rate per position and change it deliberately. Some freelancers offer a lower rate for steady repeat work, but write it down."
+        },
+        {
+          "q": "How often should I raise my rates?",
+          "a": "At least once a year, or sooner if you are regularly booked solid. Apply it to new clients first."
+        }
+      ],
+      "cta": "Save your rates once and bill hours with overtime split for you. 7 days free, no card needed."
     }
   ]
 }
